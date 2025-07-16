@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@import "@fontsource/cairo/arabic.css";
+*{
+  direction: rtl;
+  font-family: 'Cairo';
+  box-sizing: border-box;
+  
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}

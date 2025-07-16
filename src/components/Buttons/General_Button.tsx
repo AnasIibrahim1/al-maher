@@ -1,0 +1,48 @@
+import React from "react";
+import Link from "next/link";
+
+interface GeneralButtonProps {
+  text: string;
+  bgColor: string;
+  width?: string;
+  href?: string;
+  margin?: string;
+  color?: string;
+  onClick?: () => void;
+}
+
+const GeneralButton: React.FC<GeneralButtonProps> = ({ 
+  text, 
+  bgColor, 
+  margin,
+  width = "fit-content",
+  href,
+  color = "white",
+  onClick 
+}) => {
+  const buttonContent = (
+    <button 
+      className={`text-white px-10 py-2 rounded-md cursor-pointer`}
+      style={{
+        backgroundColor: bgColor,
+        width: width,
+        margin: margin,
+        color: color,
+      }}
+      onClick={onClick}
+    >
+      {text}
+    </button>
+  );
+
+  return href ? (
+    <Link className={`text-white rounded-md cursor-pointer`} href={href} style={{
+      width: width,
+      margin: margin
+    }}  >
+      {buttonContent}
+    </Link>
+  ) : buttonContent;
+};
+
+export default GeneralButton;
