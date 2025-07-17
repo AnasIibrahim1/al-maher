@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 import Input from "@/components/input/input";
 import Image from "next/image";
@@ -12,6 +12,7 @@ import Stars from "@/components/Rates/stars";
 import { useState } from "react";
 import General_Button from "@/components/Buttons/General_Button";
 import Paginations from "@/components/PaginationBar/Paginations";
+import router from "next/router";
 
 
 
@@ -22,11 +23,64 @@ const cabin = Cabin({
 const boxes = Array(10).fill({}); 
 export default function Home() {
 const [rating, setRating] = useState(0);
-const pageSize = 4;
+const LessonspageSize = 4;
 const [currentPage, setCurrentPage] = useState(1);
-const startIdx = (currentPage - 1) * pageSize;
-const endIdx = startIdx + pageSize;
+const startIdx = (currentPage - 1) * LessonspageSize;
+const endIdx = startIdx + LessonspageSize;
 const pagedBoxes = boxes.slice(startIdx, endIdx);
+
+
+const testimonialspageSize = 2;
+const testimonialsstartIdx = (currentPage - 1) * testimonialspageSize;
+const testimonialsendIdx = testimonialsstartIdx + testimonialspageSize;
+
+
+const testimonials = [
+  {
+    name: "أنس ابراهيم",
+    email: "a.ibrahim@gmail.com",
+    image: "/ppl/ppl.jpg",
+    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
+  },
+  {
+    name: "أنس ابراهيم",
+    email: "a.ibrahim@gmail.com",
+    image: "/ppl/ppl.jpg",
+    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
+  },
+  {
+    name: "أنس ابراهيم",
+    email: "a.ibrahim@gmail.com",
+    image: "/ppl/ppl.jpg",
+    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
+  },
+  {
+    name: "أنس ابراهيم",
+    email: "a.ibrahim@gmail.com",
+    image: "/ppl/ppl.jpg",
+    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
+  },
+  {
+    name: "أنس ابراهيم",
+    email: "a.ibrahim@gmail.com",
+    image: "/ppl/ppl.jpg",
+    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
+  },
+  {
+    name: "أنس ابراهيم",
+    email: "a.ibrahim@gmail.com",
+    image: "/ppl/ppl.jpg",
+    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
+  },
+  {
+    name: "أنس ابراهيم",
+    email: "a.ibrahim@gmail.com",
+    image: "/ppl/ppl.jpg",
+    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
+  },
+];
+const totalPages = Math.ceil(testimonials.length / testimonialspageSize);
+const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialsendIdx);
 
   return (
     
@@ -249,7 +303,7 @@ const pagedBoxes = boxes.slice(startIdx, endIdx);
 </Paragraph>
 
 </div>
-<General_Button text="انضمام" bgColor="#169FC6" color="white" width="100%" padding="10px"/>
+<General_Button text="انضمام" bgColor="#169FC6" color="white" width="100%" padding="10px" />
 
       </Box>
     ))}
@@ -257,7 +311,7 @@ const pagedBoxes = boxes.slice(startIdx, endIdx);
     <Paginations
   total={boxes.length}
   currentPage={currentPage}
-  pageSize={pageSize}
+  LessonspageSize={LessonspageSize}
   onPageChange={setCurrentPage}
 />
       </div>
@@ -299,7 +353,7 @@ const pagedBoxes = boxes.slice(startIdx, endIdx);
 {/* Container 6 :"Opinions" */}
 <Container>
 <div className="flex flex-col h-full mt-20"  style={{
-    width: "80%",
+    width: "85%",
     margin: "40px auto",
   }}>
     <Paragraph color="black" size="40px" style={{
@@ -313,78 +367,88 @@ const pagedBoxes = boxes.slice(startIdx, endIdx);
     }}>
     لوريم إيبسوم هو ببساطة نص وهمي للطباعة.لوريم إيبسوم هو ببساطة نص وهمي للطباعة.
     </Paragraph>
-  <ContainerRow style={{
+    <ContainerRow
+  style={{
     backgroundColor: "#f1f4f7",
     width: "100%",
     margin: "0 auto",
-  }} justify="between">
-<Box width="650px" height="200px" borderRadius="10px" background="white" padding="5px" flex column justifybetween style={{
+    padding: "20px",
+  }}
+  justify="between"
+>
+  {pagedTestimonials.map((t, idx) => (
+    <Box
+      key={idx}
+      width="650px"
+      height="200px"
+      borderRadius="10px"
+      background="white"
+      padding="5px"
+      flex
+      column
+      justifybetween
+      style={{
         boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.3)",
-      }}>
-      <Container style={{
-        width: "100%",
-        height: "100%",
-      }}>
-        <ContainerRow style={{
-          width: "100%",
-          height: "50%",
-        }} items="center" >
-            <Image src="/ppl/ppl.jpg" alt="landing" width={70} height={70} style={{
-              borderRadius: "50%",
-            }}  />
-            <Container justify="between" style={{
-              width: "50%",
-              marginRight: "20px",
-            }}>
-            <Paragraph color="black" size="20px" style={{
-          fontWeight: "900",
-        }} >أنس ابراهيم</Paragraph>
-        <Paragraph color="#084FC7" size="12px" style={{
-          fontWeight: "900",
-        }} >a.ibrahim@gmail.com</Paragraph>
-            </Container>
-        <div className="absolute left-0 p-5 ">
-          <Image src="/icons/common_icons/coma.svg" alt="landing" width=
-        {70} height={50} className=" rounded-md p-1"  />
-        </div>
+      }}
+    >
+      <Container style={{ width: "100%", height: "100%" }}>
+        <ContainerRow style={{ width: "100%", height: "50%" }} items="center">
+          <Image
+            src={t.image}
+            alt={t.name}
+            width={70}
+            height={70}
+            style={{ borderRadius: "50%" }}
+          />
+          <Container justify="between" style={{ width: "50%", marginRight: "20px" }}>
+            <Paragraph color="black" size="20px" style={{ fontWeight: "900" }}>
+              {t.name}
+            </Paragraph>
+            <Paragraph color="#084FC7" size="12px" style={{ fontWeight: "900" }}>
+              {t.email}
+            </Paragraph>
+          </Container>
+          <div className="absolute left-0 p-5 ">
+            <Image
+              src="/icons/common_icons/coma.svg"
+              alt="coma"
+              width={70}
+              height={50}
+              className="rounded-md p-1"
+            />
+          </div>
         </ContainerRow>
-        <Paragraph color="black" size="16px">تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!</Paragraph>
+        <Paragraph color="black" size="16px">
+          {t.text}
+        </Paragraph>
       </Container>
-      </Box>
-      <Box width="650px" height="200px" borderRadius="10px" background="white" padding="5px" flex column justifybetween style={{
-        boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.3)",
-      }}>
-      <Container style={{
-        width: "100%",
-        height: "100%",
-      }}>
-        <ContainerRow style={{
-          width: "100%",
-          height: "50%",
-        }} items="center" >
-            <Image src="/ppl/ppl.jpg" alt="landing" width={70} height={70} style={{
-              borderRadius: "50%",
-            }}  />
-            <Container justify="between" style={{
-              width: "50%",
-              marginRight: "20px",
-            }}>
-            <Paragraph color="black" size="20px" style={{
-          fontWeight: "900",
-        }} >أنس ابراهيم</Paragraph>
-        <Paragraph color="#084FC7" size="12px" style={{
-          fontWeight: "900",
-        }} >a.ibrahim@gmail.com</Paragraph>
-            </Container>
-        <div className="absolute left-0 p-5 ">
-          <Image src="/icons/common_icons/coma.svg" alt="landing" width=
-        {70} height={50} className=" rounded-md p-1"  />
-        </div>
-        </ContainerRow>
-        <Paragraph color="black" size="16px">تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!</Paragraph>
-      </Container>
-      </Box>
-  </ContainerRow>
+    </Box>
+  ))}
+</ContainerRow>
+<div className="flex items-center justify-end gap-2 mt-6">
+  <button
+    onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+    disabled={currentPage === 1}
+    className="w-8 h-8 flex items-center justify-center rounded bg-white shadow transition disabled:opacity-50"
+  >
+    &#x2039;
+  </button>
+  {Array.from({ length: totalPages }).map((_, idx) => (
+    <span
+      key={idx}
+      onClick={() => setCurrentPage(idx + 1)}
+      className={`w-3 h-3 rounded-full mx-1 cursor-pointer ${currentPage === idx + 1 ? 'bg-[#169FC6]' : 'bg-gray-300'}`}
+      style={{ display: 'inline-block' }}
+    />
+  ))}
+  <button
+    onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+    disabled={currentPage === totalPages}
+    className="w-8 h-8 flex items-center justify-center rounded bg-white shadow transition disabled:opacity-50"
+  >
+    &#x203A;
+  </button>
+</div>
 </div>
 </Container>
 </div>

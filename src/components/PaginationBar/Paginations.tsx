@@ -3,17 +3,17 @@ import React from "react";
 interface PaginationsProps {
   total: number;
   currentPage: number;
-  pageSize: number;
+  LessonspageSize: number;
   onPageChange: (page: number) => void;
 }
 
 const Paginations: React.FC<PaginationsProps> = ({
   total,
   currentPage,
-  pageSize,
+  LessonspageSize,
   onPageChange,
 }) => {
-  const totalPages = Math.ceil(total / pageSize);
+  const totalPages = Math.ceil(total / LessonspageSize);
 
   if (totalPages <= 1) return null;
 

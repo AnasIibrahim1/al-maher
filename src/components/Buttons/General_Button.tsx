@@ -1,5 +1,8 @@
-import React from "react";
+"use client"
+
+import React, { useState } from "react";
 import Link from "next/link";
+// eslint-disable-next-line @typescript-eslint/no-unused-expressions
 
 interface GeneralButtonProps {
   text: string;
@@ -29,25 +32,31 @@ const GeneralButton: React.FC<GeneralButtonProps> = ({
   fontWeight,
   onClick 
 }) => {
+  const [hover, setHover] = useState(false);
+
   const buttonContent = (
     <button 
-      className={`text-white px-10 py-2 rounded-md cursor-pointer`}
+      className={`text-white px-10 py-2 rounded-md cursor-pointer transition-all duration-300`}
       style={{
-        backgroundColor: bgColor,
+        backgroundColor: hover ? "#0E6983" : bgColor,
         width: width,
         margin: margin,
-        color: color,
+        color: hover ? "white" : color,
         padding: padding,
         height: height,
         fontSize: fontSize,
         fontWeight: fontWeight,
-      }}
+        transition: "all 0.3s ease",
+
+      }
+    }
       onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       {text}
     </button>
   );
-
   return href ? (
     <Link className={`text-white rounded-md cursor-pointer`} href={href} style={{
       width: width,

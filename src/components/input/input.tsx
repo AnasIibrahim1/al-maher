@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, ReactNode } from "react";
+import React, { InputHTMLAttributes, ReactNode, useState } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   backgroundColor?: string;
@@ -22,6 +22,7 @@ const Input: React.FC<InputProps> = ({
   margin = "0",
   ...rest
 }) => {
+  const [hover, setHover] = useState(false);
   return (
     <div
       className={`input-wrapper ${className}`}
