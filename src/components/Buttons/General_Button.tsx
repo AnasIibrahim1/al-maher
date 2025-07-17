@@ -8,7 +8,12 @@ interface GeneralButtonProps {
   href?: string;
   margin?: string;
   color?: string;
+  padding?: string;
+  fontSize?: string;
+  height?: string;
+  fontWeight?: string;
   onClick?: () => void;
+
 }
 
 const GeneralButton: React.FC<GeneralButtonProps> = ({ 
@@ -17,7 +22,11 @@ const GeneralButton: React.FC<GeneralButtonProps> = ({
   margin,
   width = "fit-content",
   href,
+  padding,
+  height,
   color = "white",
+  fontSize,
+  fontWeight,
   onClick 
 }) => {
   const buttonContent = (
@@ -28,6 +37,10 @@ const GeneralButton: React.FC<GeneralButtonProps> = ({
         width: width,
         margin: margin,
         color: color,
+        padding: padding,
+        height: height,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
       }}
       onClick={onClick}
     >

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import GeneralButton from "../Buttons/General_Button";
+import Paragraph from "../Paragraphs/small";
 
 
 const Footer = () => {
@@ -60,7 +61,7 @@ const Footer = () => {
             <ul>
 <div className="mt-10 mb-6">            
     <li style={{listStyle: "square"}} className="text-2xl text-white">الاشتراك</li>
-<p className="text-white text-sm">لقد كان لوريم إيبسوم هو الذي جعل منهم طابعة صناعية تأخذ </p>
+<Paragraph color="white" size="1rem" className="text-white">لقد كان لوريم إيبسوم هو الذي جعل منهم طابعة صناعية تأخذ</Paragraph>
 </div>
               <div className="flex flex-col justify-center gap-2 w-fit h-full ">
               <input type="text" placeholder=" البريد الالكتروني" className="bg-[#E7E9EB80] text-black px-4 py-2 rounded-md w-90" />

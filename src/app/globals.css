@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource/cairo/arabic.css";
+
 *{
   direction: rtl;
   font-family: 'Cairo';
