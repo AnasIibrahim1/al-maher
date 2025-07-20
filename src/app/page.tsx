@@ -12,6 +12,7 @@ import Stars from "@/components/Rates/stars";
 import { useState } from "react";
 import General_Button from "@/components/Buttons/General_Button";
 import Paginations from "@/components/PaginationBar/Paginations";
+import TestLogin from "@/components/TestLogin";
 
 
 
@@ -79,8 +80,8 @@ const totalPages = Math.ceil(testimonials.length / testimonialspageSize);
 const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialsendIdx);
 
   return (
-    
-<div className="h-full w-full">
+    <div className="h-full w-full">
+      <TestLogin />
   
   {/* Container 1 :"Landing" */}
 <Container justify="center" style={{

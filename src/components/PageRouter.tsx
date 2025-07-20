@@ -19,6 +19,11 @@ const ContactPage = dynamic(() => import('@/app/contact/page'), {
   ssr: true
 });
 
+const CoursesPage = dynamic(() => import('@/app/courses/page'), {
+  loading: () => <LoadingSpinner size="large" text="جاري تحميل صفحة المحتوى..." />,
+  ssr: true
+});
+
 export default function PageRouter() {
   const pathname = usePathname();
 
@@ -29,6 +34,10 @@ export default function PageRouter() {
 
   if (pathname === '/contact') {
     return <ContactPage />;
+  }
+
+  if (pathname === '/courses') {
+    return <CoursesPage />;
   }
 
   // Default to home page
