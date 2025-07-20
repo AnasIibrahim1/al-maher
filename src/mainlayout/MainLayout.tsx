@@ -1,14 +1,20 @@
 import React from "react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-const MainLayout = ({ children }: { children: React.ReactNode }) => {
+
+interface MainLayoutProps {
+  children: React.ReactNode;
+  showFooter?: boolean;
+}
+
+const MainLayout = ({ children, showFooter = true }: MainLayoutProps) => {
   return (
     <div>
       <Header />
-      <main className="min-h-screen">
+      <main className="">
         {children}
       </main>
-      <Footer />
+      {showFooter && <Footer />}
     </div>
   );
 };

@@ -20,21 +20,6 @@ const cabin = Cabin({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
 });
-const boxes = Array(10).fill({}); 
-export default function Home() {
-const [rating, setRating] = useState(0);
-const LessonspageSize = 4;
-const [currentPage, setCurrentPage] = useState(1);
-const startIdx = (currentPage - 1) * LessonspageSize;
-const endIdx = startIdx + LessonspageSize;
-const pagedBoxes = boxes.slice(startIdx, endIdx);
-
-
-const testimonialspageSize = 2;
-const testimonialsstartIdx = (currentPage - 1) * testimonialspageSize;
-const testimonialsendIdx = testimonialsstartIdx + testimonialspageSize;
-
-
 const testimonials = [
   {
     name: "أنس ابراهيم",
@@ -79,6 +64,18 @@ const testimonials = [
     text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
   },
 ];
+
+const boxes = Array(10).fill({}); 
+export default function Home() {
+const [rating, setRating] = useState(0);
+const LessonspageSize = 4;
+const [currentPage, setCurrentPage] = useState(1);
+const startIdx = (currentPage - 1) * LessonspageSize;
+const endIdx = startIdx + LessonspageSize;
+const pagedBoxes = boxes.slice(startIdx, endIdx);
+const testimonialspageSize = 2;
+const testimonialsstartIdx = (currentPage - 1) * testimonialspageSize;
+const testimonialsendIdx = testimonialsstartIdx + testimonialspageSize;
 const totalPages = Math.ceil(testimonials.length / testimonialspageSize);
 const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialsendIdx);
 
@@ -345,7 +342,7 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
    }}>
 .هناك دورات يمكنك ايجادها والوصول اليها فقط عندما يكون لديك حساب , لذا يمكنك التسجيل الان للاستمتاع بكل الدورات اللتي نوفرها وتستفيد اقصي استفاد
    </Paragraph>
-   <General_Button text="إنشاء حساب" bgColor="#F7A23C" width="200px" color="white" padding="20px" fontWeight="900" fontSize="20px" margin="20px auto"/>
+   <General_Button text="إنشاء حساب" bgColor="#F7A23C" width="200px" color="white" padding="20px" fontWeight="900" fontSize="20px" margin="20px auto" href="/sign"/>
 </div>
   </AdsBox>
 

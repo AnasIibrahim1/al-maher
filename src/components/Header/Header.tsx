@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import General_Button from "../Buttons/General_Button";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -12,14 +13,16 @@ const Header = () => {
   </div>
   <div className="flex-1 flex justify-center">
     <ul className="flex flex-row gap-5 h-full items-center">
-      <li className="text-[#6D737A] font-semibold cursor-pointer hover:text-[#169FC6]">الرئيسية</li>
+      <li className="text-[#6D737A] font-semibold cursor-pointer hover:text-[#169FC6]"><Link href="/">
+      الرئيسية
+      </Link></li>
       <li className="text-[#6D737A] font-semibold cursor-pointer hover:text-[#169FC6]">محتوى المنصة</li>
       <li className="text-[#6D737A] font-semibold cursor-pointer hover:text-[#169FC6]">تواصل معنا</li>
     </ul>
   </div>
   <div className="flex-1 flex justify-end gap-5">
-    <General_Button bgColor="#169FC6" text="تسجيل الدخول" href="/h" />
-    <General_Button bgColor="" color="black" text="إنشاء حساب" href="/h" />
+    <General_Button bgColor="#169FC6" text="تسجيل الدخول" href="/sign" />
+    <General_Button bgColor="" color="black" text="إنشاء حساب" href="/sign" />
   </div>
 </div>
       </div>  
