@@ -15,7 +15,7 @@ export default function Sign(){
 
     // قراءة نوع النموذج من URL parameters
     useEffect(() => {
-        const type = searchParams.get('type');
+        const type = searchParams?.get('type');
         if (type === 'login' || type === 'register') {
             setFormType(type);
             if (type === 'register') {

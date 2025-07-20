@@ -6,6 +6,7 @@ interface ParagraphProps {
   size?: string | number;
   className?: string;
   style?: React.CSSProperties;
+  onClick?: () => void;
 }
 
 const Paragraph: React.FC<ParagraphProps> = ({
@@ -14,14 +15,17 @@ const Paragraph: React.FC<ParagraphProps> = ({
   size = "1rem",
   className = "",
   style,
+  onClick,
 }) => {
   return (
     <p
+    onClick={onClick}
       className={className}
       style={{ color, fontSize: size, ...style }}
     >
       {children}
     </p>
+
   );
 };
 

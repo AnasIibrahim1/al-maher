@@ -21,7 +21,7 @@ const Header = () => {
     if (path === '/') {
       return pathname === '/';
     }
-    return pathname.startsWith(path);
+    return pathname?.startsWith(path) || false;
   };
 
   return (
@@ -42,27 +42,27 @@ const Header = () => {
                 <Link href="/">الرئيسية</Link>
               </li>
               <li className={`font-semibold cursor-pointer transition-colors duration-200 ${
-                isActive('/courses') 
+                isActive('/information') 
                   ? 'text-[#169FC6] ' 
                   : 'text-[#6D737A] hover:text-[#169FC6]'
               }`}>
-                <Link href="/courses">محتوى المنصة</Link>
+                <Link href="/information">محتوى المنصة</Link>
               </li>
               {isLoggedIn && (
                 <>
                   <li className={`font-semibold cursor-pointer transition-colors duration-200 ${
-                    isActive('/my-courses') 
+                    isActive('/mycourses') 
                       ? 'text-[#169FC6] ' 
                       : 'text-[#6D737A] hover:text-[#169FC6]'
                   }`}>
-                    <Link href="/my-courses">دوراتي</Link>
+                    <Link href="/mycourses">دوراتي</Link>
                   </li>
                   <li className={`font-semibold cursor-pointer transition-colors duration-200 ${
-                    isActive('/my-sales') 
+                    isActive('/mysales') 
                       ? 'text-[#169FC6] ' 
                       : 'text-[#6D737A] hover:text-[#169FC6]'
                   }`}>
-                    <Link href="/my-sales">مبيعاتي</Link>
+                    <Link href="/mysales">مبيعاتي</Link>
                   </li>
                 </>
               )}
@@ -129,9 +129,9 @@ const Header = () => {
                         الملف الشخصي
                       </Link>
                       <Link 
-                        href="/my-courses" 
+                        href="/mycourses" 
                         className={`block px-4 py-2 text-sm transition-colors duration-200 ${
-                          isActive('/my-courses') 
+                          isActive('/mycourses') 
                             ? 'text-[#169FC6] bg-blue-50 border-r-2 border-[#169FC6]' 
                             : 'text-gray-700 hover:bg-gray-100'
                         }`}
@@ -139,9 +139,9 @@ const Header = () => {
                         دوراتي
                       </Link>
                       <Link 
-                        href="/my-sales" 
+                        href="/mysales" 
                         className={`block px-4 py-2 text-sm transition-colors duration-200 ${
-                          isActive('/my-sales') 
+                          isActive('/mysales') 
                             ? 'text-[#169FC6] bg-blue-50 border-r-2 border-[#169FC6]' 
                             : 'text-gray-700 hover:bg-gray-100'
                         }`}

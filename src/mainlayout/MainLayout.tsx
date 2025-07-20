@@ -11,7 +11,7 @@ const MainLayout = ({ children, showFooter = true }: MainLayoutProps) => {
   return (
     <div>
       <Header />
-      <main className="">
+      <main className="" style={{minHeight: 'calc(100vh - 200px)'}}>
         {children}
       </main>
       {showFooter && <Footer />}

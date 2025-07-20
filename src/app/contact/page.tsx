@@ -89,7 +89,7 @@ export default function Contact() {
   ];
 
   return (
-    <div className="w-full  bg-gray-100">
+    <div className="w-full h-full bg-gray-100">
       <ContainerRow className='bg-gray-100' style={{padding: " 20px 100px"}}>
 <ContainerRow style={{ backgroundColor: "white"}}>
 <div style={{ 

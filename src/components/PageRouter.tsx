@@ -3,7 +3,6 @@ import { usePathname } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import LoadingSpinner from '@/components/LoadingSpinner';
 
-// Lazy load pages
 const HomePage = dynamic(() => import('@/app/page'), {
   loading: () => <LoadingSpinner size="large" text="جاري تحميل الصفحة الرئيسية..." />,
   ssr: true
@@ -19,8 +18,18 @@ const ContactPage = dynamic(() => import('@/app/contact/page'), {
   ssr: true
 });
 
-const CoursesPage = dynamic(() => import('@/app/courses/page'), {
-  loading: () => <LoadingSpinner size="large" text="جاري تحميل صفحة المحتوى..." />,
+const MyCourses = dynamic(() => import('@/app/mycourses/page'), {
+  loading: () => <LoadingSpinner size="large" text="جاري تحميل دوراتي ..." />,
+  ssr: true
+});
+
+const InformationPage = dynamic(() => import('@/app/information/page'), {
+  loading: () => <LoadingSpinner size="large" text="جاري تحميل محتوى المنصة ..." />,
+  ssr: true
+});
+
+const MySales = dynamic(() => import('@/app/mysales/page'), {
+  loading: () => <LoadingSpinner size="large" text="جاري تحميل مبيعاتي ..." />,
   ssr: true
 });
 
@@ -35,11 +44,16 @@ export default function PageRouter() {
   if (pathname === '/contact') {
     return <ContactPage />;
   }
-
-  if (pathname === '/courses') {
-    return <CoursesPage />;
+  if (pathname === '/information') {
+    return <InformationPage />;
   }
 
+  if (pathname === '/mycourses') {
+    return <MyCourses />;
+  }
+  if (pathname === '/mysales') {
+    return <MySales />;
+  }
   // Default to home page
   return <HomePage />;
 } 
