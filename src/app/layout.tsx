@@ -1,21 +1,17 @@
-"use client"
-import MainLayout from "@/mainlayout/MainLayout";
 import "./globals.css";
 import { Cabin } from 'next/font/google';
-import { usePathname } from 'next/navigation';
+import ClientLayout from '@/components/ClientLayout';
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const pathname = usePathname();
-  const showFooter = pathname !== '/sign';
+const cabin = Cabin({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
 
+export default function RootLayout() {
   return (
     <html lang="en">
-      <body>
-        <MainLayout showFooter={showFooter}>{children}</MainLayout>
+      <body className={cabin.className}>
+        <ClientLayout />
       </body>
     </html>
   );

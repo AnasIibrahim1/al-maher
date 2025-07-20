@@ -12,7 +12,6 @@ import Stars from "@/components/Rates/stars";
 import { useState } from "react";
 import General_Button from "@/components/Buttons/General_Button";
 import Paginations from "@/components/PaginationBar/Paginations";
-import router from "next/router";
 
 
 

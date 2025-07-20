@@ -17,12 +17,18 @@ const Header = () => {
       الرئيسية
       </Link></li>
       <li className="text-[#6D737A] font-semibold cursor-pointer hover:text-[#169FC6]">محتوى المنصة</li>
-      <li className="text-[#6D737A] font-semibold cursor-pointer hover:text-[#169FC6]">تواصل معنا</li>
+      <li className="text-[#6D737A] font-semibold cursor-pointer hover:text-[#169FC6]">
+        <Link href="/contact">تواصل معنا</Link>
+      </li>
     </ul>
   </div>
   <div className="flex-1 flex justify-end gap-5">
-    <General_Button bgColor="#169FC6" text="تسجيل الدخول" href="/sign" />
-    <General_Button bgColor="" color="black" text="إنشاء حساب" href="/sign" />
+    <Link href="/sign?type=login">
+      <General_Button bgColor="#169FC6" text="تسجيل الدخول" />
+    </Link>
+    <Link href="/sign?type=register">
+      <General_Button bgColor="" color="black" text="إنشاء حساب" />
+    </Link>
   </div>
 </div>
       </div>  

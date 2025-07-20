@@ -1,15 +1,28 @@
 "use client"
 import ContainerRow from '@/components/Container/ContainerRow'
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import Image from "next/image";
 import Paragraph from '@/components/Paragraphs/small';
 import Input from '@/components/input/input';
 import General_Button from '@/components/Buttons/General_Button';
+import { useSearchParams } from 'next/navigation';
 
 export default function Sign(){
+    const searchParams = useSearchParams();
     const [formType, setFormType] = useState<'login' | 'forgot' | 'register' | 'otp' | 'newPassword'>('login');
     const [otp, setOtp] = useState(['', '', '', '']);
     const [registerStep, setRegisterStep] = useState<1 | 2>(1);
+
+    // قراءة نوع النموذج من URL parameters
+    useEffect(() => {
+        const type = searchParams.get('type');
+        if (type === 'login' || type === 'register') {
+            setFormType(type);
+            if (type === 'register') {
+                setRegisterStep(1);
+            }
+        }
+    }, [searchParams]);
 
     const changeFormType = (newType: 'login' | 'forgot' | 'register' | 'otp' | 'newPassword') => {
         setFormType(newType);
@@ -366,7 +379,7 @@ export default function Sign(){
     const RegisterForm = () => (
         <div style={{ margin: "auto", display: "flex", flexDirection: "column", gap: "20px", width: "60%" }}>
             {/* مؤشر التقدم */}
-            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "20px", marginBottom: "30px" }}>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "20px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                     <div style={{
                         width: "30px",
@@ -448,7 +461,7 @@ export default function Sign(){
                             name="grade"
                             label="الصف الدراسي"
                             placeholder="الصف"
-                                            width="80%"
+                                            width="100%"
                 margin="auto"
                             padding="20px"
                             border="1px solid #169FC6"
@@ -456,6 +469,7 @@ export default function Sign(){
                         />
                         <Input
                             name="age"
+                            type="number"
                             label="العمر"
                             placeholder="ادخل عمرك"
                                             width="100%"
