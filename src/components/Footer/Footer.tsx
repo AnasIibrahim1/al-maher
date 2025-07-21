@@ -71,6 +71,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <footer style={{ background: '#f5f5f5', borderTop: '1px solid #eee', textAlign: 'center'}}>
+      <p>© جميع الحقوق محفوظة الماهر 2021</p>
+    </footer>
     </footer>
   );
 };

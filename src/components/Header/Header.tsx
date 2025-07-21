@@ -42,27 +42,27 @@ const Header = () => {
                 <Link href="/">الرئيسية</Link>
               </li>
               <li className={`font-semibold cursor-pointer transition-colors duration-200 ${
-                isActive('/information') 
+                isActive('/twgeeh') 
                   ? 'text-[#169FC6] ' 
                   : 'text-[#6D737A] hover:text-[#169FC6]'
               }`}>
-                <Link href="/information">محتوى المنصة</Link>
+                <Link href="/twgeeh">محتوى المنصة</Link>
               </li>
               {isLoggedIn && (
                 <>
                   <li className={`font-semibold cursor-pointer transition-colors duration-200 ${
-                    isActive('/mycourses') 
+                    isActive('/vip') 
                       ? 'text-[#169FC6] ' 
                       : 'text-[#6D737A] hover:text-[#169FC6]'
                   }`}>
-                    <Link href="/mycourses">دوراتي</Link>
+                    <Link href="/vip">دوراتي</Link>
                   </li>
                   <li className={`font-semibold cursor-pointer transition-colors duration-200 ${
-                    isActive('/mysales') 
+                    isActive('/btc') 
                       ? 'text-[#169FC6] ' 
                       : 'text-[#6D737A] hover:text-[#169FC6]'
                   }`}>
-                    <Link href="/mysales">مبيعاتي</Link>
+                    <Link href="/btc">مبيعاتي</Link>
                   </li>
                 </>
               )}
@@ -129,9 +129,9 @@ const Header = () => {
                         الملف الشخصي
                       </Link>
                       <Link 
-                        href="/mycourses" 
+                        href="/vip" 
                         className={`block px-4 py-2 text-sm transition-colors duration-200 ${
-                          isActive('/mycourses') 
+                          isActive('/vip') 
                             ? 'text-[#169FC6] bg-blue-50 border-r-2 border-[#169FC6]' 
                             : 'text-gray-700 hover:bg-gray-100'
                         }`}
@@ -139,9 +139,9 @@ const Header = () => {
                         دوراتي
                       </Link>
                       <Link 
-                        href="/mysales" 
+                        href="/btc" 
                         className={`block px-4 py-2 text-sm transition-colors duration-200 ${
-                          isActive('/mysales') 
+                          isActive('/btc') 
                             ? 'text-[#169FC6] bg-blue-50 border-r-2 border-[#169FC6]' 
                             : 'text-gray-700 hover:bg-gray-100'
                         }`}

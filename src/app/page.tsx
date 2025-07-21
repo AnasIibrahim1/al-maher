@@ -1,5 +1,6 @@
+"use client";
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
-"use client"
 import Input from "@/components/input/input";
 import Image from "next/image";
 import { Cabin } from 'next/font/google';
@@ -13,13 +14,14 @@ import { useState } from "react";
 import General_Button from "@/components/Buttons/General_Button";
 import Paginations from "@/components/PaginationBar/Paginations";
 import TestLogin from "@/components/TestLogin";
-
+import { useRouter } from "next/navigation";
 
 
 const cabin = Cabin({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
 });
+
 const testimonials = [
   {
     name: "أنس ابراهيم",
@@ -64,9 +66,10 @@ const testimonials = [
     text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
   },
 ];
-
 const boxes = Array(10).fill({}); 
 export default function Home() {
+const router = useRouter();
+
 const [rating, setRating] = useState(0);
 const LessonspageSize = 4;
 const [currentPage, setCurrentPage] = useState(1);
@@ -187,7 +190,10 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
       gap: "50px",
       marginTop: "50px",
     }}>
-      <Box border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter>
+      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
+        window.scrollTo(0, 0);
+        router.push('/twgeeh');
+      }}>
         <Image src="/icons/common_icons/grads.png" alt="landing" width=
         {50} height={50}  />
         <Paragraph color="black" size="20px">توجيهي</Paragraph>
@@ -196,7 +202,10 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
         {30} height={50} className="bg-[#169FC6] rounded-md p-1"  />
         </div>
       </Box>
-      <Box border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter>
+      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
+        window.scrollTo(0, 0);
+        router.push('/package');
+      }}>
         <Image src="/icons/common_icons/mony.png" alt="landing" width=
         {50} height={50}  />
         <Paragraph color="black" size="20px">بكجات التوجيهي</Paragraph>
@@ -205,7 +214,10 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
         {30} height={50} className="bg-[#169FC6] rounded-md p-1"  />
         </div>
       </Box>
-      <Box border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter>
+      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
+        window.scrollTo(0, 0);
+        router.push('/basic');
+      }}>
         <Image src="/icons/common_icons/work.png" alt="landing" width=
         {50} height={50}  />
         <Paragraph color="black" size="20px">الصفوف الأساسية</Paragraph>
@@ -214,7 +226,10 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
         {30} height={50} className="bg-[#169FC6] rounded-md p-1"  />
         </div>
       </Box>
-      <Box border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter>
+      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
+        window.scrollTo(0, 0);
+        router.push('/btc');
+      }}>
         <Image src="/icons/common_icons/grad.png" alt="landing" width=
         {50} height={50}  />
         <Paragraph color="black" size="20px">لطلاب الـBTEC</Paragraph>
@@ -223,7 +238,10 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
         {30} height={50} className="bg-[#169FC6] rounded-md p-1"  />
         </div>
       </Box>
-      <Box border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter>
+      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
+        window.scrollTo(0, 0);
+        router.push('/vip');
+      }}>
         <Image src="/icons/common_icons/vip.png" alt="landing" width=
         {50} height={50}  />
         <Paragraph color="black" size="20px">بطاقة الـ Event</Paragraph>
@@ -232,7 +250,10 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
         {30} height={50} className="bg-[#169FC6] rounded-md p-1"  />
         </div>
       </Box>
-      <Box border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter>
+      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
+        window.scrollTo(0, 0);
+        router.push('/basicPackage');
+      }}>
         <Image src="/icons/common_icons/mony2.png" alt="landing" width=
         {50} height={50}  />
         <Paragraph color="black" size="20px">بكجات الصفوف الاساسية</Paragraph>

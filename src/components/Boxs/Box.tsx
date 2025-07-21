@@ -16,6 +16,8 @@ interface BoxProps {
   height?: string;
   justifyaround?: boolean;
   justifybetween?: boolean;
+  onClick?: () => void;
+  cursor?: string;
 }
 
 const Box: React.FC<BoxProps> = ({
@@ -33,10 +35,13 @@ const Box: React.FC<BoxProps> = ({
   justifycenter = false,
   justifyaround = false,
   justifybetween = false,
-  column = false
+  column = false,
+  cursor = "default",
+  onClick,
 }) => {
   return (
     <div 
+    onClick={onClick}
       className={`relative ${flex ? 'flex' : ''} ${itemsCenter ? 'items-center' : ''} ${column ? 'flex-col' : ''} ${justifycenter ? 'justify-center' : ''} ${justifyaround ? 'justify-around' : ''} ${justifybetween ? 'justify-between' : ''} ${className}`}
       style={{
         height : height,
@@ -45,6 +50,7 @@ const Box: React.FC<BoxProps> = ({
         width: width,
         padding: padding,
         background,
+        cursor: cursor,
         ...style
       }}
     >

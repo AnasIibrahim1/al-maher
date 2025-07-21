@@ -6,7 +6,7 @@ import Container from "@/components/Container/Conatiner";
 import ContainerRow from "@/components/Container/ContainerRow";
 import Paragraph from "@/components/Paragraphs/small";
 
-export default function InformationPage(){
+export default function BasicPackagePage(){
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
     const [selectedSubject, setSelectedSubject] = useState<string | null>(null);
     const [selectedMaterial, setSelectedMaterial] = useState<string | null>(null);
@@ -17,483 +17,31 @@ export default function InformationPage(){
 
     // بيانات الفئات الرئيسية
     const categories = [
-        { id: 'generation2007', title: 'جيل 2007' },
-        { id: 'generation2008', title: 'جيل 2008' },
-        { id: 'complementary', title: 'تكميلي' },
-        { id: 'intensive', title: 'مكثفات' }
+        { id: 'grade5', title: 'الصف الخامس' },
+        { id: 'grade6', title: 'الصف السادس' },
+        { id: 'grade7', title: 'الصف السابع' },
+        { id: 'grade8', title: 'الصف الثامن' },
+        { id: 'grade9', title: 'الصف التاسع' },
+        { id: 'grade10', title: 'الصف العاشر' }
     ];
 
-    // بيانات المواد والأساتذة لكل فئة
+    // بيانات الفصل الدراسي الثاني والأساتذة لكل فئة
     const subjectsData = {
-        generation2007: {
-            title: 'جيل 2007',
+        grade5: {
+            title: 'الفصل الدراسي الثاني',
             subjects: [
                 {
-                    id: 'common',
-                    title: 'المواد المشتركة',
-                    materials: [
-                        {
-                            name: 'عربي',
-                            teachers: [
-                                {
-                                    id: 'teacher1',
-                                    name: 'أ. أحمد محمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'خبرة 15 سنة في تدريس اللغة العربية',
-                                    subjects: ['عربي']
-                                },
-                                {
-                                    id: 'teacher2',
-                                    name: 'أ. فاطمة علي',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرسة اللغة العربية مع خبرة 12 سنة',
-                                    subjects: ['عربي']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'تاريخ الاردن',
-                            teachers: [
-                                {
-                                    id: 'teacher3',
-                                    name: 'أ. سارة أحمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرسة التاريخ مع خبرة 10 سنة',
-                                    subjects: ['تاريخ الاردن']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'تربيه اسلاميه',
-                            teachers: [
-                                {
-                                    id: 'teacher4',
-                                    name: 'أ. محمد حسن',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس التربية الإسلامية مع خبرة 10 سنة',
-                                    subjects: ['تربيه اسلاميه']
-                                },
-                                {
-                                    id: 'teacher5',
-                                    name: 'أ. ليلى كريم',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرسة التربية الإسلامية مع خبرة 8 سنة',
-                                    subjects: ['تربيه اسلاميه']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'للغه الانجليزيه',
-                            teachers: [
-                                {
-                                    id: 'teacher6',
-                                    name: 'أ. عمر سعد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس اللغة الإنجليزية مع شهادة TESOL',
-                                    subjects: ['للغه الانجليزيه']
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: 'scientific',
-                    title: 'علمي',
-                    materials: [
-                        {
-                            name: 'رياضه',
-                            teachers: [
-                                {
-                                    id: 'teacher7',
-                                    name: 'أ. نور الدين',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتورة في الرياضيات مع خبرة 20 سنة',
-                                    subjects: ['رياضه']
-                                },
-                                {
-                                    id: 'teacher8',
-                                    name: 'أ. خديجة محمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتور في الرياضيات مع خبرة 18 سنة',
-                                    subjects: ['رياضه']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'فيزيا',
-                            teachers: [
-                                {
-                                    id: 'teacher9',
-                                    name: 'أ. عبدالله علي',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتور في الفيزياء مع ماجستير في العلوم',
-                                    subjects: ['فيزيا']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'كيمياء',
-                            teachers: [
-                                {
-                                    id: 'teacher10',
-                                    name: 'أ. زينب أحمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتور في الكيمياء مع خبرة 18 سنة',
-                                    subjects: ['كيمياء']
-                                },
-                                {
-                                    id: 'teacher11',
-                                    name: 'أ. علي الصناعي',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتورة في الكيمياء مع خبرة 15 سنة',
-                                    subjects: ['كيمياء']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'احياء',
-                            teachers: [
-                                {
-                                    id: 'teacher12',
-                                    name: 'أ. فاطمة الزراعي',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتورة في الأحياء مع خبرة 16 سنة',
-                                    subjects: ['احياء']
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: 'literary',
-                    title: 'ادبي',
-                    materials: [
-                        {
-                            name: 'عربي',
-                            teachers: [
-                                {
-                                    id: 'teacher13',
-                                    name: 'أ. محمد الاقتصاد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس اللغة العربية مع خبرة 14 سنة',
-                                    subjects: ['عربي']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'جغرافيا',
-                            teachers: [
-                                {
-                                    id: 'teacher14',
-                                    name: 'أ. أحمد المكثف',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرسة الجغرافيا مع خبرة 13 سنة',
-                                    subjects: ['جغرافيا']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'تربيه اسلاميه',
-                            teachers: [
-                                {
-                                    id: 'teacher15',
-                                    name: 'أ. أحمد محمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس التربية الإسلامية مع خبرة 11 سنة',
-                                    subjects: ['تربيه اسلاميه']
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: 'vocational',
-                    title: 'الفروع المهنية',
-                    materials: [
-                        {
-                            name: 'صناعي',
-                            teachers: [
-                                {
-                                    id: 'teacher16',
-                                    name: 'أ. فاطمة علي',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس الصناعي مع خبرة 17 سنة',
-                                    subjects: ['صناعي']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'زراعي',
-                            teachers: [
-                                {
-                                    id: 'teacher17',
-                                    name: 'أ. سارة أحمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس الزراعي مع خبرة 15 سنة',
-                                    subjects: ['زراعي']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'اقتصاد منزلي',
-                            teachers: [
-                                {
-                                    id: 'teacher18',
-                                    name: 'أ. محمد حسن',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس اقتصاد منزلي مع خبرة 12 سنة',
-                                    subjects: ['اقتصاد منزلي']
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: 'intensive',
-                    title: 'الدورات المكثفة',
-                    materials: [
-                        {
-                            name: 'جميع المواد',
-                            teachers: [
-                                {
-                                    id: 'teacher19',
-                                    name: 'أ. ليلى كريم',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرب الدورات المكثفة مع خبرة 25 سنة',
-                                    subjects: ['جميع المواد']
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        generation2008: {
-            title: 'جيل 2008',
-            subjects: [
-                {
-                    id: 'common',
-                    title: 'المواد المشتركة',
-                    materials: [
-                        {
-                            name: 'عربي',
-                            teachers: [
-                                {
-                                    id: 'teacher20',
-                                    name: 'أ. عمر سعد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'خبرة 15 سنة في تدريس اللغة العربية',
-                                    subjects: ['عربي']
-                                },
-                                {
-                                    id: 'teacher21',
-                                    name: 'أ. نور الدين',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرسة اللغة العربية مع خبرة 12 سنة',
-                                    subjects: ['عربي']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'تاريخ الاردن',
-                            teachers: [
-                                {
-                                    id: 'teacher22',
-                                    name: 'أ. خديجة محمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرسة التاريخ مع خبرة 10 سنة',
-                                    subjects: ['تاريخ الاردن']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'تربيه اسلاميه',
-                            teachers: [
-                                {
-                                    id: 'teacher23',
-                                    name: 'أ. عبدالله علي',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس التربية الإسلامية مع خبرة 10 سنة',
-                                    subjects: ['تربيه اسلاميه']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'للغه الانجليزيه',
-                            teachers: [
-                                {
-                                    id: 'teacher24',
-                                    name: 'أ. زينب أحمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس اللغة الإنجليزية مع شهادة TESOL',
-                                    subjects: ['للغه الانجليزيه']
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: 'scientific',
-                    title: 'علمي',
-                    materials: [
-                        {
-                            name: 'رياضه',
-                            teachers: [
-                                {
-                                    id: 'teacher25',
-                                    name: 'أ. علي الصناعي',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتورة في الرياضيات مع خبرة 20 سنة',
-                                    subjects: ['رياضه']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'فيزيا',
-                            teachers: [
-                                {
-                                    id: 'teacher26',
-                                    name: 'أ. فاطمة الزراعي',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتور في الفيزياء مع ماجستير في العلوم',
-                                    subjects: ['فيزيا']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'كيمياء',
-                            teachers: [
-                                {
-                                    id: 'teacher27',
-                                    name: 'أ. محمد الاقتصاد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتور في الكيمياء مع خبرة 18 سنة',
-                                    subjects: ['كيمياء']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'احياء',
-                            teachers: [
-                                {
-                                    id: 'teacher28',
-                                    name: 'أ. أحمد المكثف',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتورة في الأحياء مع خبرة 16 سنة',
-                                    subjects: ['احياء']
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: 'literary',
-                    title: 'ادبي',
-                    materials: [
-                        {
-                            name: 'عربي',
-                            teachers: [
-                                {
-                                    id: 'teacher29',
-                                    name: 'أ. أحمد محمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس اللغة العربية مع خبرة 14 سنة',
-                                    subjects: ['عربي']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'جغرافيا',
-                            teachers: [
-                                {
-                                    id: 'teacher30',
-                                    name: 'أ. فاطمة علي',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرسة الجغرافيا مع خبرة 13 سنة',
-                                    subjects: ['جغرافيا']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'تربيه اسلاميه',
-                            teachers: [
-                                {
-                                    id: 'teacher31',
-                                    name: 'أ. سارة أحمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس التربية الإسلامية مع خبرة 11 سنة',
-                                    subjects: ['تربيه اسلاميه']
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: 'vocational',
-                    title: 'الفروع المهنية',
-                    materials: [
-                        {
-                            name: 'صناعي',
-                            teachers: [
-                                {
-                                    id: 'teacher32',
-                                    name: 'أ. محمد حسن',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس الصناعي مع خبرة 17 سنة',
-                                    subjects: ['صناعي']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'زراعي',
-                            teachers: [
-                                {
-                                    id: 'teacher33',
-                                    name: 'أ. ليلى كريم',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس الزراعي مع خبرة 15 سنة',
-                                    subjects: ['زراعي']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'اقتصاد منزلي',
-                            teachers: [
-                                {
-                                    id: 'teacher34',
-                                    name: 'أ. عمر سعد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس اقتصاد منزلي مع خبرة 12 سنة',
-                                    subjects: ['اقتصاد منزلي']
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        complementary: {
-            title: 'تكميلي',
-            subjects: [
-                {
-                    id: 'basic',
-                    title: 'المواد الأساسية',
+                    id: 'subjects',
+                    title: 'الفصل الدراسي الثاني',
                     materials: [
                         {
                             name: 'رياضيات',
                             teachers: [
                                 {
-                                    id: 'teacher35',
-                                    name: 'أ. نور الدين',
+                                    id: 'teacher1',
+                                    name: 'أ. أحمد محمد',
                                     image: '/ppl/ppl.jpg',
-                                    description: 'مدرس الرياضيات مع خبرة 19 سنة',
-                                    subjects: ['رياضيات']
-                                },
-                                {
-                                    id: 'teacher36',
-                                    name: 'أ. خديجة محمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرسة الرياضيات مع خبرة 16 سنة',
+                                    description: 'خبرة 15 سنة في تدريس الرياضيات',
                                     subjects: ['رياضيات']
                                 }
                             ]
@@ -502,10 +50,10 @@ export default function InformationPage(){
                             name: 'علوم',
                             teachers: [
                                 {
-                                    id: 'teacher37',
-                                    name: 'أ. عبدالله علي',
+                                    id: 'teacher2',
+                                    name: 'أ. فاطمة علي',
                                     image: '/ppl/ppl.jpg',
-                                    description: 'مدرسة العلوم مع خبرة 16 سنة',
+                                    description: 'مدرسة العلوم مع خبرة 12 سنة',
                                     subjects: ['علوم']
                                 }
                             ]
@@ -514,10 +62,10 @@ export default function InformationPage(){
                             name: 'لغة عربية',
                             teachers: [
                                 {
-                                    id: 'teacher38',
-                                    name: 'أ. زينب أحمد',
+                                    id: 'teacher3',
+                                    name: 'أ. سارة أحمد',
                                     image: '/ppl/ppl.jpg',
-                                    description: 'مدرس اللغة العربية مع خبرة 14 سنة',
+                                    description: 'مدرسة اللغة العربية مع خبرة 10 سنة',
                                     subjects: ['لغة عربية']
                                 }
                             ]
@@ -526,65 +74,11 @@ export default function InformationPage(){
                             name: 'لغة إنجليزية',
                             teachers: [
                                 {
-                                    id: 'teacher39',
-                                    name: 'أ. علي الصناعي',
+                                    id: 'teacher4',
+                                    name: 'أ. محمد حسن',
                                     image: '/ppl/ppl.jpg',
-                                    description: 'مدرسة اللغة الإنجليزية مع خبرة 13 سنة',
+                                    description: 'مدرس اللغة الإنجليزية مع خبرة 10 سنة',
                                     subjects: ['لغة إنجليزية']
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: 'advanced',
-                    title: 'المواد المتقدمة',
-                    materials: [
-                        {
-                            name: 'فيزياء',
-                            teachers: [
-                                {
-                                    id: 'teacher40',
-                                    name: 'أ. فاطمة الزراعي',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتور في الفيزياء مع خبرة 22 سنة',
-                                    subjects: ['فيزياء']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'كيمياء',
-                            teachers: [
-                                {
-                                    id: 'teacher41',
-                                    name: 'أ. محمد الاقتصاد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتورة في الكيمياء مع خبرة 20 سنة',
-                                    subjects: ['كيمياء']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'أحياء',
-                            teachers: [
-                                {
-                                    id: 'teacher42',
-                                    name: 'أ. أحمد المكثف',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'دكتور في الأحياء مع خبرة 18 سنة',
-                                    subjects: ['أحياء']
-                                }
-                            ]
-                        },
-                        {
-                            name: 'جغرافيا',
-                            teachers: [
-                                {
-                                    id: 'teacher43',
-                                    name: 'أ. أحمد محمد',
-                                    image: '/ppl/ppl.jpg',
-                                    description: 'مدرس الجغرافيا مع خبرة 15 سنة',
-                                    subjects: ['جغرافيا']
                                 }
                             ]
                         }
@@ -592,22 +86,294 @@ export default function InformationPage(){
                 }
             ]
         },
-        intensive: {
-            title: 'مكثفات',
+        grade6: {
+            title: 'الفصل الدراسي الثاني',
             subjects: [
                 {
-                    id: 'all',
-                    title: 'جميع المواد',
+                    id: 'subjects',
+                    title: 'الفصل الدراسي الثاني',
                     materials: [
                         {
-                            name: 'دورة شاملة لجميع المواد',
+                            name: 'رياضيات',
                             teachers: [
                                 {
-                                    id: 'teacher44',
+                                    id: 'teacher5',
+                                    name: 'أ. نور الدين',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'خبرة 15 سنة في تدريس الرياضيات',
+                                    subjects: ['رياضيات']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'علوم',
+                            teachers: [
+                                {
+                                    id: 'teacher6',
+                                    name: 'أ. خديجة محمد',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرسة العلوم مع خبرة 12 سنة',
+                                    subjects: ['علوم']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'لغة عربية',
+                            teachers: [
+                                {
+                                    id: 'teacher7',
+                                    name: 'أ. عبدالله علي',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس اللغة العربية مع خبرة 10 سنة',
+                                    subjects: ['لغة عربية']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'لغة إنجليزية',
+                            teachers: [
+                                {
+                                    id: 'teacher8',
+                                    name: 'أ. زينب أحمد',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس اللغة الإنجليزية مع خبرة 10 سنة',
+                                    subjects: ['لغة إنجليزية']
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        grade7: {
+            title: 'الفصل الدراسي الثاني',
+            subjects: [
+                {
+                    id: 'subjects',
+                    title: 'الفصل الدراسي الثاني',
+                    materials: [
+                        {
+                            name: 'رياضيات',
+                            teachers: [
+                                {
+                                    id: 'teacher9',
+                                    name: 'أ. علي الصناعي',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'خبرة 15 سنة في تدريس الرياضيات',
+                                    subjects: ['رياضيات']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'علوم',
+                            teachers: [
+                                {
+                                    id: 'teacher10',
+                                    name: 'أ. فاطمة الزراعي',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرسة العلوم مع خبرة 12 سنة',
+                                    subjects: ['علوم']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'لغة عربية',
+                            teachers: [
+                                {
+                                    id: 'teacher11',
+                                    name: 'أ. محمد الاقتصاد',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس اللغة العربية مع خبرة 10 سنة',
+                                    subjects: ['لغة عربية']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'لغة إنجليزية',
+                            teachers: [
+                                {
+                                    id: 'teacher12',
+                                    name: 'أ. أحمد المكثف',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس اللغة الإنجليزية مع خبرة 10 سنة',
+                                    subjects: ['لغة إنجليزية']
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        grade8: {
+            title: 'الفصل الدراسي الثاني',
+            subjects: [
+                {
+                    id: 'subjects',
+                    title: 'الفصل الدراسي الثاني',
+                    materials: [
+                        {
+                            name: 'رياضيات',
+                            teachers: [
+                                {
+                                    id: 'teacher13',
+                                    name: 'أ. أحمد محمد',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'خبرة 15 سنة في تدريس الرياضيات',
+                                    subjects: ['رياضيات']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'علوم',
+                            teachers: [
+                                {
+                                    id: 'teacher14',
                                     name: 'أ. فاطمة علي',
                                     image: '/ppl/ppl.jpg',
-                                    description: 'مدرب الدورات المكثفة مع خبرة 25 سنة في جميع المواد',
-                                    subjects: ['دورة شاملة لجميع المواد', 'مراجعة نهائية', 'حل نماذج الامتحانات']
+                                    description: 'مدرسة العلوم مع خبرة 12 سنة',
+                                    subjects: ['علوم']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'لغة عربية',
+                            teachers: [
+                                {
+                                    id: 'teacher15',
+                                    name: 'أ. سارة أحمد',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس اللغة العربية مع خبرة 10 سنة',
+                                    subjects: ['لغة عربية']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'لغة إنجليزية',
+                            teachers: [
+                                {
+                                    id: 'teacher16',
+                                    name: 'أ. محمد حسن',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس اللغة الإنجليزية مع خبرة 10 سنة',
+                                    subjects: ['لغة إنجليزية']
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        grade9: {
+            title: 'الفصل الدراسي الثاني',
+            subjects: [
+                {
+                    id: 'subjects',
+                    title: 'الفصل الدراسي الثاني',
+                    materials: [
+                        {
+                            name: 'رياضيات',
+                            teachers: [
+                                {
+                                    id: 'teacher17',
+                                    name: 'أ. ليلى كريم',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'خبرة 15 سنة في تدريس الرياضيات',
+                                    subjects: ['رياضيات']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'علوم',
+                            teachers: [
+                                {
+                                    id: 'teacher18',
+                                    name: 'أ. عمر سعد',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس العلوم مع خبرة 12 سنة',
+                                    subjects: ['علوم']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'لغة عربية',
+                            teachers: [
+                                {
+                                    id: 'teacher19',
+                                    name: 'أ. نور الدين',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس اللغة العربية مع خبرة 10 سنة',
+                                    subjects: ['لغة عربية']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'لغة إنجليزية',
+                            teachers: [
+                                {
+                                    id: 'teacher20',
+                                    name: 'أ. خديجة محمد',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس اللغة الإنجليزية مع خبرة 10 سنة',
+                                    subjects: ['لغة إنجليزية']
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        grade10: {
+            title: 'الفصل الدراسي الثاني',
+            subjects: [
+                {
+                    id: 'subjects',
+                    title: 'الفصل الدراسي الثاني',
+                    materials: [
+                        {
+                            name: 'رياضيات',
+                            teachers: [
+                                {
+                                    id: 'teacher21',
+                                    name: 'أ. عبدالله علي',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'خبرة 15 سنة في تدريس الرياضيات',
+                                    subjects: ['رياضيات']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'علوم',
+                            teachers: [
+                                {
+                                    id: 'teacher22',
+                                    name: 'أ. زينب أحمد',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس العلوم مع خبرة 12 سنة',
+                                    subjects: ['علوم']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'لغة عربية',
+                            teachers: [
+                                {
+                                    id: 'teacher23',
+                                    name: 'أ. علي الصناعي',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس اللغة العربية مع خبرة 10 سنة',
+                                    subjects: ['لغة عربية']
+                                }
+                            ]
+                        },
+                        {
+                            name: 'لغة إنجليزية',
+                            teachers: [
+                                {
+                                    id: 'teacher24',
+                                    name: 'أ. فاطمة الزراعي',
+                                    image: '/ppl/ppl.jpg',
+                                    description: 'مدرس اللغة الإنجليزية مع خبرة 10 سنة',
+                                    subjects: ['لغة إنجليزية']
                                 }
                             ]
                         }
@@ -938,8 +704,8 @@ export default function InformationPage(){
             <Container style={{minHeight: 'calc(100vh - 200px)', padding: '20px'}}>
                 <div style={{display: 'flex', flexDirection: 'column', gap: '30px'}}>
                     <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
-                        <Paragraph style={{fontSize: '32px', fontWeight: 'bold', width: "50%", textAlign: 'center', margin: '0 auto', backgroundColor: '#169FC6',color:"white", borderRadius: '5px', padding: '10px 20px'}}>
-                            {categoryData.title}
+                        <Paragraph style={{fontSize: '32px', fontWeight: 'bold', width: "90%", textAlign: 'right', margin: '0 auto', backgroundColor: '#169FC6',color:"white", borderRadius: '5px', padding: '10px 20px'}}>
+                            {categories.find(cat => cat.id === selectedCategory)?.title}
                         </Paragraph>
                     </div>
 
@@ -948,12 +714,14 @@ export default function InformationPage(){
                         backgroundColor: 'white',
                         borderRadius: '15px',
                     }}>
-                        {/* تفاصيل جميع المواد */}
+                        {/* تفاصيل جميع الفصل الدراسي الثاني */}
                         <div>
                             
                             <div style={{
-                                display: 'grid',
-                                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                          display: 'flex',
+                          flexDirection: 'row',
+                          flexWrap: 'wrap',
+                          justifyContent: 'space-around',
                                 gap: '15px'
                             }}>
                                 {categoryData.subjects.map((subject) => (
@@ -962,7 +730,9 @@ export default function InformationPage(){
                                         borderRadius: '8px',
                                         border: '1px solid #e5e5e5',
                                         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.05)',
-                                        padding: '20px'
+                                        padding: '20px',
+                                        width: '300px',
+                                        minHeight: '300px'
                                     }}>
                                         <Paragraph style={{
                                             fontSize: '18px',
@@ -974,7 +744,7 @@ export default function InformationPage(){
                                             borderRadius: '5px',
                                             padding: '30px 20px'
                                         }}>
-                                            {subject.title}
+                                            {categoryData.title}
                                         </Paragraph>
                                         <div style={{
                                             display: 'flex',

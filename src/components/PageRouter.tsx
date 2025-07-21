@@ -18,17 +18,32 @@ const ContactPage = dynamic(() => import('@/app/contact/page'), {
   ssr: true
 });
 
-const MyCourses = dynamic(() => import('@/app/mycourses/page'), {
+const VipPage = dynamic(() => import('@/app/vip/page'), {
   loading: () => <LoadingSpinner size="large" text="جاري تحميل دوراتي ..." />,
   ssr: true
 });
 
-const InformationPage = dynamic(() => import('@/app/information/page'), {
+const TwgeehPage = dynamic(() => import('@/app/twgeeh/page'), {
   loading: () => <LoadingSpinner size="large" text="جاري تحميل محتوى المنصة ..." />,
   ssr: true
 });
 
-const MySales = dynamic(() => import('@/app/mysales/page'), {
+const BTCPage = dynamic(() => import('@/app/btc/page'), {
+  loading: () => <LoadingSpinner size="large" text="جاري تحميل مبيعاتي ..." />,
+  ssr: true
+});
+
+const PackagePage = dynamic(() => import('@/app/package/page'), {
+  loading: () => <LoadingSpinner size="large" text="جاري تحميل مبيعاتي ..." />,
+  ssr: true
+});
+
+const BasicPage = dynamic(() => import('@/app/basic/page'), {
+  loading: () => <LoadingSpinner size="large" text="جاري تحميل مبيعاتي ..." />,
+  ssr: true
+});
+
+const BasicPackagePage = dynamic(() => import('@/app/basicPackage/page'), {
   loading: () => <LoadingSpinner size="large" text="جاري تحميل مبيعاتي ..." />,
   ssr: true
 });
@@ -44,15 +59,24 @@ export default function PageRouter() {
   if (pathname === '/contact') {
     return <ContactPage />;
   }
-  if (pathname === '/information') {
-    return <InformationPage />;
+  if (pathname === '/twgeeh') {
+    return <TwgeehPage />;
   }
 
-  if (pathname === '/mycourses') {
-    return <MyCourses />;
+  if (pathname === '/vip') {
+    return <VipPage />;
   }
-  if (pathname === '/mysales') {
-    return <MySales />;
+  if (pathname === '/btc') {
+    return <BTCPage />;
+  }
+  if (pathname === '/package') {
+    return <PackagePage />;
+  }
+  if (pathname === '/basic') {
+    return <BasicPage />;
+  }
+  if (pathname === '/basicPackage') {
+    return <BasicPackagePage />;
   }
   // Default to home page
   return <HomePage />;
