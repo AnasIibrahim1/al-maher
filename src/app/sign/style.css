@@ -1,0 +1,36 @@
+@media (max-width: 1200px) {
+    .onlineLimageC{
+        right: -100px !important;
+    }
+    .onlineLimage{
+        width: 500px !important;
+        height: 500px !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .title{
+        font-size: 20px !important;
+        margin-top: 20px !important;
+    }
+    .cont{
+        height: 80vh !important;
+    }
+    .onlineLimageC{
+        display: none !important;
+    }
+    .onlineLimageContainer{
+        width:0% !important;
+    }
+    .onlineLimage{
+        width: 500px !important;
+        height: 500px !important;
+    }
+    .row-cont{
+        flex-direction: column !important;
+    }
+    .width100{
+        width: 100% !important;
+    }
+
+}

@@ -6,7 +6,7 @@ import Paragraph from '@/components/Paragraphs/small';
 import Input from '@/components/input/input';
 import General_Button from '@/components/Buttons/General_Button';
 import { useSearchParams } from 'next/navigation';
-
+import './style.css'
 export default function Sign(){
     const searchParams = useSearchParams();
     const [formType, setFormType] = useState<'login' | 'forgot' | 'register' | 'otp' | 'newPassword'>('login');
@@ -78,10 +78,10 @@ export default function Sign(){
     const LoginForm = () => (
         <form style={{ margin: "auto", display: "flex", flexDirection: "column", gap: "20px", width: "60%" }}
               onSubmit={handleLoginSubmit}>
-            <Paragraph style={{fontSize: "25px", color: "black", fontWeight: "bold", textAlign: "center"}}>
+            <Paragraph className='title' style={{fontSize: "25px", color: "black", fontWeight: "bold", textAlign: "center"}}>
                 تسجيل الدخول
             </Paragraph>
-            <Input
+            <Input className="width100"
                 name="email"
                 type="email"
                 label="البريد الإلكتروني"
@@ -92,7 +92,7 @@ export default function Sign(){
                 border="1px solid #169FC6"
                 required
             />
-            <Input
+            <Input className="width100"
                 name="password"
                 label="كلمة المرور" 
                 type="password"
@@ -432,8 +432,8 @@ export default function Sign(){
             {registerStep === 1 ? (
                 <form onSubmit={handleRegisterStep1Submit} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                     {/* الصف الأول: اسم المستخدم والهاتف */}
-                    <div style={{ display: "flex", gap: "20px" }}>
-                        <Input
+                    <div className="row-cont" style={{ display: "flex", gap: "20px" }}>
+                        <Input className="width100"
                             name="username"
                             label="اسم المستخدم"
                             placeholder="ادخل اسم المستخدم"
@@ -443,7 +443,7 @@ export default function Sign(){
                             border="1px solid #169FC6"
                             required
                         />
-                        <Input
+                        <Input className="width100"
                             name="phone"
                             label="الهاتف"
                             placeholder="ادخل رقم الهاتف"
@@ -456,7 +456,7 @@ export default function Sign(){
                     </div>
 
                     {/* الصف الثاني: الصف الدراسي والعمر */}
-                    <div style={{ display: "flex", gap: "20px" }}>
+                    <div className="row-cont" style={{ display: "flex", gap: "20px" }}>
                         <Input
                             name="grade"
                             label="الصف الدراسي"
@@ -526,7 +526,7 @@ export default function Sign(){
                     />
 
                     <General_Button
-                        text="التالي"
+                        text="إنشاء حساب"
                         bgColor="#169FC6"
                         color="white"
                         width="80%"
@@ -589,7 +589,6 @@ export default function Sign(){
                     </div>
                 </form>
             )}
-
             <div style={{ textAlign: "center"}}>
                 <Paragraph style={{ fontSize: "14px", color: "#6D737A" }}>
                     لديك حساب بالفعل؟{" "}
@@ -605,11 +604,11 @@ export default function Sign(){
     );
 
     return(
-        <div className='w-full' style={{height: "80vh"}}>
+        <div className='w-full cont' style={{height: "100vh"}}>
             <ContainerRow>
-                <div style={{width: "60%", height: "80vh"}}>
-                    <div style={{ height: "100%", padding: "30px"}}>
-                        <Paragraph style={{fontSize: "30px", color: "black", fontWeight: "bold", textAlign: "right", marginRight: "50px"}}>
+                <div style={{width: "100%", height: "100vh"}} className='cont'>
+                    <div style={{ height: "100%", }}>
+                        <Paragraph className='title' style={{fontSize: "30px", color: "black", fontWeight: "bold", textAlign: "right", marginRight: "50px", marginTop: "20px"}}>
                             أهلا بيك في الماهر
                         </Paragraph>
                         <div style={{marginTop: "50px"}}>
@@ -623,12 +622,12 @@ export default function Sign(){
                 </div>
                 <div style={{
                     width: "40%", 
-                    height: "90vh",
+                    height: "100vh",
                     backgroundColor: "#169FC6",
                     position: "relative"
-                }}>
-                    <div style={{position: "absolute", right: "-200px", top:"5%"}}>
-                        <Image src="/vectors/onlineL.png" alt="logo" width={720} height={720} />
+                }} className='onlineLimageContainer'>
+                    <div className='onlineLimageC' style={{position: "absolute", right: "-200px", top:"5%"}}>
+                        <Image className='onlineLimage' src="/vectors/onlineL.png" alt="logo" width={720} height={720} />
                     </div>
                 </div>
             </ContainerRow>
