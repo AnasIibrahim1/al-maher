@@ -590,7 +590,7 @@ if (selectedCategory && selectedMaterial) {
     const materialData = subjectData?.materials.find(m => m.name === selectedMaterial);
     
     return (
-        <Container style={{minHeight: 'calc(100vh - 200px)', padding: '20px'}}>
+        <Container style={{ padding: '20px'}}>
             <div style={{display: 'flex', flexDirection: 'column', gap: '30px'}}>
                 {/* العنوان وأزرار العودة */}
                 <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
@@ -609,10 +609,11 @@ if (selectedCategory && selectedMaterial) {
                     <div style={{
                         display: 'flex',
                         flexDirection: 'row',
+                        flexWrap: 'wrap',
                         gap: '25px'
                     }}>
                         {materialData?.teachers.map((teacher) => (
-                            <div key={teacher.id} style={{
+                            <div className="Width" key={teacher.id} style={{
                                 backgroundColor: 'white',
                                 borderRadius: '12px',
                                 padding: '25px',
@@ -933,14 +934,14 @@ if (selectedCategory) {
 }
     // عرض البوكسات الرئيسية
     return (
-      <Container style={{height: 'calc(100vh - 200px)', padding: '20px'}}>
+      <Container style={{ padding: '20px'}}>
                   <Paragraph style={{fontSize: '32px', fontWeight: 'bold', width: "50%", textAlign: 'center', margin: '0 auto', backgroundColor: '#169FC6',color:"white", borderRadius: '5px', padding: '10px 20px'}}>
                         طلاب BTEC - مواد مشتركة
                     </Paragraph>
           <div style={{display: 'flex', flexDirection: 'column', gap: '100px', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
 
 
-              <ContainerRow gap="10" justify="center">
+              <ContainerRow gap="4" justify="center" wrap className="p-10">
                   {categories.map((category) => (
                       <div 
                           key={category.id}

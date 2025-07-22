@@ -611,10 +611,11 @@ if (selectedCategory && selectedMaterial) {
                     <div style={{
                         display: 'flex',
                         flexDirection: 'row',
+                        flexWrap: 'wrap',
                         gap: '25px'
                     }}>
                         {materialData?.teachers.map((teacher) => (
-                            <div key={teacher.id} style={{
+                            <div className="Width" key={teacher.id} style={{
                                 backgroundColor: 'white',
                                 borderRadius: '12px',
                                 padding: '25px',

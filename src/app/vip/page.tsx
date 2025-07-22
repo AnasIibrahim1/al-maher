@@ -342,7 +342,7 @@ export default function VipPage() {
   if (selectedCategory) {
     const categoryData = subjectsData[selectedCategory as keyof typeof subjectsData];
     return (
-      <Container style={{ minHeight: 'calc(100vh - 200px)', padding: '20px' }}>
+      <Container style={{ padding: '20px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
             <Paragraph style={{ fontSize: '32px', fontWeight: 'bold', width: '50%', textAlign: 'center', margin: '0 auto', backgroundColor: '#169FC6', color: 'white', borderRadius: '5px', padding: '10px 20px' }}>
@@ -554,19 +554,20 @@ export default function VipPage() {
 
   // In the main return, remove the conditional rendering for subjects/materials and just show the popup when showCardPopup is true
   return (
-    <Container style={{ height: 'calc(100vh - 200px)', padding: '20px' }}>
+    <Container style={{ padding: '20px' , height: '100%'}}>
                                                 <Paragraph style={{fontSize: '32px', fontWeight: 'bold', width: "90%", margin: '0 auto', textAlign: 'right', backgroundColor: '#169FC6',color:"white", borderRadius: '5px', padding: '10px 20px'}}>
                                                 بطافات ال Event
                     </Paragraph>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '100px', height: '100%' }}>
+      <div style={{height: '100%', display: 'flex', flexDirection: 'column', gap: '100px'}}>
 
         <div style={{
           display: 'flex',
           flexDirection: 'row',
           flexWrap: 'wrap',
           justifyContent: 'center',
-          gap: '40px',
           alignItems: 'center',
+          gap: '40px',
+          marginTop: '30px',
           height: '100%'
         }}>
           {categories.map((category) => (

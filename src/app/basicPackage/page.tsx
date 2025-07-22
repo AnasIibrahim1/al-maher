@@ -472,10 +472,11 @@ export default function BasicPackagePage(){
                         <div style={{
                             display: 'flex',
                             flexDirection: 'row',
+                            flexWrap: 'wrap',
                             gap: '25px'
                         }}>
                             {materialData?.teachers.map((teacher) => (
-                                <div key={teacher.id} style={{
+                                <div className="Width" key={teacher.id} style={{
                                     backgroundColor: 'white',
                                     borderRadius: '12px',
                                     padding: '25px',
@@ -797,7 +798,7 @@ export default function BasicPackagePage(){
 
     // عرض البوكسات الرئيسية
     return (
-        <Container style={{height: 'calc(100vh - 200px)', padding: '20px'}}>
+        <Container style={{minHeight: 'calc(100vh - 200px)', padding: '20px'}}>
             <div style={{display: 'flex', flexDirection: 'column', gap: '100px', justifyContent: 'center', alignItems: 'center', height: '100%'}}>
                 <Paragraph style={{
                     fontSize: '24px', 
@@ -813,7 +814,7 @@ export default function BasicPackagePage(){
                     يحقُّ لك أن ترتقي
                 </Paragraph>
 
-                <ContainerRow gap="10" justify="center">
+                <ContainerRow gap="10" justify="center" wrap>
                     {categories.map((category) => (
                         <div 
                             key={category.id}

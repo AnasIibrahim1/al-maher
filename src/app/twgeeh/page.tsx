@@ -690,7 +690,7 @@ export default function TwgeehPage(){
             <Container style={{minHeight: 'calc(100vh - 200px)', padding: '20px'}}>
                 <div style={{display: 'flex', flexDirection: 'column', gap: '30px'}}>
                     {/* العنوان وأزرار العودة */}
-                    <div style={{display: 'flex', alignItems: 'center', gap: '20px'}}>
+                    <div style={{display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap'}}>
                         <Paragraph style={{fontSize: '35px', fontWeight: 'bold', color: 'white', backgroundColor: '#169FC6', padding: '10px 100px', borderRadius: '10px'}}>
                             {categoryData.title} - {subjectData?.title || ''} - {selectedMaterial}
                         </Paragraph>
@@ -706,14 +706,16 @@ export default function TwgeehPage(){
                         <div style={{
                             display: 'flex',
                             flexDirection: 'row',
+                            justifyContent: 'center',
+                            flexWrap: 'wrap',
                             gap: '25px'
                         }}>
                             {materialData?.teachers.map((teacher) => (
-                                <div key={teacher.id} style={{
+                                <div className="Width" key={teacher.id} style={{
                                     backgroundColor: 'white',
                                     borderRadius: '12px',
                                     padding: '25px',
-                                    width: '50%',
+                                    width: '40%',
                                     border: '1px solid #e5e5e5',
                                     cursor: 'pointer',
                                     transition: 'all 0.3s ease',
@@ -1047,7 +1049,7 @@ export default function TwgeehPage(){
                     يحقُّ لك أن ترتقي
                 </Paragraph>
 
-                <ContainerRow gap="10" justify="center">
+                <ContainerRow className="p-10" gap="4" justify="center" wrap >
                     {categories.map((category) => (
                         <div 
                             key={category.id}
