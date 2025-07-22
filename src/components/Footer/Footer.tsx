@@ -3,9 +3,12 @@ import Image from "next/image";
 import GeneralButton from "../Buttons/General_Button";
 import Paragraph from "../Paragraphs/small";
 import './footer.css'
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 const Footer = () => {
+  const router = useRouter();
   return (
     <footer className="w-full " style={{backgroundImage: 'url(/backgrounds/footer.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', width: '100%', height: '50vh', paddingTop: '10vh'}}>
       <div className="h-full footer flex flex-row justify-around items-center gap-5 " >
@@ -13,7 +16,10 @@ const Footer = () => {
           <div className="flex-1 flex flex-col gap-2 text-center justify-start">
             {/* Logo */}
             <div className="Logo">
-              <div className="flex justify-center items-center">
+              <div className="flex justify-center items-center" onClick={() => {
+        window.scrollTo(0, 0);
+        router.push('/');
+      }}>
                 <Image src="/logos/white_one.png" alt="logo" width={120} height={120} />
               </div>
             </div>

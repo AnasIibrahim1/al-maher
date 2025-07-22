@@ -6,8 +6,11 @@ import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { usePathname } from "next/navigation";
 import './Header.css'
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+const router = useRouter();
+
   const { user, isLoggedIn, logout } = useAuth();
   const [showUserMenu, setShowUserMenu] = useState(false);
   const pathname = usePathname();
@@ -29,7 +32,10 @@ const Header = () => {
     <header className="border-b border-[#e4e4e4]">
       <div className="w-full">
         <div className="flex w-full items-center pt-2 pb-2 px-20 justify-around h-20 header-main">
-          <div className="flex-1 flex justify-start header-section">
+          <div className="flex-1 flex justify-start header-section" onClick={() => {
+        window.scrollTo(0, 0);
+        router.push('/');
+      }}>
             <Image src="/logos/blue_one.png" alt="logo" width={100} height={100} />
           </div>
           
