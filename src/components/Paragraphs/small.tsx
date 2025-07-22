@@ -12,7 +12,7 @@ interface ParagraphProps {
 const Paragraph: React.FC<ParagraphProps> = ({
   children,
   color = "inherit",
-  size = "1rem",
+  size,
   className = "",
   style,
   onClick,

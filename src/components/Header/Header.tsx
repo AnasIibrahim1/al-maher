@@ -5,6 +5,7 @@ import General_Button from "../Buttons/General_Button";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
 import { usePathname } from "next/navigation";
+import './Header.css'
 
 const Header = () => {
   const { user, isLoggedIn, logout } = useAuth();
@@ -27,13 +28,13 @@ const Header = () => {
   return (
     <header className="border-b border-[#e4e4e4]">
       <div className="w-full">
-        <div className="flex w-full items-center pt-2 pb-2 px-20 justify-around h-20">
-          <div className="flex-1 flex justify-start">
+        <div className="flex w-full items-center pt-2 pb-2 px-20 justify-around h-20 header-main">
+          <div className="flex-1 flex justify-start header-section">
             <Image src="/logos/blue_one.png" alt="logo" width={100} height={100} />
           </div>
           
-          <div className="flex-1 flex justify-center">
-            <ul className="flex flex-row gap-5 h-full items-center">
+          <div className="flex-1 flex justify-center header-section">
+            <ul className="flex flex-row gap-5 h-full items-center header-nav">
               <li className={`font-semibold cursor-pointer transition-colors duration-200 ${
                 isActive('/') 
                   ? 'text-[#169FC6] ' 
@@ -76,7 +77,7 @@ const Header = () => {
             </ul>
           </div>
           
-          <div className="flex-1 flex justify-end gap-5">
+          <div className="flex-1 flex justify-end gap-5 header-section">
             {!isLoggedIn ? (
               <>
                 <Link href="/sign?type=login">

@@ -16,7 +16,7 @@ interface GeneralButtonProps {
   height?: string;
   fontWeight?: string;
   onClick?: () => void;
-
+  className?: string;
 }
 
 const GeneralButton: React.FC<GeneralButtonProps> = ({ 
@@ -29,6 +29,7 @@ const GeneralButton: React.FC<GeneralButtonProps> = ({
   height,
   color = "white",
   fontSize,
+  className,
   fontWeight,
   onClick 
 }) => {
@@ -36,7 +37,7 @@ const GeneralButton: React.FC<GeneralButtonProps> = ({
 
   const buttonContent = (
     <button 
-      className={`text-white px-10 py-2 rounded-md cursor-pointer transition-all duration-300`}
+      className={`text-white px-10 py-2 rounded-md cursor-pointer transition-all duration-300 ${className}`}
       style={{
         backgroundColor: hover ? "#0E6983" : bgColor,
         width: width,
@@ -47,7 +48,6 @@ const GeneralButton: React.FC<GeneralButtonProps> = ({
         fontSize: fontSize,
         fontWeight: fontWeight,
         transition: "all 0.3s ease",
-
       }
     }
       onClick={onClick}

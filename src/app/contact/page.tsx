@@ -6,6 +6,7 @@ import Input from '@/components/input/input';
 import General_Button from '@/components/Buttons/General_Button';
 import Image from 'next/image';
 import Container from '@/components/Container/Conatiner';
+import './style.css'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -90,8 +91,8 @@ export default function Contact() {
 
   return (
     <div className="w-full h-full bg-gray-100">
-      <ContainerRow className='bg-gray-100' style={{padding: " 20px 100px"}}>
-<ContainerRow style={{ backgroundColor: "white"}}>
+      <ContainerRow className='bg-gray-100 contact-container-row' style={{padding: " 20px 100px"}}>
+<ContainerRow className='contact-container' style={{ backgroundColor: "white", padding: "30px"}}>
 <div style={{ 
           width: "70%", 
           backgroundColor: "white",
@@ -102,7 +103,7 @@ export default function Contact() {
 
         }}>
           <div style={{ maxWidth: "600px", margin: "0 auto", width: "100%" }}>
-            <Paragraph style={{
+            <Paragraph className='contact-title' style={{
               fontSize: "36px",
               color: "black",
               fontWeight: "bold",
@@ -118,7 +119,7 @@ export default function Contact() {
               textAlign: "right",
               marginBottom: "50px",
               lineHeight: "1.6"
-            }}>
+            }} className='contact-paragraph'>
               تواصل معنا واترك لنا رسالتك وسيتم التواصل معك في اقرب وقت
             </Paragraph>
 
@@ -224,7 +225,7 @@ export default function Contact() {
           position: "relative",
           margin: "20px",
           overflow: "hidden"
-        }}>
+        }} className='contact-container-left'>
           {/* خلفية دائرية */}
           <div style={{
             position: "absolute",
@@ -275,9 +276,10 @@ export default function Contact() {
               </Paragraph>
             </div>
 
-            <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "15px" }}>
+            <div className='contact-methods-container' style={{ flex: 1, display: "flex", flexDirection: "column", gap: "15px" }}>
               {contactMethods.map((method, index) => (
                 <a
+                className='contact-method'
                   key={index}
                   href={method.link}
                   target="_blank"

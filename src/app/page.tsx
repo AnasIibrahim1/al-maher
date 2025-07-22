@@ -10,7 +10,7 @@ import ContainerRow from "@/components/Container/ContainerRow";
 import Box from "@/components/Boxs/Box";
 import AdsBox from "@/components/Boxs/AdsBox";
 import Stars from "@/components/Rates/stars";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import General_Button from "@/components/Buttons/General_Button";
 import Paginations from "@/components/PaginationBar/Paginations";
 import TestLogin from "@/components/TestLogin";
@@ -71,12 +71,35 @@ export default function Home() {
 const router = useRouter();
 
 const [rating, setRating] = useState(0);
-const LessonspageSize = 4;
+const [LessonspageSize, setLessonspageSize] = useState(4);
+const [testimonialspageSize, setTestimonialspageSize] = useState(2);
 const [currentPage, setCurrentPage] = useState(1);
+useEffect(() => {
+  function handleResize() {
+    // Lessons
+    if (window.innerWidth < 750) {
+      setLessonspageSize(1);
+    } else if (window.innerWidth < 1200) {
+      setLessonspageSize(2);
+    } else if (window.innerWidth < 1450) {
+      setLessonspageSize(3);
+    } else {
+      setLessonspageSize(4);
+    }
+    // Testimonials
+    if (window.innerWidth < 750) {
+      setTestimonialspageSize(1);
+    } else {
+      setTestimonialspageSize(2);
+    }
+  }
+  handleResize();
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 const startIdx = (currentPage - 1) * LessonspageSize;
 const endIdx = startIdx + LessonspageSize;
 const pagedBoxes = boxes.slice(startIdx, endIdx);
-const testimonialspageSize = 2;
 const testimonialsstartIdx = (currentPage - 1) * testimonialspageSize;
 const testimonialsendIdx = testimonialsstartIdx + testimonialspageSize;
 const totalPages = Math.ceil(testimonials.length / testimonialspageSize);
@@ -87,47 +110,47 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
       <TestLogin />
   
   {/* Container 1 :"Landing" */}
-<Container justify="center" style={{
+<Container className="landing-container" justify="center" style={{
       backgroundImage: "url('/backgrounds/landing.png')",
       backgroundSize: "cover",
-      height: "100vh",
+      minHeight: "100vh",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
     }}>
-       <div className="flex flex-col mb-20 h-100 text-center" style={{
+       <div className="flex flex-col gap-2 mb-20 h-100 text-center" style={{
         width: "50%",
       }}>
-        <Paragraph color="#CED3E6" size="50px" className="font-bold" style={{
+        <Paragraph color="#CED3E6" size="50px"  className="font-bold landing-title" style={{
           textShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
           lineHeight: "1.5",
         }}>
 منصه الماهر
         </Paragraph>
-        <Paragraph color="#CED3E6" size="50px" className="font-bold" style={{
+        <Paragraph color="#CED3E6" size="50px" className="font-bold landing-title" style={{
           textShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
           lineHeight: "1.5",
         }}>
 تفتح لك ابواب النمو والتقدم
         </Paragraph>
-        <Paragraph color="#F7A23C" size="50px" className="font-bold" style={{
+        <Paragraph color="#F7A23C" size="50px" className="font-bold landing-title" style={{
           lineHeight: "1.5",
         }}>
 يحق لك ان ترتقي
         </Paragraph>
-       <Input placeholder="ماذا تريد أن تتعلم؟" width="60%" margin="60px auto 0 auto" padding="25px" icon={<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#169FC6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>}
+       <Input className="landing-input" placeholder="ماذا تريد أن تتعلم؟" width="60%" margin="60px auto 0 auto" padding="25px" icon={<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#169FC6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>}
        />
        </div>
-       <div className="flex flex-row justify-around absolute bottom-10 left-0 right-0" style={{
+       <div className="flex flex-row justify-around absolute bottom-10 left-0 right-0 landing-boxes-container" style={{
         width: "80%",
         margin: "0 auto",
        }}>
-          <div className="flex flex-col bg-white border-2 justify-center items-center border-[#169FC6] rounded-md p-4 text-center" style={{
+          <div className="flex flex-col bg-white border-2 justify-center items-center border-[#169FC6] rounded-md p-4 text-center landing-box" style={{
             width:"220px",
             height:"162px",
             boxShadow : "0 10px 10px 0 rgba(0, 0, 0, 0.3)",
           }}>
-            <Image src="/icons/common_icons/group.png" alt="landing" width={100} height={100}  />
-            <Paragraph color="#169FC6" size="25px" style={
+            <Image src="/icons/common_icons/group.png" alt="landing" width={100} height={100} className="landing-box-image" />
+            <Paragraph className="landing-box-paragraph" color="#169FC6" size="25px" style={
               {
                 fontFamily : 'Cabin',
                 maxWidth : "190px",
@@ -137,13 +160,13 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
  متسخدم</Paragraph>
  
           </div>
-                    <div className="flex flex-col bg-white border-2 justify-center items-center border-[#169FC6] rounded-md p-4 text-center" style={{
+                    <div className="flex flex-col bg-white border-2 justify-center items-center border-[#169FC6] rounded-md p-4 text-center landing-box" style={{
             width:"220px",
             height:"162px",
             boxShadow : "0 10px 10px 0 rgba(0, 0, 0, 0.3)",
           }}>
-            <Image src="/icons/common_icons/girl.png" alt="landing" width={100} height={100}  />
-            <Paragraph color="#169FC6" size="25px" style={
+            <Image src="/icons/common_icons/girl.png" className="landing-box-image" alt="landing" width={100} height={100}  />
+            <Paragraph className="landing-box-paragraph" color="#169FC6" size="25px" style={
               {
                 fontFamily : 'Cabin',
                 maxWidth : "190px",
@@ -151,13 +174,13 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
               }
             }>أكثر من 100 الف خريج</Paragraph>
           </div>
-          <div className="flex flex-col bg-white border-2 justify-center items-center border-[#169FC6] rounded-md p-4 text-center" style={{
+          <div className="flex flex-col bg-white border-2 justify-center items-center border-[#169FC6] rounded-md p-4 text-center landing-box" style={{
             width:"220px",
             height:"162px",
             boxShadow : "0 10px 10px 0 rgba(0, 0, 0, 0.3)",
           }}>
-            <Image src="/icons/common_icons/study.png" alt="landing" width={100} height={100}  />
-            <Paragraph color="#169FC6" size="25px" style={
+            <Image src="/icons/common_icons/study.png" className="landing-box-image" alt="landing" width={100} height={100}  />
+            <Paragraph className="landing-box-paragraph" color="#169FC6" size="25px" style={
               {
                 fontFamily : 'Cabin',
                 maxWidth : "190px",
@@ -294,12 +317,12 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
     لوريم إيبسوم هو ببساطة نص وهمي للطباعة.لوريم إيبسوم هو ببساطة نص وهمي للطباعة.
     </Paragraph>
 
-    <ContainerRow gap="10">
+    <ContainerRow gap="10" className="xxl:flex-col">
     {pagedBoxes.map((box, idx) => (
-      <Box key={startIdx + idx} width="300px" height="400px" borderRadius="10px" padding="5px" flex column justifybetween style={{
+      <Box key={startIdx + idx} height="400px" borderRadius="10px" padding="5px" flex column justifybetween style={{
         boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.3)",
       }}>
-        <div style={{
+        <div className="xxl:w-full" style={{
           width: "280px",
           margin: "0 auto",
           height: "207px",
@@ -354,16 +377,17 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
   alignItems: "center",
   textAlign: "center",
 }}>
-<Paragraph className="" color="white" size="40px" style={{
+<Paragraph className="paragraph-signup" color="white"  style={{
     fontWeight: "900",
+    fontSize: "40px",
    }}>
 !سجل الان واحصل علي المزيد من الدورات
    </Paragraph>
-   <Paragraph className="" color="white" size="20px" style={{
+   <Paragraph className="paragraph-signup" color="white" size="20px" style={{
    }}>
 .هناك دورات يمكنك ايجادها والوصول اليها فقط عندما يكون لديك حساب , لذا يمكنك التسجيل الان للاستمتاع بكل الدورات اللتي نوفرها وتستفيد اقصي استفاد
    </Paragraph>
-   <General_Button text="إنشاء حساب" bgColor="#F7A23C" width="200px" color="white" padding="20px" fontWeight="900" fontSize="20px" margin="20px auto" href="/sign"/>
+   <General_Button className="signup-button" text="إنشاء حساب" bgColor="#F7A23C" width="200px" color="white" padding="20px" fontWeight="900" fontSize="20px" margin="20px auto" href="/sign"/>
 </div>
   </AdsBox>
 
@@ -393,6 +417,7 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
     padding: "20px",
   }}
   justify="between"
+  gap="10"
 >
   {pagedTestimonials.map((t, idx) => (
     <Box
@@ -408,6 +433,7 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
       style={{
         boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.3)",
       }}
+      className="opinion-box"
     >
       <Container style={{ width: "100%", height: "100%" }}>
         <ContainerRow style={{ width: "100%", height: "50%" }} items="center">
@@ -419,7 +445,7 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
             style={{ borderRadius: "50%" }}
           />
           <Container justify="between" style={{ width: "50%", marginRight: "20px" }}>
-            <Paragraph color="black" size="20px" style={{ fontWeight: "900" }}>
+            <Paragraph className="opinion-name" color="black" size="20px" style={{ fontWeight: "900" }}>
               {t.name}
             </Paragraph>
             <Paragraph color="#084FC7" size="12px" style={{ fontWeight: "900" }}>
@@ -432,11 +458,11 @@ const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialse
               alt="coma"
               width={70}
               height={50}
-              className="rounded-md p-1"
+              className="rounded-md p-1 coma"
             />
           </div>
         </ContainerRow>
-        <Paragraph color="black" size="16px">
+        <Paragraph color="black" size="16px" className="opinion-paragraph">
           {t.text}
         </Paragraph>
       </Container>

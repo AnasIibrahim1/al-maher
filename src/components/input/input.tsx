@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes, ReactNode, useState } from "react";
-
+import './input.css'
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   backgroundColor?: string;
   color?: string;
@@ -20,7 +20,7 @@ const Input: React.FC<InputProps> = React.memo(({
   icon,
   className = "",
   style,
-  width = "50%",
+  width,
   height = "40px",
   padding = "12px",
   margin = "0",

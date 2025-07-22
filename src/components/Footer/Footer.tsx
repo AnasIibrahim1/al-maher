@@ -2,13 +2,14 @@ import React from "react";
 import Image from "next/image";
 import GeneralButton from "../Buttons/General_Button";
 import Paragraph from "../Paragraphs/small";
+import './footer.css'
 
 
 const Footer = () => {
   return (
-    <footer className="w-full" style={{backgroundImage: 'url(/backgrounds/footer.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', width: '100%', height: '50vh', paddingTop: '10vh'}}>
-      <div className="h-full flex flex-row justify-around items-center gap-5" >
-        <div className="m-auto  h-full flex flex-row justify-between items-center gap-5" style={{width: '100%'}}>
+    <footer className="w-full " style={{backgroundImage: 'url(/backgrounds/footer.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', width: '100%', height: '50vh', paddingTop: '10vh'}}>
+      <div className="h-full footer flex flex-row justify-around items-center gap-5 " >
+        <div className="m-auto footer  h-full flex flex-row  justify-between items-center gap-5 " style={{width: '100%'}}>
           <div className="flex-1 flex flex-col gap-2 text-center justify-start">
             {/* Logo */}
             <div className="Logo">
@@ -69,11 +70,13 @@ const Footer = () => {
               </div>
             </ul>
           </div>
+
+
         </div>
       </div>
-      <footer style={{ background: '#f5f5f5', borderTop: '1px solid #eee', textAlign: 'center'}}>
+      <div style={{ background: '#f5f5f5', borderTop: '1px solid #eee', textAlign: 'center'}}>
       <p>© جميع الحقوق محفوظة الماهر 2021</p>
-    </footer>
+    </div>
     </footer>
   );
 };

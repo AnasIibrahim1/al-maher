@@ -1,0 +1,10 @@
+@media (max-width: 1450px) {
+    .ad-container{
+        height: 40vh !important;
+    }
+}
+@media (max-width: 850px) {
+    .ad-container{
+        height: 30vh !important;
+    }
+}

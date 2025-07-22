@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect, useRef } from "react";
+import './box.css'
 
 interface AdsBoxProps {
   images: string[];
@@ -71,7 +72,7 @@ const AdsBox: React.FC<AdsBoxProps> = ({ images, autoPlayInterval = 4000 ,childr
   };
 
   return (
-    <div className="w-full h-[60vh] mt-30 mb-30 relative flex flex-col items-center justify-center">
+    <div className="w-full h-[60vh] mt-30 mb-30 relative flex flex-col items-center justify-center ad-container">
       <div className="w-[80%] h-full mx-auto relative overflow-hidden rounded-lg shadow-lg">
         {/* Slides */}
         {[current, nextIndex].filter((v, i, a) => v !== null && a.indexOf(v) === i).map((imgIdx) => (
@@ -79,7 +80,7 @@ const AdsBox: React.FC<AdsBoxProps> = ({ images, autoPlayInterval = 4000 ,childr
             key={imgIdx as number}
             src={images[imgIdx as number]}
             alt={`Ad ${Number(imgIdx) + 1}`}
-            className={`w-full h-full object-center absolute top-0 left-0 transition-transform duration-400 ${getSlideClass(imgIdx as number)} ${isSliding && imgIdx === nextIndex ? 'animate-slide-in' : ''} ${isSliding && imgIdx === current ? 'animate-slide-out' : ''}`}
+            className={`w-full h-full  absolute top-0 left-0 transition-transform duration-400 ${getSlideClass(imgIdx as number)} ${isSliding && imgIdx === nextIndex ? 'animate-slide-in' : ''} ${isSliding && imgIdx === current ? 'animate-slide-out' : ''}`}
             style={{ pointerEvents: 'none' }}
           />
         ))}
