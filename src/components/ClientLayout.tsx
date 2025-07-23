@@ -1,0 +1,18 @@
+"use client"
+import { usePathname } from 'next/navigation';
+import MainLayout from '@/lazy/MainLayout';
+import PageRouter from './PageRouter';
+import { AuthProvider } from '@/context/AuthContext';
+
+export default function ClientLayout() {
+  const pathname = usePathname();
+  const showFooter = pathname !== '/sign' && pathname !== '/contact';
+
+  return (
+    <AuthProvider>
+      <MainLayout showFooter={showFooter}>
+        <PageRouter />
+      </MainLayout>
+    </AuthProvider>
+  );
+} 

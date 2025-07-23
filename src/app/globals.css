@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import "@fontsource/cairo/arabic.css";
+
+*{
+  direction: rtl;
+  font-family: 'Cairo';
+  box-sizing: border-box;
+  
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+@media (max-width: 850px) {
+  .paragraph-signup{
+    font-size: 12px !important;
+  }
+  .signup-button{
+    width: 200px !important;
+    font-size: 15px !important;
+    padding: 10px !important;
+    margin: 10px auto !important;
+  }
+  .landing-container{
+    min-height: 60vh !important;
+  }
+  .landing-title{
+    font-size: 24px !important;
+  }
+  .landing-input{
+    margin-top: 30px !important;
+    margin-right: 10px !important;
+    width: 100% !important;
+  }
+  .landing-box{
+    width:200px !important;
+    height:150px !important;
+  }
+  .landing-box-image{
+    width: 100px !important;
+    height: 100px !important;
+  }
+  .landing-box-paragraph{
+    font-size: 16px !important;
+  }
+  .landing-boxes-container{
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  .coma{
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .opinion-paragraph{
+    font-size: 12px !important;
+  }
+  .opinion-box{
+    height: auto !important;
+  }
+  .opinion-name{
+    font-size: 14px !important;
+  }
+  .Width{
+    width: 280px !important;
+    height: fit-content !important;
+  }
+}
