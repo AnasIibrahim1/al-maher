@@ -11,6 +11,7 @@ import CoursesCircles from '../components/Circles/CoursesCircles/CoursesCircles'
 import ProfileCircles from '../components/Circles/ProfileCicles/ProfileCircles';
 import ActionButtons from '../components/Buttons/ActionButtons/ActionButtons';
 import GeneralBox from '../components/Boxes/GeneralBox/GeneralBox';
+import PaperBox from '../components/Boxes/PaperBox/paperBox';
 
 export default function Home() {
 
@@ -68,7 +69,7 @@ export default function Home() {
     <GeneralBox backgroundColor="#E4E4E4" width="450px" height="100px" borderColor="#000" padding="10px" flexDirection="row" alignItems="center" justifyContent="space-between">
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "50%", height: "100%"}}>
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "start", width: "100%", height: "100%"}}>
-        <ProfileCircles image="/photo.png" backgroundColor="#E4E4E4" width="50px" height="50px" />
+        <ProfileCircles image="/photo.png" backgroundColor="#E4E4E4" width="60px" height="50px" />
       <div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center", width: "100%", height: "100%", marginRight: "10px"}}>
         <p>أنس إبراهيم حلمي</p>
         <p>مبرمج تطبيقات</p>
@@ -80,6 +81,8 @@ export default function Home() {
         <p>100</p>
       </div>
     </GeneralBox>
+
+    <PaperBox alignItems="center" justifyContent="center" padding="10px" content={<div>بوكس الهدايا</div>} backgroundColorGeneral="#000" backgroundColor="#fff" width="450px" height="100px"/>
     </div>
 
     </>
