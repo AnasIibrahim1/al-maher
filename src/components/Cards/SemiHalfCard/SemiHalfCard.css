@@ -1,0 +1,32 @@
+.semi-half-card-container-general{
+    width : 310px;
+    height : 380px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: var(--justify);
+    align-items: var(--align);
+}
+.container-overlay{
+    width : 100%;
+    height : 50%;
+    border-radius: 100% 0px 10px 10px;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.semi-half-card-content{
+    z-index: 10;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.semi-half-card-container-general:hover .container-overlay{
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+}
+.semi-half-card-container-general:hover .semi-half-card-content{
+    transform: translateY(-120px) scale(1.02);
+}

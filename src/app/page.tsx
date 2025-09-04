@@ -5,6 +5,7 @@ import PaperCard from '../components/Cards/PaperCard/PaperCard';
 import IconButtons from '../components/Buttons/IconButtons/IconButtons';
 import Image from 'next/image';
 import './page.css';  
+import SemiHalfCard from '../components/Cards/SemiHalfCard/SemiHalfCard';
 
 export default function Home() {
 
@@ -24,9 +25,16 @@ export default function Home() {
       } image="https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" backgroundColor="#4F5DE4" />
       <PaperCard alignItems="start" justifyContent="start" content={
         <h1>هلا بالاحباب</h1>
-      } backgroundColorGeneral="#1e3a8a" backgroundColor="#8cc210" backgroundColorGeneralHover="#fff" />
+      } backgroundColorGeneral="#1e3a8a" backgroundColor="#8cc210" />
       <IconButtons backgroundColor="#4F5DE4" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
         <Image src="/Group.svg" alt="Icon" width={24} height={24} />
+      } />
+      <SemiHalfCard backgroundColorGeneral="#fff" justifyContent="end" alignItems="center" backgroundColorOverlay="#4F5DE4" content={
+        <div>
+          <h1>Semi Half Card</h1>
+          <p>Semi Half Card</p>
+          <p>Semi Half Card</p>
+        </div>
       } />
     </div>
   );
