@@ -12,6 +12,7 @@
   justify-content: center;
   gap: 32px;
   text-align: center;
+  z-index: -2;
 }
 
 .page-title {
