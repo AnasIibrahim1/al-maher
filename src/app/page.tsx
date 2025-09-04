@@ -1,3 +1,4 @@
+'use client'
 import General_Button from '../components/Buttons/GeneralButtons/Buttons';
 import SocialButtons from '../components/Buttons/Solcial Buttons/SocialButtons';
 import BackBoxCard from '../components/Cards/BackBoxCard/BackBoxCard';
@@ -7,10 +8,14 @@ import Image from 'next/image';
 import './page.css';  
 import SemiHalfCard from '../components/Cards/SemiHalfCard/SemiHalfCard';
 import CoursesCircles from '../components/Circles/CoursesCircles/CoursesCircles';
+import ProfileCircles from '../components/Circles/ProfileCicles/ProfileCircles';
+import ActionButtons from '../components/Buttons/ActionButtons/ActionButtons';
+import GeneralBox from '../components/Boxes/GeneralBox/GeneralBox';
 
 export default function Home() {
 
   return (
+    <>
     <div className="page-container">
       <h1 className="page-title">Anas</h1>
         <General_Button backgroundColor="#4F5DE4" color="#fff" padding="10px 20px" border="1px solid #fff" href="https://www.google.com">
@@ -38,6 +43,15 @@ export default function Home() {
         </div>
       } color="#000" />
     <CoursesCircles backgroundColor="#E4E4E4" width="250px" height="250px" image="/photo.png" />
+    <ProfileCircles image="/photo.png" backgroundColor="#E4E4E4" width="100px" height="100px" />
+    <ActionButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>} backgroundColor="#4F5DE4" width="50px" height="50px" ariaLabel="Love" title="Love" onClick={() => {console.log("Love")}}/>
+    <GeneralBox backgroundColor="#E4E4E4" width="450px" height="100px" borderColor="#000" >
+      <div style={{display: "flex", alignItems: "start", justifyContent: "start", width: "100%", height: "100%"}}>
+      <h1>ده البوكس</h1>
+      </div>
+    </GeneralBox>
     </div>
+
+    </>
   );
 }
