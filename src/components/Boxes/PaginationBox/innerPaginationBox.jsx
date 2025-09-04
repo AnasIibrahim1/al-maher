@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
+import Image from 'next/image'
 import './innerPaginationBox.css'
 
 /**
  * @param {Object} props
- * @param {Array<{text: string, name: string, title: string}>} props.data
+ * @param {Array<{text: string, name: string, title: string, image?: string}>} props.data
+ * @param {Object} props.style
  */
-export default function InnerPaginationBox({ data = [], width = "60%" }) {
+export default function InnerPaginationBox({ data = [], width = "800px", style }) {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handlePrevious = () => {
@@ -23,9 +25,18 @@ export default function InnerPaginationBox({ data = [], width = "60%" }) {
   const currentItem = data[currentIndex]
 
   return (
-    <div className="pagination-box-container" style={{width: width}}>
-      <div className="pagination-content" >
-        <p className="opinion-text">{currentItem.text}</p>
+    <div className="pagination-box-container" style={{width: width, ...style}}>
+        <div className="pagination-box-circle" key={`circle-${currentIndex}`}>
+          <Image 
+            src={currentItem.image || "/photo.jpg"} 
+            alt={currentItem.name}
+            width={150}
+            height={150}
+            className="user-image"
+          />
+        </div>
+      <div className="pagination-content" style={{marginTop: "100px"}} key={`content-${currentIndex}`}>
+        <p className="opinion-text" style={{textAlign: "justify", maxWidth: "600px", marginBottom: "40px"}}>{currentItem.text}</p>
         <div className="author-info">
 <div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "start", width: "40%"}}>
 <h3 className="author-name">{currentItem.name}</h3>

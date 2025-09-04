@@ -13,9 +13,10 @@ import ActionButtons from '../components/Buttons/ActionButtons/ActionButtons';
 import GeneralBox from '../components/Boxes/GeneralBox/GeneralBox';
 import PaperBox from '../components/Boxes/PaperBox/paperBox';
 import InnerPaginationBox from '../components/Boxes/PaginationBox/innerPaginationBox';
+import CircleWithBrush from '../components/Circles/CircleWithBrush/CircleWithBrush';
 
 export default function Home() {
-  const data = [{text: "lorem text if u want to play with me just ms me i will be in hoold for u ", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات"}, {text: "lorem text if u want to play with me just ms me i will be in hoold for u ", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات"}, {text: "lorem text if u want to play with me just ms me i will be in hoold for u ", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات"}]
+  const data = [{text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process ", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات"}]
   return (
     <>
     <div className="page-container">
@@ -86,7 +87,11 @@ export default function Home() {
     <PaperBox alignItems="center" justifyContent="center" padding="10px" content={<div>بوكس الهدايا</div>} backgroundColorGeneral="#000" backgroundColor="#fff" width="450px" height="100px"/>
     </div>
 
-    <InnerPaginationBox data={data} />
+{/* when be low Reslotuin, right 0 in innerPaginationBox and resize the circle of content to 300px , 150px, and right of brush reduce it. */}
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", width: "100%", height: "80vh", position: "relative", flexWrap: "wrap"}}>
+<InnerPaginationBox data={data} style={{right: "100px"}} />
+<CircleWithBrush src="/photo.jpg" position="relative" style={{}} />
+</div>
 
     </>
   );
