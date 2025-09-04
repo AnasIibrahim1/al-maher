@@ -1,0 +1,79 @@
+.social-buttons-container{
+    display: flex;
+    justify-content: center;
+    width : 35px;
+    height : 35px;
+    align-items: center;
+    border-radius: 100%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-buttons-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+    border-radius: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-buttons-container:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.social-buttons-container:hover::before {
+    opacity: 1;
+}
+
+.social-buttons-container:active {
+    transform: translateY(0) scale(0.95);
+    transition: all 0.1s ease;
+}
+
+.social-buttons-container a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1;
+    position: relative;
+}
+
+.social-buttons-container a svg {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-buttons-container:hover a svg {
+    transform: scale(1.1) rotate(18deg);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.social-buttons-container:active a svg {
+    transform: scale(0.9) rotate(-2deg);
+    transition: all 0.1s ease;
+}
+
+/* Pulse animation for attention */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.social-buttons-container:hover {
+    animation: pulse 2s infinite;
+}

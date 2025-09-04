@@ -1,9 +1,10 @@
 import React from 'react';
 import './Buttons.css';
 
-const General_Button = ({children, backgroundColor, color, padding, border}) => {
+const General_Button = ({children, backgroundColor, color, padding, border, href}) => {
   return (
-    <button className="custom-button" style={{backgroundColor: backgroundColor, color: color, padding: padding, border:border}}>
+<a href={href}>
+<button className="custom-button" style={{backgroundColor: backgroundColor, color: color, padding: padding, border:border}}>
       <div className="hover-overlay"></div>
       <span className="button-text">{children}</span>
       <div className="arrow-container">
@@ -12,9 +13,8 @@ const General_Button = ({children, backgroundColor, color, padding, border}) => 
         <path d="M12 19l-7-7 7-7"/>
       </svg>
       </div>
-
-      
     </button>
+</a>
   );
 };
 
