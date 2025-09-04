@@ -23,11 +23,15 @@
   .custom-button .arrow-container {
     position: relative;
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
-  .custom-button .arrow {
+  .custom-button .arrow-container .arrow {
     padding: 4px 8px;
     border-radius: 4px;
+    font-size: 18px !important;
     transition: all 0.3s ease;
   }
   .custom-button::before {
@@ -50,17 +54,3 @@
     width: 100%;
     left: 0;
   }
-  /* .custom-button .hover-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #f6f5f5a1;
-    transform: translateX(-100%); 
-    transition: transform 0.3s ease;
-  }
-
-  .custom-button:hover .hover-overlay {
-    transform: translateX(0); 
-  } */

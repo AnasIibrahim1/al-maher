@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'cairo': ['Cairo', 'sans-serif'],
+        'sans': ['Cairo', 'sans-serif'],
+      },
       screens: {
         'xxl': '1450px',
         'xl': '1250px',
