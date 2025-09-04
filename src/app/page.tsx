@@ -14,6 +14,7 @@ import GeneralBox from '../components/Boxes/GeneralBox/GeneralBox';
 import PaperBox from '../components/Boxes/PaperBox/paperBox';
 import InnerPaginationBox from '../components/Boxes/PaginationBox/innerPaginationBox';
 import CircleWithBrush from '../components/Circles/CircleWithBrush/CircleWithBrush';
+import BackCircles from '../components/Circles/BackCircles/BackCircles';
 
 export default function Home() {
   const data = [{text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.png"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process ", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}]
@@ -93,6 +94,7 @@ export default function Home() {
 <CircleWithBrush src="/photo.jpg" position="relative" style={{}} />
 </div>
 
+<BackCircles width="500px" height="500px" style={{position: "absolute", top: "0", left: "0", zIndex: "1"}} content={<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam veritatis deserunt, expedita officia mollitia magnam minima soluta consequatur tenetur quaerat ad. Veritatis explicabo quos iure est fuga aperiam excepturi enim.</div>} />  
     </>
   );
 }
