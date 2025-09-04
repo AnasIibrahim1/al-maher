@@ -6,6 +6,7 @@ import IconButtons from '../components/Buttons/IconButtons/IconButtons';
 import Image from 'next/image';
 import './page.css';  
 import SemiHalfCard from '../components/Cards/SemiHalfCard/SemiHalfCard';
+import CoursesCircles from '../components/Circles/CoursesCircles/CoursesCircles';
 
 export default function Home() {
 
@@ -36,6 +37,7 @@ export default function Home() {
           <p>Semi Half Card</p>
         </div>
       } color="#000" />
+    <CoursesCircles backgroundColor="#E4E4E4" width="250px" height="250px" image="/photo.png" />
     </div>
   );
 }
