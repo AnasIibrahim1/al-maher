@@ -35,7 +35,7 @@ export default function Home() {
           <p>Semi Half Card</p>
           <p>Semi Half Card</p>
         </div>
-      } />
+      } color="#000" />
     </div>
   );
 }
