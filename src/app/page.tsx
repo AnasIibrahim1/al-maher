@@ -12,9 +12,10 @@ import ProfileCircles from '../components/Circles/ProfileCicles/ProfileCircles';
 import ActionButtons from '../components/Buttons/ActionButtons/ActionButtons';
 import GeneralBox from '../components/Boxes/GeneralBox/GeneralBox';
 import PaperBox from '../components/Boxes/PaperBox/paperBox';
+import InnerPaginationBox from '../components/Boxes/PaginationBox/innerPaginationBox';
 
 export default function Home() {
-
+  const data = [{text: "lorem text if u want to play with me just ms me i will be in hoold for u ", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات"}, {text: "lorem text if u want to play with me just ms me i will be in hoold for u ", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات"}, {text: "lorem text if u want to play with me just ms me i will be in hoold for u ", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات"}]
   return (
     <>
     <div className="page-container">
@@ -39,7 +40,7 @@ export default function Home() {
 
 
       <PaperCard alignItems="start" justifyContent="start" content={
-        <h1>هلا بالاحباب</h1>
+        <h1>lorem text if u want to play with me just ms me i will be in hoold for u </h1>
       } backgroundColorGeneral="#1e3a8a" backgroundColor="#8cc210" />
 
 
@@ -84,6 +85,8 @@ export default function Home() {
 
     <PaperBox alignItems="center" justifyContent="center" padding="10px" content={<div>بوكس الهدايا</div>} backgroundColorGeneral="#000" backgroundColor="#fff" width="450px" height="100px"/>
     </div>
+
+    <InnerPaginationBox data={data} />
 
     </>
   );

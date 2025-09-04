@@ -1,0 +1,62 @@
+import React, { useState } from 'react'
+import './innerPaginationBox.css'
+
+/**
+ * @param {Object} props
+ * @param {Array<{text: string, name: string, title: string}>} props.data
+ */
+export default function InnerPaginationBox({ data = [], width = "60%" }) {
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const handlePrevious = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : data.length - 1))
+  }
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev < data.length - 1 ? prev + 1 : 0))
+  }
+
+  if (!data || data.length === 0) {
+    return null
+  }
+
+  const currentItem = data[currentIndex]
+
+  return (
+    <div className="pagination-box-container" style={{width: width}}>
+      <div className="pagination-content" >
+        <p className="opinion-text">{currentItem.text}</p>
+        <div className="author-info">
+<div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "start", width: "40%"}}>
+<h3 className="author-name">{currentItem.name}</h3>
+<p className="author-title">{currentItem.title}</p>
+</div>
+{data.length > 1 && (
+        <div className="pagination-controls">
+          <button 
+            className="pagination-btn prev-btn"
+            onClick={handlePrevious}
+            aria-label="Previous opinion"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
+          </button>
+          <button 
+            className="pagination-btn next-btn"
+            onClick={handleNext}
+            aria-label="Next opinion"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
+          </button>
+        </div>
+      )}
+        </div>
+      </div>
+      
+
+    </div>
+  )
+}
