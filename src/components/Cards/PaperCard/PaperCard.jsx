@@ -1,12 +1,12 @@
 import React from 'react'
 import './PaperCard.css';
 
-export default function PaperCard() {
+export default function PaperCard({alignItems, justifyContent, padding = '0px', content, backgroundColorGeneral, backgroundColor, backgroundColorGeneralHover}) {
   return (
-<div className="paper-card-container-general">
-<div className="paper-card-container">
-        <div className="paper-card-content">
-            <h1>Paper Card</h1>
+<div className="paper-card-container-general" style={{'--bg': backgroundColorGeneral, '--bg-hover': backgroundColorGeneralHover || backgroundColorGeneral}}>
+<div className="paper-card-container" style={{display: 'flex', alignItems: alignItems, justifyContent: justifyContent, backgroundColor: backgroundColor}}>
+        <div className="paper-card-content" style={{padding: padding}}>
+            {content}
         </div>
     </div>
 </div>
