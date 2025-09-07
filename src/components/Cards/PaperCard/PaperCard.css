@@ -16,3 +16,33 @@
 .paper-card-container-general:hover .paper-card-container{
     border-radius: 10px 10px 10px 10px;
 }
+
+/* IconButton hover effects when PaperCard is hovered */
+.paper-card-container-general:hover .icon-buttons-container {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(79, 93, 228, 0.4);
+    animation: iconPulse 2s infinite;
+    filter: brightness(1.1) saturate(1.1);
+}
+
+.paper-card-container-general:hover .icon-buttons-container::before {
+    opacity: 1;
+}
+
+.paper-card-container-general:hover .icon-buttons-content svg {
+    transform: scale(1.15) rotate(8deg);
+    filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+}
+
+/* Keyframes for iconPulse animation */
+@keyframes iconPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(79, 93, 228, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(79, 93, 228, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(79, 93, 228, 0);
+    }
+}

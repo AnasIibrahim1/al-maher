@@ -21,10 +21,10 @@ export default function HomeCircle({image, backgroundColor, width, height, anima
       </div>
       
       {/* Overlay images positioned relative to outer container */}
-      <img src="/KWKB.svg" alt="brush" className="floating-brush-1" style={{position: "absolute", top: "10%", right: "5%"}}/>
-      <img src="/edu.svg" alt="brush" className="floating-brush-2" style={{position: "absolute", top: "50px", left: "-60px", zIndex: "10"}}/>
-      <img src="/bok.svg" alt="brush" className="floating-brush-3" style={{position: "absolute", bottom: "0", left: "0%" }}/>
-      <img src="/Video.svg" alt="brush" className="floating-brush-4" style={{position: "absolute", top: "20%", right: "-20%"}}/>
+      <img src="/KWKB.svg" alt="brush" draggable={false} security='true' className="floating-brush-1" style={{position: "absolute", top: "10%", right: "5%"}}/>
+      <img src="/edu.svg" alt="brush" draggable={false} security='true' className="floating-brush-2" style={{position: "absolute", top: "50px", left: "-60px", zIndex: "10"}}/>
+      <img src="/bok.svg" alt="brush" draggable={false} security='true' className="floating-brush-3" style={{position: "absolute", bottom: "0", left: "0%" }}/>
+      <img src="/Video.svg" alt="brush" draggable={false} security='true' className="floating-brush-4" style={{position: "absolute", top: "20%", right: "-20%"}}/>
       
       
 <div className="floating-card" style={{position: "absolute", bottom: "-5%", right: "-10%"}}>

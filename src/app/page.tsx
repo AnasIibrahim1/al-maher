@@ -4,6 +4,9 @@ import './page.css';
 import Header from '../components/Header/Header';
 import HomeCircle from '../components/Circles/HomeCircle/HomeCircle';
 import General_Button from '@/components/Buttons/GeneralButtons/Buttons';
+import PaperCard from '@/components/Cards/PaperCard/PaperCard';
+import IconButtons from '@/components/Buttons/IconButtons/IconButtons';
+import ReadMoreButtons from '@/components/Buttons/ReadMoreBurrons/ReadMoreButtons';
 
 export default function Home() {
 
@@ -36,6 +39,46 @@ export default function Home() {
       <div style={{width:"50%", height:"100%", display:"flex", alignItems: "center", justifyContent: "center"}}>
       <HomeCircle image="/photo.jpg" backgroundColor="#E4E4E4" width="600px" height="600px" />
       </div>
+    </section>
+
+    {/* About Section */}
+    <section className='about-section' style={{width: "100%", height: "150vh", backgroundColor: "#fff", position: "relative", overflow:"hidden"}}>
+      <img src="/line.svg" alt="line" draggable={false} style={{width: "200%", height: "200%", position: "absolute", top: "-50%", left: 0, bottom: 0, right: "-50%", zIndex:"0"}} />
+
+    <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "row", marginTop: "100px", justifyContent: "center", flexWrap: "wrap", gap: "100px"}}>
+    <PaperCard content={<div>
+      <IconButtons backgroundColor="#4F5DE4" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/Group.svg" alt="Icon" width={24} height={24} />
+      } />
+      <h2>المدرب الحصري</h2>
+      <p>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
+    </div>} backgroundColorGeneral="#4F5DE4" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
+    <PaperCard content={<div>
+      <IconButtons backgroundColor="#F57005" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/busn.svg" alt="Icon" width={24} height={24} />
+      } />
+      <h2>المدرب الحصري</h2>
+      <p>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
+    </div>} backgroundColorGeneral="#F57005" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
+    <PaperCard content={<div>
+      <IconButtons backgroundColor="#4F5DE4" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/neu.svg" alt="Icon" width={24} height={24} />
+      } />
+      <h2>المدرب الحصري</h2>
+      <p>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
+    </div>} backgroundColorGeneral="#4F5DE4" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
+    <PaperCard content={<div>
+      <IconButtons backgroundColor="#F57005" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+      <h2>المدرب الحصري</h2>
+      <p>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
+    </div>} backgroundColorGeneral="#F57005" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
+    </div>
     </section>
     </>
 
