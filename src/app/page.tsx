@@ -16,6 +16,7 @@ import InnerPaginationBox from '../components/Boxes/PaginationBox/innerPaginatio
 import CircleWithBrush from '../components/Circles/CircleWithBrush/CircleWithBrush';
 import BackCircles from '../components/Circles/BackCircles/BackCircles';
 import HomeCircle from '../components/Circles/HomeCircle/HomeCircle';
+import AboutCircle from '../components/Circles/AboutCircles/AboutCircle';
 
 export default function Home() {
   const data = [{text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.png"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process ", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}]
@@ -100,8 +101,8 @@ export default function Home() {
 <hr />
 <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", width: "100%", height: "80vh", position: "relative", flexWrap: "wrap"}}>
 <HomeCircle image="/photo.jpg" backgroundColor="#E4E4E4" width="500px" height="500px" />
-
 </div>
+<AboutCircle src="/photo.jpg" />
 
     </>
 
