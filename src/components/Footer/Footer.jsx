@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <img src="/line_geroup_2.svg" alt="Logo" style={{width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, bottom: 0, right: 0, zIndex:"2"}} />
+        <img src="/line_geroup_2.svg" alt="Logo" style={{width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, bottom: 0, right: 0, zIndex:"0"}} />
         {/* Column 1: Logo + Lorem + Social Icons */}
         <div className="footer-column">
           <div className="footer-logo">

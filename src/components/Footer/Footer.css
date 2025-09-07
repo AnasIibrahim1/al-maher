@@ -162,13 +162,13 @@
 
 .subscribe-btn {
   position: absolute;
-  left: 4px;
+  left: 0px;
   top: 50%;
   transform: translateY(-50%);
   background: linear-gradient(135deg, #FF7200, #FFBF8C);
   border: none;
   border-radius: 6px;
-  padding: 8px 16px;
+  padding: 13px 30px;
   color: white;
   font-weight: 600;
   font-size: 12px;
@@ -322,7 +322,7 @@
   
   .subscribe-btn {
     font-size: 11px;
-    padding: 6px 12px;
+    padding: 100px 12px;
   }
 }
 

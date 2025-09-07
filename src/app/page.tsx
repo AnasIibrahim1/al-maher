@@ -1,15 +1,42 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import './page.css';  
 import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
-
+import HomeCircle from '../components/Circles/HomeCircle/HomeCircle';
+import General_Button from '@/components/Buttons/GeneralButtons/Buttons';
 
 export default function Home() {
 
   return (
     <>
+    {/* Header Component */}
     <Header />
-    <Footer />
+
+    {/* Landing Section*/}
+    <section className='landing-section' style={{width: "100%", height: "100vh", backgroundColor: "#4F5DE4", position: "relative", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap"}}>
+      <img src="/Shapes/landing.png" alt="line" draggable={false} style={{width: "100%", height: "100%", position: "absolute", top: 0, left: 0, bottom: 0, right: 0, zIndex:"0"}} />
+      <div style={{width:"50%", height:"100%", display:"flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", textAlign: "right"}}>
+      <h1 style={{color: "#fff", fontSize: "70px", fontWeight: "bold", maxWidth: "70%"}}>
+    أفضل 
+    رحلة التعلم المستقبلية تبدأ هنا
+    </h1>
+    <p style={{color: "#fff", fontSize: "18px", maxWidth: "70%"}}>
+    تميل جميع مولدات لوريم إيبسوم الموجودة على الإنترنت إلى تكرار الأجزاء المحددة مسبقًا حسب الضرورة،
+    </p>
+     <div style={{marginTop: "20px", display:"flex", flexDirection: "row", alignItems: "center", gap: "10px", justifyContent: "flex-start", width: "70%"}}>
+     <General_Button backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="https://www.google.com">
+        إحجز حضورك الآن
+      </General_Button>
+    <General_Button backgroundColor="#4F5DE4" color="#fff" padding="10px 20px" border="1px solid #fff" href="https://www.google.com">
+        إبحث عن دروسك
+      </General_Button>
+
+    </div>
+      </div>
+      <div style={{width:"50%", height:"100%", display:"flex", alignItems: "center", justifyContent: "center"}}>
+      <HomeCircle image="/photo.jpg" backgroundColor="#E4E4E4" width="600px" height="600px" />
+      </div>
+    </section>
     </>
 
   );

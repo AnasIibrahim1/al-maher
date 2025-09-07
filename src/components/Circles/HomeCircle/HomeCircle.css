@@ -3,10 +3,8 @@
   border-radius: 50%;
   background: linear-gradient(45deg, #FF7200, #6A78FF, #FF7200);
   background-size: 200% 200%;
-  animation: gradientRotate 3s ease-in-out infinite;
+  animation: gradientRotate 3s ease-in-out infinite, pulseGlow 2s ease-in-out infinite;
   padding: 30px;
-  position: relative;
-
 }
 
 .home-circle-inner {
@@ -47,4 +45,102 @@
 
 .home-circle-rotating {
   animation: rotate 4s linear infinite;
+}
+
+/* Floating animations for overlay images */
+.floating-brush-1 {
+  animation: floatUpDown 3s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.floating-brush-2 {
+  animation: floatLeftRight 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.floating-brush-3 {
+  animation: floatRotate 5s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.floating-brush-4 {
+  animation: floatBounce 3.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* Paper card animation */
+.floating-card {
+  animation: floatCard 4s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* Main circle pulse animation */
+.home-circle-container {
+  animation: gradientRotate 3s ease-in-out infinite;
+}
+
+/* Keyframe animations */
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes floatLeftRight {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes floatRotate {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  25% {
+    transform: rotate(5deg) translateY(-8px);
+  }
+  75% {
+    transform: rotate(-5deg) translateY(8px);
+  }
+}
+
+@keyframes floatBounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+  }
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+
+
+
+/* Responsive animations */
+@media (max-width: 768px) {
+  .floating-brush-1,
+  .floating-brush-2,
+  .floating-brush-3,
+  .floating-brush-4 {
+    animation-duration: 4s;
+  }
+  
+  .floating-card {
+    animation-duration: 5s;
+  }
 }
