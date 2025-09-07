@@ -17,6 +17,8 @@ import CircleWithBrush from '../components/Circles/CircleWithBrush/CircleWithBru
 import BackCircles from '../components/Circles/BackCircles/BackCircles';
 import HomeCircle from '../components/Circles/HomeCircle/HomeCircle';
 import AboutCircle from '../components/Circles/AboutCircles/AboutCircle';
+import PaginationCategories from '../components/PaginationCategories/PaginationCategories';
+
 
 export default function Home() {
   const data = [{text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.png"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process ", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}]
@@ -104,6 +106,33 @@ export default function Home() {
 </div>
 <AboutCircle src="/photo.jpg" />
 
+
+<PaginationCategories>
+  <div style={{backgroundColor: "#FF7200", padding: "20px", borderRadius: "10px", color: "white"}}>
+    <h1>Box 1</h1>
+    <p>Content 1</p>
+  </div>
+  <div style={{backgroundColor: "#6A78FF", padding: "20px", borderRadius: "10px", color: "white"}}>
+    <h1>Box 2</h1>
+    <p>Content 2</p>
+  </div>
+  <div style={{backgroundColor: "#4F5DE4", padding: "20px", borderRadius: "10px", color: "white"}}>
+    <h1>Box 3</h1>
+    <p>Content 3</p>
+  </div>
+  <div style={{backgroundColor: "#E4E4E4", padding: "20px", borderRadius: "10px", color: "black"}}>
+    <h1>Box 4</h1>
+    <p>Content 4</p>
+  </div>
+  <div style={{backgroundColor: "#1e3a8a", padding: "20px", borderRadius: "10px", color: "white"}}>
+    <h1>Box 5</h1>
+    <p>Content 5</p>
+  </div>
+  <div style={{backgroundColor: "#8cc210", padding: "20px", borderRadius: "10px", color: "white"}}>
+    <h1>Box 6</h1>
+    <p>Content 6</p>
+  </div>
+</PaginationCategories>
     </>
 
   );

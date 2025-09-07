@@ -1,0 +1,60 @@
+import React, { useState, useEffect } from 'react';
+import './PaginationCategories.css';
+
+export default function PaginationCategories({ children, itemsPerPage = 4 }) {
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [childrenArray, setChildrenArray] = useState([]);
+
+  // Calculate total pages and split children into pages
+  useEffect(() => {
+    const childrenList = React.Children.toArray(children);
+    setChildrenArray(childrenList);
+    setTotalPages(Math.ceil(childrenList.length / itemsPerPage));
+    console.log('Children count:', childrenList.length, 'Total pages:', Math.ceil(childrenList.length / itemsPerPage));
+  }, [children, itemsPerPage]);
+
+  // Get current page items
+  const getCurrentPageItems = () => {
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return childrenArray.slice(startIndex, endIndex);
+  };
+
+  // Handle dot click to go to specific page
+  const handleDotClick = (pageIndex) => {
+    setCurrentPage(pageIndex);
+  };
+
+  // Create pagination dots
+  const renderDots = () => {
+    const dots = [];
+    for (let i = 0; i < totalPages; i++) {
+      dots.push(
+        <button
+          key={i}
+          className={`pagination-dot ${i === currentPage ? 'active' : ''}`}
+          onClick={() => handleDotClick(i)}
+          aria-label={`Go to page ${i + 1}`}
+        />
+      );
+    }
+    return dots;
+  };
+
+  return (
+    <div className="pagination-categories-container">
+      <div className="pagination-content-wrapper">
+        <div className="pagination-content">
+          {getCurrentPageItems()}
+        </div>
+      </div>
+      
+      {totalPages > 1 && (
+        <div className="pagination-dots-container">
+          {renderDots()}
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,78 @@
+.pagination-categories-container {
+  width: 100%;
+  position: relative;
+}
+
+.pagination-content-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.pagination-content {
+  display: flex;
+  gap: 20px;
+  padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-content > * {
+  flex: 0 0 calc(25% - 15px); /* 4 items per page with gap */
+  min-width: 0;
+}
+
+.pagination-dots-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 10px 0;
+}
+
+.pagination-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.pagination-dot:hover {
+  background-color: #999;
+  transform: scale(1.1);
+}
+
+.pagination-dot.active {
+  background-color: #FF7200;
+  transform: scale(1.2);
+}
+
+.pagination-dot:focus {
+  box-shadow: 0 0 0 2px rgba(255, 114, 0, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .pagination-content {
+    gap: 15px;
+  }
+  
+  .pagination-content > * {
+    flex: 0 0 calc(50% - 7.5px); /* 2 items per page on mobile */
+  }
+  
+  .pagination-dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-content > * {
+    flex: 0 0 calc(100% - 0px); /* 1 item per page on very small screens */
+  }
+}
