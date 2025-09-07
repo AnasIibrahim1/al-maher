@@ -15,6 +15,7 @@ import PaperBox from '../components/Boxes/PaperBox/paperBox';
 import InnerPaginationBox from '../components/Boxes/PaginationBox/innerPaginationBox';
 import CircleWithBrush from '../components/Circles/CircleWithBrush/CircleWithBrush';
 import BackCircles from '../components/Circles/BackCircles/BackCircles';
+import HomeCircle from '../components/Circles/HomeCircle/HomeCircle';
 
 export default function Home() {
   const data = [{text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.png"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process ", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}]
@@ -43,7 +44,7 @@ export default function Home() {
 
       <PaperCard alignItems="start" justifyContent="start" content={
         <h1>lorem text if u want to play with me just ms me i will be in hoold for u </h1>
-      } backgroundColorGeneral="#1e3a8a" backgroundColor="#8cc210" />
+      } backgroundColorGeneral="#1e3a8a" backgroundColor="#8cc210" width="300px" height="340px" />
 
 
       <IconButtons backgroundColor="#4F5DE4" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
@@ -95,6 +96,14 @@ export default function Home() {
 </div>
 
 <BackCircles width="500px" height="500px" style={{position: "absolute", top: "0", left: "0", zIndex: "1"}} content={<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam veritatis deserunt, expedita officia mollitia magnam minima soluta consequatur tenetur quaerat ad. Veritatis explicabo quos iure est fuga aperiam excepturi enim.</div>} />  
+
+<hr />
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", width: "100%", height: "80vh", position: "relative", flexWrap: "wrap"}}>
+<HomeCircle image="/photo.jpg" backgroundColor="#E4E4E4" width="500px" height="500px" />
+
+</div>
+
     </>
+
   );
 }

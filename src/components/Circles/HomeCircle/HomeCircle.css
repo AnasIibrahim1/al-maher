@@ -1,0 +1,50 @@
+.home-circle-container {
+  position: relative;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #FF7200, #6A78FF, #FF7200);
+  background-size: 200% 200%;
+  animation: gradientRotate 3s ease-in-out infinite;
+  padding: 30px;
+  position: relative;
+
+}
+
+.home-circle-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.home-circle-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@keyframes gradientRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Alternative rotating animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.home-circle-rotating {
+  animation: rotate 4s linear infinite;
+}
