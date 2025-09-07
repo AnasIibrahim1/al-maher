@@ -1,29 +1,21 @@
 'use client'
-import General_Button from '../components/Buttons/GeneralButtons/Buttons';
-import SocialButtons from '../components/Buttons/Solcial Buttons/SocialButtons';
-import BackBoxCard from '../components/Cards/BackBoxCard/BackBoxCard';
-import PaperCard from '../components/Cards/PaperCard/PaperCard';
-import IconButtons from '../components/Buttons/IconButtons/IconButtons';
-import Image from 'next/image';
 import './page.css';  
-import SemiHalfCard from '../components/Cards/SemiHalfCard/SemiHalfCard';
-import CoursesCircles from '../components/Circles/CoursesCircles/CoursesCircles';
-import ProfileCircles from '../components/Circles/ProfileCicles/ProfileCircles';
-import ActionButtons from '../components/Buttons/ActionButtons/ActionButtons';
-import GeneralBox from '../components/Boxes/GeneralBox/GeneralBox';
-import PaperBox from '../components/Boxes/PaperBox/paperBox';
-import InnerPaginationBox from '../components/Boxes/PaginationBox/innerPaginationBox';
-import CircleWithBrush from '../components/Circles/CircleWithBrush/CircleWithBrush';
-import BackCircles from '../components/Circles/BackCircles/BackCircles';
-import HomeCircle from '../components/Circles/HomeCircle/HomeCircle';
-import AboutCircle from '../components/Circles/AboutCircles/AboutCircle';
-import PaginationCategories from '../components/PaginationCategories/PaginationCategories';
 
 
 export default function Home() {
-  const data = [{text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.png"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process ", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}]
+
   return (
     <>
+    
+    </>
+
+  );
+}
+
+/**
+   const data = [{text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.png"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}, {text: "Flexible Classes refers to the process of acquiring knowledge or skills through the use of digital technologies and the internet. Flexible Classes refers to the process  flexible Classes refers to the process ", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}]
+
+
     <div className="page-container">
       <h1 className="page-title">Anas</h1>
 
@@ -92,7 +84,6 @@ export default function Home() {
     <PaperBox alignItems="center" justifyContent="center" padding="10px" content={<div>بوكس الهدايا</div>} backgroundColorGeneral="#000" backgroundColor="#fff" width="450px" height="100px"/>
     </div>
 
-{/* when be low Reslotuin, right 0 in innerPaginationBox and resize the circle of content to 300px , 150px, and right of brush reduce it. */}
 <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", width: "100%", height: "80vh", position: "relative", flexWrap: "wrap"}}>
 <InnerPaginationBox data={data} style={{right: "100px"}} />
 <CircleWithBrush src="/photo.jpg" position="relative" style={{}} />
@@ -133,7 +124,5 @@ export default function Home() {
     <p>Content 6</p>
   </div>
 </PaginationCategories>
-    </>
-
-  );
-}
+  
+ */
