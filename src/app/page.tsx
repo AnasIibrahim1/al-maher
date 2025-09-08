@@ -14,6 +14,8 @@ import GradiantButton from '@/components/Buttons/GradiantButton/GradiantButton';
 import PaginationCategories from '@/components/PaginationCategories/PaginationCategories';
 import SemiHalfCard from '@/components/Cards/SemiHalfCard/SemiHalfCard';
 import CourseCard from '@/components/Cards/CourseCard/CourseCard';
+import BackCircles from '@/components/Circles/BackCircles/BackCircles';
+import Counter from '@/components/Counter/Counter';
 export default function Home() {
 
   return (
@@ -33,10 +35,10 @@ export default function Home() {
     تميل جميع مولدات لوريم إيبسوم الموجودة على الإنترنت إلى تكرار الأجزاء المحددة مسبقًا حسب الضرورة،
     </p>
      <div style={{marginTop: "20px", display:"flex", flexDirection: "row", alignItems: "center", gap: "10px", justifyContent: "flex-start", width: "70%"}}>
-     <General_Button backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="https://www.google.com">
+     <General_Button style={{}} backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="https://www.google.com">
         إحجز حضورك الآن
       </General_Button>
-    <General_Button backgroundColor="#4F5DE4" color="#fff" padding="10px 20px" border="1px solid #fff" href="https://www.google.com">
+    <General_Button style={{}} backgroundColor="#4F5DE4" color="#fff" padding="10px 20px" border="1px solid #fff" href="https://www.google.com">
         إبحث عن دروسك
       </General_Button>
 
@@ -89,7 +91,7 @@ export default function Home() {
       <div style={{width: "50%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1"}}>
       <div style={{maxWidth: "80%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "20px"}}>
       <SmColoredTitle title="من نحن" color="#4F5DE4" alignItems="start" justifyContent="start" />
-      <HeaderPargraph title="العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة" color="#2A254D" alignItems="start" justifyContent="start" />
+      <HeaderPargraph style={{}} title="العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة" color="#2A254D" alignItems="start" justifyContent="start" />
 <p style={{color: "gray", fontSize: "16px", textAlign: "start", width: "100%"}}>يستخدم قاموسًا يضم أكثر من 200 كلمة لاتينية، بالإضافة إلى مجموعة من هياكل الجمل النموذجية، لإنشاء لوريم إيبسوم الذي يبدو</p>
       <GradiantButton color1="#FF7200" color2="#fff" borderWidth="2px" borderRadius="10px" backgroundColor="#fff" width="100%" height="fit-content" alignItems="center" justifyContent="start" padding="16px" ariaLabel="إحجز حضورك الآن">
         <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "start", gap: "10px"}}>
@@ -114,7 +116,7 @@ export default function Home() {
 </div>
       </GradiantButton>
 <div style={{width: "100%", display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "start", gap: "10px"}}>
-<General_Button backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="https://www.google.com">
+<General_Button style={{}} backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="https://www.google.com">
         إحجز حضورك الآن
       </General_Button>
 </div>
@@ -131,7 +133,7 @@ export default function Home() {
       <img src="/base.jpg" alt="" style={{width: "100%", height: "50%", position: "absolute", top: 0, left: 0, zIndex:"0"}} />
       <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
         <SmColoredTitle title="الفئات" color="#4F5DE4" alignItems="start" justifyContent="center" />
-        <HeaderPargraph title="المواضيع المفضلة للتعلم" color="#2A254D" alignItems="center" justifyContent="center" />
+        <HeaderPargraph style={{}} title="المواضيع المفضلة للتعلم" color="#2A254D" alignItems="center" justifyContent="center" />
       </div>
       <PaginationCategories>
       <SemiHalfCard content={<div>
@@ -193,14 +195,14 @@ export default function Home() {
 
     {/* Best Courses */}
     <section style={{width: "100%",  backgroundColor: "#F1F2FD", position: "relative", overflow:"hidden", marginTop: "100px"}}>
-      <img src="/base1.jpg" alt="" style={{width: "100%", height: "100%", position: "absolute", top: 0, left: 0, zIndex:"0", objectFit: "cover", opacity: "0.5"}} />
+      <img src="/base1.svg" alt="" style={{width: "100%", height: "100%", position: "absolute", top: 0, left: 0, zIndex:"0", objectFit: "cover", opacity: "0.5"}} />
 
 
       <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
         <SmColoredTitle title="أفضل الدورات" color="#4F5DE4" alignItems="start" justifyContent="center" />
-        <HeaderPargraph title="الدورات المميزة لهذا الشهر"color="#2A254D" alignItems="center" justifyContent="center" />
+        <HeaderPargraph style={{}} title="الدورات المميزة لهذا الشهر"color="#2A254D" alignItems="center" justifyContent="center" />
       </div>
-<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "150px", zIndex: "10", margin : "100px auto", flexWrap: "wrap", width: "90%"}}>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "150px", zIndex: "10", margin : "150px auto", flexWrap: "wrap", width: "90%"}}>
 <CourseCard title="دورة المطور النهائي
 للمتعلم في المستقبل" image="/photo.jpg" price={100} />
 <CourseCard title="دورة المطور النهائي
@@ -212,6 +214,28 @@ export default function Home() {
 <CourseCard title="دورة المطور النهائي
 للمتعلم في المستقبل" image="/photo.jpg" price={100} />
 </div>
+
+    </section>
+
+    {/* Ad Section */}
+    <section style={{width: "100%", backgroundColor: "#4F5DE4", position: "relative", margin: "100px 0px", height: "auto", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap"}}>
+    <img src="/squares.svg" alt="ad" style={{width: "50%", height: "100%", position: "absolute", top: 0, right: "-200px", zIndex: "0", opacity: "0.2"}} />
+    <img src="/diamond.svg" alt="ad" style={{width: "50%", height: "100%", position: "absolute", top: 0, left: "-200px", zIndex: "0", opacity: "1"}} />
+    <img src="/dotted white.svg" alt="ad" style={{width: "6%", height: "100%", position: "absolute", top: "20%", left: "50%", zIndex: "0", opacity: "1"}} />
+    
+
+    <div style={{width: "50%", height: "100%", position: "relative", zIndex:"10", display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "space-around", padding: "100px 180px"}}>
+        <HeaderPargraph title="إنشىء حسابك المجاني الأن !"  color="#fff"  alignItems="right" justifyContent="start" style={{marginBottom:"20px"}}/>
+        <PaperCard content={<div>
+          <p style={{color: "#fff", fontSize: "16px", textAlign: "justify", padding: "20px"}}>ولذلك فإن نص لوريم إيبسوم الذي تم إنشاؤه يكون دائمًا خاليًا من التكرار أو الفكاهة المحقونة أو غير المميزة.</p>
+        </div>} backgroundColorGeneral="#F57005" backgroundColor="#6470E6" alignItems="center" justifyContent="center" width="100%" height="auto"/>
+        <General_Button style={{marginTop:"20px"}} backgroundColor="#F57005" color="white" padding="10px 20px" border="none" href="https://www.google.com">إنضم الأن</General_Button>
+      </div>
+
+      <div style={{width: "50%", height: "100%", position: "relative", zIndex:"10", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+        <BackCircles width="500px" height="500px" style={{position: "absolute", top: "0", left: "0", zIndex: "1"}} content={<Counter/>} />
+      </div>
+
 
     </section>
     </>

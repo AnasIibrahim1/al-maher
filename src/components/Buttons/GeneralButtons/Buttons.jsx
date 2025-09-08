@@ -1,10 +1,10 @@
 import React from 'react';
 import './Buttons.css';
 
-const General_Button = ({children, backgroundColor, color, padding, border, href}) => {
+const General_Button = ({children, backgroundColor, color, padding, border, href, style}) => {
   return (
 <a href={href} style={{textDecoration: 'none'}}>
-<button className="custom-button" style={{backgroundColor: backgroundColor, color: color, padding: padding, border:border}}>
+<button className="custom-button" style={{backgroundColor: backgroundColor, color: color, padding: padding, border:border, ...style}}>
       <div className="hover-overlay"></div>
       <span className="button-text">{children}</span>
       <div className="arrow-container">

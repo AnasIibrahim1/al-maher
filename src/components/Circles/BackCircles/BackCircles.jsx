@@ -8,7 +8,7 @@ export default function BackCircles({ width, height, style, content, rotationSpe
   };
 
   const contentStyle = {
-    backgroundColor: "blue",
+    backgroundColor: "white",
     width: "70%",
     height: "70%",
   };
