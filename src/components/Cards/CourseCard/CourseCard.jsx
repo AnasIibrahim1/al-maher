@@ -4,10 +4,17 @@ import Stars from "@/components/CardSpecialists/Stars/Stars";
 import SalaryLessons from "@/components/CardSpecialists/SalaryLessons/SalaryLessons";
 import GeneralBox from "@/components/Boxes/GeneralBox/GeneralBox";
 import ProfileCircles from "@/components/Circles/ProfileCicles/ProfileCircles";
+import CourseCircles from "@/components/Circles/CoursesCircles/CoursesCircles";
 export default function CourseCard({title, image, price}) {
   return (
-    <div style={{display: "flex", flexDirection: "column", justifyContent: "center", width: "450px", borderRadius: "10px", overflow: "hidden", backgroundColor: "#fff", padding : "30px",zIndex: "10"}}>
+    <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", width: "450px", height : "300px",borderRadius: "10px", backgroundColor: "#fff", padding : "30px",zIndex: "10"}}>
+<div style={{position: "relative", zIndex: "10"}}>
 <Hours hour={10} />
+<div>
+<CourseCircles image={image} width="225px" height="225px" style={{position: "absolute", top: "-140px", left: "0", zIndex: "10"}} /> 
+</div>
+</div>
+
 <Stars rating={5} reviews={24} size="medium" />
 <CourseHead title={title} />
 <GeneralBox backgroundColor="#F1F2FD" width="auto" height="auto"  padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">

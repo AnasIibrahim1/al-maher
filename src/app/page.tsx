@@ -200,7 +200,15 @@ export default function Home() {
         <SmColoredTitle title="أفضل الدورات" color="#4F5DE4" alignItems="start" justifyContent="center" />
         <HeaderPargraph title="الدورات المميزة لهذا الشهر"color="#2A254D" alignItems="center" justifyContent="center" />
       </div>
-<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", zIndex: "10"}}>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "150px", zIndex: "10", margin : "100px auto", flexWrap: "wrap", width: "90%"}}>
+<CourseCard title="دورة المطور النهائي
+للمتعلم في المستقبل" image="/photo.jpg" price={100} />
+<CourseCard title="دورة المطور النهائي
+للمتعلم في المستقبل" image="/photo.jpg" price={100} />
+<CourseCard title="دورة المطور النهائي
+للمتعلم في المستقبل" image="/photo.jpg" price={100} />
+<CourseCard title="دورة المطور النهائي
+للمتعلم في المستقبل" image="/photo.jpg" price={100} />
 <CourseCard title="دورة المطور النهائي
 للمتعلم في المستقبل" image="/photo.jpg" price={100} />
 </div>
