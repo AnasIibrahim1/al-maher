@@ -16,6 +16,13 @@
   align-items: center;
   flex-wrap: nowrap;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.pagination-content.transitioning {
+  opacity: 0;
+  transform: translateX(-20px);
 }
 
 .pagination-content > * {

@@ -6,6 +6,7 @@ export default function PaginationCategories({ children }) {
   const [totalPages, setTotalPages] = useState(0);
   const [childrenArray, setChildrenArray] = useState([]);
   const [itemsPerPage, setItemsPerPage] = useState(4);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Calculate items per page based on screen width
   useEffect(() => {
@@ -47,7 +48,15 @@ export default function PaginationCategories({ children }) {
 
   // Handle dot click to go to specific page
   const handleDotClick = (pageIndex) => {
-    setCurrentPage(pageIndex);
+    if (pageIndex === currentPage) return;
+    
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentPage(pageIndex);
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
+    }, 200);
   };
 
   // Create pagination dots
@@ -69,7 +78,7 @@ export default function PaginationCategories({ children }) {
   return (
     <div className="pagination-categories-container">
       <div className="pagination-content-wrapper">
-        <div className="pagination-content">
+        <div className={`pagination-content ${isTransitioning ? 'transitioning' : ''}`}>
           {getCurrentPageItems()}
         </div>
       </div>
