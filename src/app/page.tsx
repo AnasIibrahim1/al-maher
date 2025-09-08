@@ -10,6 +10,7 @@ import ReadMoreButtons from '@/components/Buttons/ReadMoreBurrons/ReadMoreButton
 import AboutCircle from '@/components/Circles/AboutCircles/AboutCircle';
 import SmColoredTitle from '@/components/Paragraphs/SmColoredTitle/SmTitle';
 import HeaderPargraph from '@/components/Paragraphs/Header/HeaderPargraph';
+import GradiantButton from '@/components/Buttons/GradiantButton/GradiantButton';
 export default function Home() {
 
   return (
@@ -83,8 +84,38 @@ export default function Home() {
     
     <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "row", alignItems: "center", flexWrap: "wrap", marginTop: "100px"}}>
       <div style={{width: "50%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1"}}>
+      <div style={{maxWidth: "80%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "20px"}}>
       <SmColoredTitle title="من نحن" color="#4F5DE4" alignItems="start" justifyContent="start" />
       <HeaderPargraph title="العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة" color="#2A254D" alignItems="start" justifyContent="start" />
+<p style={{color: "gray", fontSize: "16px", textAlign: "start", width: "100%"}}>يستخدم قاموسًا يضم أكثر من 200 كلمة لاتينية، بالإضافة إلى مجموعة من هياكل الجمل النموذجية، لإنشاء لوريم إيبسوم الذي يبدو</p>
+      <GradiantButton color1="#FF7200" color2="#fff" borderWidth="2px" borderRadius="10px" backgroundColor="#fff" width="100%" height="fit-content" alignItems="center" justifyContent="start" padding="16px" ariaLabel="إحجز حضورك الآن">
+        <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "start", gap: "10px"}}>
+        <IconButtons backgroundColor="rgba(128, 137, 225, 0.12)" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/presentation.svg" alt="Presentation" width={24} height={24} />
+      } />
+<div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center", gap: "1px", marginRight: "10px"}}>
+<h3 style={{color: "#2D2A4E", fontSize: "22px", fontWeight: "bold"}}>فصول مرنة</h3>
+<p style={{color: "gray", fontSize: "16px"}}> يستخدم قاموسًا يضم أكثر من 200 كلمة لاتينية، بالإضافة إلى مجموعة من هياكل الجمل النموذجية، لإنشاء لوريم إيبسوم الذي يبدو</p>
+</div>
+</div>
+      </GradiantButton>
+      <GradiantButton color1="#FF7200" color2="#fff" borderWidth="2px" borderRadius="10px" backgroundColor="#fff" width="100%" height="fit-content" alignItems="center" justifyContent="start" padding="16px" ariaLabel="إحجز حضورك الآن">
+        <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "start", gap: "10px"}}>
+        <IconButtons backgroundColor="rgba(128, 137, 225, 0.12)" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/online_learning.svg" alt="Presentation" width={24} height={24} />
+      } />
+<div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center", gap: "1px", marginRight: "10px"}}>
+<h3 style={{color: "#2D2A4E", fontSize: "22px", fontWeight: "bold"}}>فصول مرنة</h3>
+<p style={{color: "gray", fontSize: "16px"}}> يستخدم قاموسًا يضم أكثر من 200 كلمة لاتينية، بالإضافة إلى مجموعة من هياكل الجمل النموذجية، لإنشاء لوريم إيبسوم الذي يبدو</p>
+</div>
+</div>
+      </GradiantButton>
+<div style={{width: "100%", display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "start", gap: "10px"}}>
+<General_Button backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="https://www.google.com">
+        إحجز حضورك الآن
+      </General_Button>
+</div>
+      </div>
       </div>
       <div style={{width: "50%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
         <AboutCircle src="/photo.jpg" />
