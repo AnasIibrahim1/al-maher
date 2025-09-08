@@ -7,7 +7,9 @@ import General_Button from '@/components/Buttons/GeneralButtons/Buttons';
 import PaperCard from '@/components/Cards/PaperCard/PaperCard';
 import IconButtons from '@/components/Buttons/IconButtons/IconButtons';
 import ReadMoreButtons from '@/components/Buttons/ReadMoreBurrons/ReadMoreButtons';
-
+import AboutCircle from '@/components/Circles/AboutCircles/AboutCircle';
+import SmColoredTitle from '@/components/Paragraphs/SmColoredTitle/SmTitle';
+import HeaderPargraph from '@/components/Paragraphs/Header/HeaderPargraph';
 export default function Home() {
 
   return (
@@ -42,44 +44,54 @@ export default function Home() {
     </section>
 
     {/* About Section */}
-    <section className='about-section' style={{width: "100%", height: "150vh", backgroundColor: "#fff", position: "relative", overflow:"hidden"}}>
-      <img src="/line.svg" alt="line" draggable={false} style={{width: "200%", height: "200%", position: "absolute", top: "-50%", left: 0, bottom: 0, right: "-50%", zIndex:"0"}} />
-
+    <section className='about-section' style={{width: "100%", backgroundColor: "#fff", position: "relative", overflow:"hidden"}}>
+      <img src="/line.svg" alt="line" draggable={false} style={{width: "200%", height: "200%", position: "absolute", top: "-50%", left: 0, bottom: 0, right: "-50%"}} />
     <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "row", marginTop: "100px", justifyContent: "center", flexWrap: "wrap", gap: "100px"}}>
     <PaperCard content={<div>
       <IconButtons backgroundColor="#4F5DE4" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
         <img src="/Group.svg" alt="Icon" width={24} height={24} />
       } />
-      <h2>المدرب الحصري</h2>
-      <p>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>المدرب الحصري</h2>
+      <p style={{color: "gray", fontSize: "16px"}}>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
       <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
     </div>} backgroundColorGeneral="#4F5DE4" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
     <PaperCard content={<div>
       <IconButtons backgroundColor="#F57005" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
         <img src="/busn.svg" alt="Icon" width={24} height={24} />
       } />
-      <h2>المدرب الحصري</h2>
-      <p>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>المدرب الحصري</h2>
+      <p style={{color: "gray", fontSize: "16px"}}>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
       <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
     </div>} backgroundColorGeneral="#F57005" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
     <PaperCard content={<div>
       <IconButtons backgroundColor="#4F5DE4" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
         <img src="/neu.svg" alt="Icon" width={24} height={24} />
       } />
-      <h2>المدرب الحصري</h2>
-      <p>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>المدرب الحصري</h2>
+      <p style={{color: "gray", fontSize: "16px"}}>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
       <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
     </div>} backgroundColorGeneral="#4F5DE4" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
     <PaperCard content={<div>
       <IconButtons backgroundColor="#F57005" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
         <img src="/ed.svg" alt="Icon" width={24} height={24} />
       } />
-      <h2>المدرب الحصري</h2>
-      <p>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>المدرب الحصري</h2>
+      <p style={{color: "gray", fontSize: "16px"}}>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
       <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
     </div>} backgroundColorGeneral="#F57005" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
     </div>
+    
+    <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "row", alignItems: "center", flexWrap: "wrap", marginTop: "100px"}}>
+      <div style={{width: "50%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1"}}>
+      <SmColoredTitle title="من نحن" color="#4F5DE4" alignItems="start" justifyContent="start" />
+      <HeaderPargraph title="العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة" color="#2A254D" alignItems="start" justifyContent="start" />
+      </div>
+      <div style={{width: "50%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+        <AboutCircle src="/photo.jpg" />
+      </div>
+    </div>
     </section>
+    
     </>
 
   );
