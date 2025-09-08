@@ -13,6 +13,9 @@ import HeaderPargraph from '@/components/Paragraphs/Header/HeaderPargraph';
 import GradiantButton from '@/components/Buttons/GradiantButton/GradiantButton';
 import PaginationCategories from '@/components/PaginationCategories/PaginationCategories';
 import SemiHalfCard from '@/components/Cards/SemiHalfCard/SemiHalfCard';
+import Stars from '@/components/CardSpecialists/Stars/Stars';
+import Hours from '@/components/CardSpecialists/Hours/Hours';
+import SalaryLessons from '@/components/CardSpecialists/SalaryLessons/SalaryLessons';
 export default function Home() {
 
   return (
@@ -188,6 +191,20 @@ export default function Home() {
       <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
       </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
       </PaginationCategories>
+    </section>
+
+    {/* Best Courses */}
+    <section style={{width: "100%", height: "100vh",  backgroundColor: "#F1F2FD", position: "relative", overflow:"hidden", marginTop: "100px"}}>
+      <img src="/base1.jpg" alt="" style={{width: "100%", height: "100%", position: "absolute", top: 0, left: 0, zIndex:"0", objectFit: "cover", opacity: "0.5"}} />
+      <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
+        <SmColoredTitle title="أفضل الدورات" color="#4F5DE4" alignItems="start" justifyContent="center" />
+        <HeaderPargraph title="الدورات المميزة لهذا الشهر"color="#2A254D" alignItems="center" justifyContent="center" />
+      </div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", zIndex: "10"}}>
+  <Hours hour={10} />
+<Stars rating={5} reviews={24} size="medium" />
+<SalaryLessons salary={100} lessons={24} />
+</div>
     </section>
     </>
 
