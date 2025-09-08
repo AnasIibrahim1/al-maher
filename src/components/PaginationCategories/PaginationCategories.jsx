@@ -1,18 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import './PaginationCategories.css';
 
-export default function PaginationCategories({ children, itemsPerPage = 4 }) {
+export default function PaginationCategories({ children }) {
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [childrenArray, setChildrenArray] = useState([]);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
+
+  // Calculate items per page based on screen width
+  useEffect(() => {
+    const calculateItemsPerPage = () => {
+      const screenWidth = window.innerWidth;
+      const gap = 20; // gap between items
+      const itemWidth = screenWidth < 480 ? 200 : 310;
+      const availableWidth = screenWidth - 60; // padding
+      const items = Math.floor((availableWidth + gap) / (itemWidth + gap));
+      return Math.max(1, items);
+    };
+
+    const updateItemsPerPage = () => {
+      setItemsPerPage(calculateItemsPerPage());
+    };
+
+    updateItemsPerPage();
+    window.addEventListener('resize', updateItemsPerPage);
+    return () => window.removeEventListener('resize', updateItemsPerPage);
+  }, []);
 
   // Calculate total pages and split children into pages
   useEffect(() => {
     const childrenList = React.Children.toArray(children);
     setChildrenArray(childrenList);
     setTotalPages(Math.ceil(childrenList.length / itemsPerPage));
-    console.log('Children count:', childrenList.length, 'Total pages:', Math.ceil(childrenList.length / itemsPerPage));
-  }, [children, itemsPerPage]);
+    // Reset to first page if current page is out of bounds
+    if (currentPage >= Math.ceil(childrenList.length / itemsPerPage)) {
+      setCurrentPage(0);
+    }
+  }, [children, itemsPerPage, currentPage]);
 
   // Get current page items
   const getCurrentPageItems = () => {

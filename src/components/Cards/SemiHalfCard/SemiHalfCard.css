@@ -18,16 +18,61 @@
     position: absolute;
     bottom: 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: inherit;
 }
 .semi-half-card-content{
     z-index: 10;
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.35s cubic-bezier(0.4, 0, 0.2, 1), justify-content 0.35s cubic-bezier(0.4, 0, 0.2, 1), align-items 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
 }
 .semi-half-card-container-general:hover .container-overlay{
     height: 100%;
     border-radius: 10px 10px 10px 10px;
+    background-color: var(--hover-overlay, #1E1F25) !important;
 }
 .semi-half-card-container-general:hover .semi-half-card-content{
-    transform: translateY(-120px) scale(1.02);
+    transform: translateY(-50px) scale(1.02);
     color: #fff !important;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Icon buttons transition for smooth animation */
+.icon-buttons-container {
+    transform: scale(1);
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+/* Hover effect for icon buttons inside the card */
+.semi-half-card-container-general:hover .icon-buttons-container {
+    background-color: #4F5DE4 !important;
+    transform: scale(1.2);
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+/* Text transition for smooth animation */
+.semi-half-card-content h1,
+.semi-half-card-content h2,
+.semi-half-card-content h3,
+.semi-half-card-content p,
+.semi-half-card-content span,
+.semi-half-card-content div {
+    transition: color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effect for text inside the card */
+.semi-half-card-container-general:hover h1,
+.semi-half-card-container-general:hover h2,
+.semi-half-card-container-general:hover h3,
+.semi-half-card-container-general:hover p,
+.semi-half-card-container-general:hover span,
+.semi-half-card-container-general:hover div {
+    color: #fff !important;
+}
+
+@media (max-width: 480px) { 
+    .semi-half-card-container-general{
+        width : 250px;
+    }
 }

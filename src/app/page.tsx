@@ -11,6 +11,8 @@ import AboutCircle from '@/components/Circles/AboutCircles/AboutCircle';
 import SmColoredTitle from '@/components/Paragraphs/SmColoredTitle/SmTitle';
 import HeaderPargraph from '@/components/Paragraphs/Header/HeaderPargraph';
 import GradiantButton from '@/components/Buttons/GradiantButton/GradiantButton';
+import PaginationCategories from '@/components/PaginationCategories/PaginationCategories';
+import SemiHalfCard from '@/components/Cards/SemiHalfCard/SemiHalfCard';
 export default function Home() {
 
   return (
@@ -123,6 +125,70 @@ export default function Home() {
     </div>
     </section>
     
+    {/* Favorite Topics To Learn */}
+    <section style={{width: "100%", backgroundColor: "#fff", position: "relative", overflow:"hidden", marginTop: "100px"}}>
+      <img src="/base.jpg" alt="" style={{width: "100%", height: "50%", position: "absolute", top: 0, left: 0, zIndex:"0"}} />
+      <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
+        <SmColoredTitle title="الفئات" color="#4F5DE4" alignItems="start" justifyContent="center" />
+        <HeaderPargraph title="المواضيع المفضلة للتعلم" color="#2A254D" alignItems="center" justifyContent="center" />
+      </div>
+      <PaginationCategories>
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      </PaginationCategories>
+    </section>
     </>
 
   );
