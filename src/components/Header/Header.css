@@ -11,6 +11,10 @@
   transition: all 0.3s ease;
 }
 
+.header.scrolled {
+  background: rgb(79, 93, 228);
+}
+
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -110,7 +114,7 @@
   top: 100%;
   right: 0;
   margin-top: 10px;
-  background-color: #1e3a8a;
+  background-color: rgb(79, 93, 228);;
   backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 15px;
@@ -198,7 +202,7 @@
 
 /* Get in Touch Button */
 .get-in-touch-btn {
-  background: linear-gradient(135deg, #FF7200, #FFBF8C);
+  background: linear-gradient(135deg, #F57005, #F57005);
   border: none;
   border-radius: 10px;
   padding: 6px 10px;
@@ -210,10 +214,7 @@
   white-space: nowrap;
 }
 
-.get-in-touch-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(255, 114, 0, 0.4);
-}
+
 
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {

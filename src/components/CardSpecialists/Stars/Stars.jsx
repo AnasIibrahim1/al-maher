@@ -31,7 +31,7 @@ export default function Stars({ rating = 5, reviews = 24, size = 'medium' }) {
         {renderStars()}
       </div>
       <span className="reviews-text">
-        ({reviews} Reviews)
+        ({reviews} تقيمات)
       </span>
     </div>
   );
