@@ -360,14 +360,14 @@ export default function Home() {
         <HeaderPargraph style={{}} title="اخر الخبار و المقالات" color="#2A254D" alignItems="center" justifyContent="center" />
       </div>
       <div style={{width: "80%", flex: 1, display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "40px", margin: "100px auto"}}>
-<div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px", width:"50%", minHeight: "400px"}}>
+<div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px", width:"50%", minHeight: "600px"}}>
 </div>
-        <div style={{display: "flex", flexDirection: "column", gap: "10px", width:"50%", minHeight: "300px"}}>
+        <div style={{display: "flex", flexDirection: "column", gap: "10px", width:"50%", minHeight: "300px", height: "100%"}}>
           <div style={{width: "100%", flex: 1, backgroundColor: "#152B4A", borderRadius: "10px 15px 15px 10px", minHeight: "200px"}}>
-            <div style={{width:"70%", minHeight: "300px", backgroundColor: "#fff", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)", borderRadius: "0px 10px 10px 0px", display: "flex", flexDirection: "column", alignItems: "right", justifyContent: "space-around"}}>
+            <div style={{width:"70%", minHeight: "300px", backgroundColor: "#fff", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)", borderRadius: "0px 10px 10px 0px", display: "flex", flexDirection: "column", alignItems: "right", justifyContent: "space-around",  padding: "20px"}}>
               <Category category="تطوير"/>
               <h1>المبادئ التوجيهية الكاملة لمطوري الويب 2023</h1>
-              <GeneralBox backgroundColor="#F1F2FD" width="80%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
+              <GeneralBox backgroundColor="#F1F2FD" width="100%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
         <ProfileCircles image="/photo.jpg" backgroundColor="#E4E4E4" width="60px" height="50px" />
@@ -377,7 +377,7 @@ export default function Home() {
       </div>
       </div>
       <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "50%", height: "100%"}}>
-<DateDisplay date={new Date()} style={{color: "#000", fontSize: "12px", fontWeight: "bold"}} className="date-display"/>
+<DateDisplay date={new Date()} style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}} className="date-display"/>
 </div>
       </div>
     </GeneralBox>
@@ -385,10 +385,10 @@ export default function Home() {
             
           </div>
           <div style={{width: "100%", flex: 1, backgroundColor: "#152B4A", borderRadius: "10px 15px 15px 10px", minHeight: "200px"}}>
-            <div style={{width:"70%", minHeight: "300px", backgroundColor: "#fff", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)", borderRadius: "0px 10px 10px 0px", display: "flex", flexDirection: "column", alignItems: "right", justifyContent: "space-around"}}>
+            <div style={{width:"70%", minHeight: "300px", backgroundColor: "#fff", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)", borderRadius: "0px 10px 10px 0px", display: "flex", flexDirection: "column", alignItems: "right", justifyContent: "space-around",  padding: "20px"}}>
               <Category category="تطوير"/>
               <h1>المبادئ التوجيهية الكاملة لمطوري الويب 2023</h1>
-              <GeneralBox backgroundColor="#F1F2FD" width="80%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
+              <GeneralBox backgroundColor="#F1F2FD" width="100%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
         <ProfileCircles image="/photo.jpg" backgroundColor="#E4E4E4" width="60px" height="50px" />
@@ -398,13 +398,14 @@ export default function Home() {
       </div>
       </div>
       <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "50%", height: "100%"}}>
-<DateDisplay date={new Date()} style={{color: "#000", fontSize: "12px", fontWeight: "bold"}} className="date-display"/>
+<DateDisplay date={new Date()} style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}} className="date-display"/>
 </div>
       </div>
     </GeneralBox>
             </div>
             
           </div>
+          
         </div>
       </div>
     </section>
