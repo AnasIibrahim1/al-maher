@@ -25,8 +25,8 @@ export default function InnerPaginationBox({ data = [], width = "800px", style }
   const currentItem = data[currentIndex]
 
   return (
-    <div className="pagination-box-container" style={{width: width, ...style}}>
-        <div className="pagination-box-circle" key={`circle-${currentIndex}`}>
+    <div className="pagination-box-container2" style={{width: width, ...style}}>
+        <div className="pagination-box-circle2" key={`circle-${currentIndex}`}>
           <Image 
             src={currentItem.image || "/photo.jpg"} 
             alt={currentItem.name}
@@ -35,7 +35,7 @@ export default function InnerPaginationBox({ data = [], width = "800px", style }
             className="user-image"
           />
         </div>
-      <div className="pagination-content" style={{marginTop: "100px"}} key={`content-${currentIndex}`}>
+      <div className="pagination-content2" style={{marginTop: "100px"}} key={`content-${currentIndex}`}>
         <p className="opinion-text" style={{textAlign: "justify", maxWidth: "600px", marginBottom: "40px"}}>{currentItem.text}</p>
         <div className="author-info">
 <div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "start", width: "40%"}}>
@@ -43,9 +43,9 @@ export default function InnerPaginationBox({ data = [], width = "800px", style }
 <p className="author-title">{currentItem.title}</p>
 </div>
 {data.length > 1 && (
-        <div className="pagination-controls">
+        <div className="pagination-controls2">
           <button 
-            className="pagination-btn prev-btn"
+            className="pagination-btn2 prev-btn"
             onClick={handlePrevious}
             aria-label="Previous opinion"
           >
@@ -54,7 +54,7 @@ export default function InnerPaginationBox({ data = [], width = "800px", style }
             </svg>
           </button>
           <button 
-            className="pagination-btn next-btn"
+            className="pagination-btn2 next-btn"
             onClick={handleNext}
             aria-label="Next opinion"
           >

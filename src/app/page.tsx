@@ -16,7 +16,10 @@ import SemiHalfCard from '@/components/Cards/SemiHalfCard/SemiHalfCard';
 import CourseCard from '@/components/Cards/CourseCard/CourseCard';
 import BackCircles from '@/components/Circles/BackCircles/BackCircles';
 import Counter from '@/components/Counter/Counter';
+import InnerPaginationBox from '@/components/Boxes/PaginationBox/innerPaginationBox';
+import CircleWithBrush from '@/components/Circles/CircleWithBrush/CircleWithBrush';
 export default function Home() {
+  const data = [{text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.png"}, {text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}, {text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}]
 
   return (
     <>
@@ -237,6 +240,19 @@ export default function Home() {
       </div>
 
 
+    </section>
+
+    {/* Testimonials */}
+    <section style={{width: "100%", backgroundColor: "#fff", position: "relative", overflow:"hidden", marginTop: "100px"}}>
+      <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
+        <SmColoredTitle title="التعليقات" color="#4F5DE4" alignItems="start" justifyContent="center" />
+        <HeaderPargraph style={{}} title="التعليقات على الدورات" color="#2A254D" alignItems="center" justifyContent="center" />
+      </div>
+
+      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", width: "100%", height: "80vh", position: "relative", flexWrap: "wrap"}}>
+        <InnerPaginationBox data={data} style={{}} />
+<CircleWithBrush src="/photo.jpg" position="relative" style={{}} />
+</div>
     </section>
     </>
 
