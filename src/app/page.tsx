@@ -25,6 +25,9 @@ import Category from '@/components/CardSpecialists/Category/Category';
 import GeneralBox from '@/components/Boxes/GeneralBox/GeneralBox';
 import ProfileCircles from '@/components/Circles/ProfileCicles/ProfileCircles';
 import DateDisplay from '@/components/CardSpecialists/Date/Date';
+import BotCard from '@/components/Cards/BotCard/BotCard';
+
+
 export default function Home() {
   const data = [{text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.png"}, {text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}, {text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}]
 
@@ -359,8 +362,26 @@ export default function Home() {
         <SmColoredTitle title="اخر الاخبار" color="#4F5DE4" alignItems="start" justifyContent="center" />
         <HeaderPargraph style={{}} title="اخر الخبار و المقالات" color="#2A254D" alignItems="center" justifyContent="center" />
       </div>
-      <div style={{width: "80%", flex: 1, display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "40px", margin: "100px auto"}}>
-<div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px", width:"50%", minHeight: "600px"}}>
+      <div style={{width: "80%", flex: 1, display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "40px", margin: "100px auto", flexWrap: "wrap"}}>
+<div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "end", gap: "10px", height: "600px"}}>
+ <div style={{width: "auto", height: "100%"}}>
+ <BotCard width="400px" height="100%" content={
+    <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between"}}>
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px", height: "100%", textAlign: "center"}}>
+        <IconButtons  backgroundColor={"#4F5DE4"} borderRadius={"100%"} width={"100px"} height={"100px"} icon={<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"/><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"/><path d="M20 10V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6"/></svg>} padding={"0 10px"}/>
+        <h1 style={{color: "#fff", fontSize: "24px", fontWeight: "bold", textAlign: "center", maxWidth: "70%"}}>اشترك في النشرة الإخبارية ليصلك كل جديد</h1>
+      </div>
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "end", width: "80%", zIndex: "1", paddingBottom: "20px"}}>
+        <input type="email" placeholder="البريد الإلكتروني" style={{width: "100%", height: "40px", borderRadius: "5px", border: "none", padding: "0 10px", marginBottom: "10px"}} />
+        <a href="" style={{width: "100%"}}>
+          <button style={{backgroundColor: "#4F5DE4", color: "#fff",width: "100%", height: "40px", borderRadius: "5px", border: "none", cursor: "pointer"}}>إشتراك</button>
+        </a>
+        <p style={{color: "#fff", fontSize: "14px", fontWeight: "normal", textAlign: "center", marginTop: "10px"}}>احصل على أخر الأخبار و المقالات</p>
+
+      </div>
+    </div>
+  } />
+ </div>
 </div>
         <div style={{display: "flex", flexDirection: "column", gap: "10px", width:"50%", minHeight: "300px", height: "100%"}}>
           <div style={{width: "100%", flex: 1, backgroundColor: "#152B4A", borderRadius: "10px 15px 15px 10px", minHeight: "200px"}}>
@@ -409,6 +430,8 @@ export default function Home() {
         </div>
       </div>
     </section>
+
+    {/* Ad Skills */}
 <Footer/>
     </>
 
