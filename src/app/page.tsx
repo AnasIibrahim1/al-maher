@@ -21,6 +21,10 @@ import CircleWithBrush from '@/components/Circles/CircleWithBrush/CircleWithBrus
 import BackBoxCard from '@/components/Cards/BackBoxCard/BackBoxCard';
 import Footer from '@/components/Footer/Footer';
 import SocialButtons from '@/components/Buttons/Solcial Buttons/SocialButtons';
+import Category from '@/components/CardSpecialists/Category/Category';
+import GeneralBox from '@/components/Boxes/GeneralBox/GeneralBox';
+import ProfileCircles from '@/components/Circles/ProfileCicles/ProfileCircles';
+import DateDisplay from '@/components/CardSpecialists/Date/Date';
 export default function Home() {
   const data = [{text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.png"}, {text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}, {text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}]
 
@@ -354,6 +358,54 @@ export default function Home() {
     <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
         <SmColoredTitle title="اخر الاخبار" color="#4F5DE4" alignItems="start" justifyContent="center" />
         <HeaderPargraph style={{}} title="اخر الخبار و المقالات" color="#2A254D" alignItems="center" justifyContent="center" />
+      </div>
+      <div style={{width: "80%", flex: 1, display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "40px", margin: "100px auto"}}>
+<div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px", width:"50%", minHeight: "400px"}}>
+</div>
+        <div style={{display: "flex", flexDirection: "column", gap: "10px", width:"50%", minHeight: "300px"}}>
+          <div style={{width: "100%", flex: 1, backgroundColor: "#152B4A", borderRadius: "10px 15px 15px 10px", minHeight: "200px"}}>
+            <div style={{width:"70%", minHeight: "300px", backgroundColor: "#fff", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)", borderRadius: "0px 10px 10px 0px", display: "flex", flexDirection: "column", alignItems: "right", justifyContent: "space-around"}}>
+              <Category category="تطوير"/>
+              <h1>المبادئ التوجيهية الكاملة لمطوري الويب 2023</h1>
+              <GeneralBox backgroundColor="#F1F2FD" width="80%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
+      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
+      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
+        <ProfileCircles image="/photo.jpg" backgroundColor="#E4E4E4" width="60px" height="50px" />
+      <div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center", width: "100%", height: "100%", marginRight: "10px"}}>
+        <h3 style={{color: "#000", fontSize: "16px", fontWeight: "bold"}}>أنس إبراهيم حلمي</h3>
+        <p style={{color: "gray", fontSize: "12px", fontWeight: "bold"}}>مبرمج تطبيقات</p>
+      </div>
+      </div>
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "50%", height: "100%"}}>
+<DateDisplay date={new Date()} style={{color: "#000", fontSize: "12px", fontWeight: "bold"}} className="date-display"/>
+</div>
+      </div>
+    </GeneralBox>
+            </div>
+            
+          </div>
+          <div style={{width: "100%", flex: 1, backgroundColor: "#152B4A", borderRadius: "10px 15px 15px 10px", minHeight: "200px"}}>
+            <div style={{width:"70%", minHeight: "300px", backgroundColor: "#fff", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)", borderRadius: "0px 10px 10px 0px", display: "flex", flexDirection: "column", alignItems: "right", justifyContent: "space-around"}}>
+              <Category category="تطوير"/>
+              <h1>المبادئ التوجيهية الكاملة لمطوري الويب 2023</h1>
+              <GeneralBox backgroundColor="#F1F2FD" width="80%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
+      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
+      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
+        <ProfileCircles image="/photo.jpg" backgroundColor="#E4E4E4" width="60px" height="50px" />
+      <div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center", width: "100%", height: "100%", marginRight: "10px"}}>
+        <h3 style={{color: "#000", fontSize: "16px", fontWeight: "bold"}}>أنس إبراهيم حلمي</h3>
+        <p style={{color: "gray", fontSize: "12px", fontWeight: "bold"}}>مبرمج تطبيقات</p>
+      </div>
+      </div>
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "50%", height: "100%"}}>
+<DateDisplay date={new Date()} style={{color: "#000", fontSize: "12px", fontWeight: "bold"}} className="date-display"/>
+</div>
+      </div>
+    </GeneralBox>
+            </div>
+            
+          </div>
+        </div>
       </div>
     </section>
 <Footer/>
