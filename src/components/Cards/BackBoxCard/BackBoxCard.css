@@ -1,7 +1,7 @@
 .back-box-card-container{
     position: relative;
-    width : 420px;
-    height : 500px;
+    width : 320px;
+    height : 400px;
     cursor: pointer;
 }
 
@@ -33,6 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
