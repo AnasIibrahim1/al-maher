@@ -1,7 +1,7 @@
 import React from 'react'
 import './BackCircles.css'
 
-export default function BackCircles({ width, height, style, content, rotationSpeed = 20}) {
+export default function BackCircles({ width, height, style, content, rotationSpeed = 20, image = ""}) {
   const containerStyle = {
     width: width,
     height: height,
@@ -11,6 +11,10 @@ export default function BackCircles({ width, height, style, content, rotationSpe
     backgroundColor: "white",
     width: "70%",
     height: "70%",
+    backgroundImage: `url(${image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
   };
 
   return (

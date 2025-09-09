@@ -26,6 +26,7 @@ import GeneralBox from '@/components/Boxes/GeneralBox/GeneralBox';
 import ProfileCircles from '@/components/Circles/ProfileCicles/ProfileCircles';
 import DateDisplay from '@/components/CardSpecialists/Date/Date';
 import BotCard from '@/components/Cards/BotCard/BotCard';
+import AdSkills from '@/components/AdSkills/AdSkills';
 
 
 export default function Home() {
@@ -432,6 +433,7 @@ export default function Home() {
     </section>
 
     {/* Ad Skills */}
+    <AdSkills />
 <Footer/>
     </>
 
