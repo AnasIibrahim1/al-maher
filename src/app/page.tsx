@@ -347,7 +347,14 @@ export default function Home() {
         </div>  
       } image="/People/man.jpg" backgroundColor="#4F5DE4" />
           </div>
+    </section>
 
+    {/* Latest Blog */}
+    <section style={{width: "100%", minHeight: "100vh", backgroundColor: "#fff", position: "relative", overflow:"hidden", marginTop: "100px"}}>
+    <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
+        <SmColoredTitle title="اخر الاخبار" color="#4F5DE4" alignItems="start" justifyContent="center" />
+        <HeaderPargraph style={{}} title="اخر الخبار و المقالات" color="#2A254D" alignItems="center" justifyContent="center" />
+      </div>
     </section>
 <Footer/>
     </>
