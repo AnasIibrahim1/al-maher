@@ -73,7 +73,11 @@ export default function AboutPage() {
     {/* Popular Course */}
     <section style={{width: "100%", position: "relative", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", margin:"100px 0px"}}>
       <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom:"50px"}}>
+      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", width: "100%", height: "100%"}}>
       <h4 style={{color: "#4F5DE4", fontSize: "24px", fontWeight: "bold", margin: "0px"}}>الدورات الأشهر</h4>
+      <img src="/Shapes/frame.svg" alt="" style={{transform: "rotate(180deg)", marginRight: "20px"}} />
+
+      </div>
         <HeaderPargraph title="الدورات الأشهر في هذا الشهر" color="#2A254D" alignItems="center" justifyContent="center" style={{margin:"0px"}}/>
       </div>
 
@@ -86,6 +90,16 @@ export default function AboutPage() {
       </Pagination>
     </section>
 
+
+    <section style={{width: "100%", position: "relative", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", margin:"100px 0px"}}>
+    <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom:"50px"}}>
+    <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", width: "100%", height: "100%"}}>
+      <h4 style={{color: "#4F5DE4", fontSize: "24px", fontWeight: "bold", margin: "0px"}}>فريقنا</h4>
+      <img src="/Shapes/frame.svg" alt="" style={{transform: "rotate(180deg)", marginRight: "20px"}} />
+      </div>
+      <HeaderPargraph title="ما هي تعليقات طلابنا" color="#2A254D" alignItems="center" justifyContent="center" style={{margin:"0px"}}/>
+      </div>
+    </section>
     </>
   );
 }
