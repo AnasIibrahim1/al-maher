@@ -1,4 +1,5 @@
 import DoubleCircles from "@/components/Circles/DoubleCircles/DoubleCircles";
+import DottedCard from "@/components/Cards/DottedCard/DottedCard";
 
 export default function AboutPage() {
   return (
@@ -40,8 +41,28 @@ export default function AboutPage() {
     </section>
 
     {/* Percentages */}
-    <section style={{width: "100%", height: "100vh", position: "relative", margin:"100px 0px"}}>
-
+    <section style={{width: "100%", height: "60vh", position: "relative", margin:"100px 0px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+      <img src="/Shapes/books.svg" alt="" style={{position: "absolute", bottom: "0", left: "0"}} />
+      <img src="/Shapes/lamb.svg" alt="" style={{position: "absolute", bottom: "0", right: "0"}} />
+      <img src="/Shapes/dab.svg" alt="" style={{position: "absolute", bottom: "40%", right: "0"}} />
+    <div style={{width: "80%", height: "50%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: "20px", margin: "0 auto",flexWrap: "wrap", borderRadius: "10px"}}>
+      <DottedCard content={<div>
+        <h1 style={{color: "#F57005", fontSize: "50px", fontWeight: "bold", margin:0, padding:0}}>88.9%</h1>
+        <p style={{color: "#000", fontSize: "24px", margin:0, padding:0}}>أفضل تقييم</p>
+      </div>} />
+      <DottedCard content={<div>
+        <h1 style={{color: "#F57005", fontSize: "50px", fontWeight: "bold", margin:0, padding:0}}>88.9%</h1>
+        <p style={{color: "#000", fontSize: "24px", margin:0, padding:0}}>أفضل تقييم</p>
+      </div>} />
+            <DottedCard content={<div>
+        <h1 style={{color: "#F57005", fontSize: "50px", fontWeight: "bold", margin:0, padding:0}}>88.9%</h1>
+        <p style={{color: "#000", fontSize: "24px", margin:0, padding:0}}>أفضل تقييم</p>
+      </div>} />
+            <DottedCard content={<div>
+        <h1 style={{color: "#F57005", fontSize: "50px", fontWeight: "bold", margin:0, padding:0}}>88.9%</h1>
+        <p style={{color: "#000", fontSize: "24px", margin:0, padding:0}}>أفضل تقييم</p>
+      </div>} />
+    </div>
     </section>
     </>
   );
