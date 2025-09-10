@@ -17,9 +17,9 @@ export default function AdSkills() {
         <img src="/vector.png" alt="" />
     </div>
     <div style={{display: "flex", flexDirection: "column", alignItems: "end", justifyContent: "center", width: "100%", height: "100%",transform: "translateX(5%)", position: "relative"}}>
-        <img src="/getur.png" alt="" style={{position: "absolute", top: "30%", left: "20%"}}  />
+        <img src="/getur.png" alt="" style={{position: "absolute", top: "30%", left: "20%", textAlign: "right"}}  />
         <h1 style={{color: "#fff", fontSize: "40px", fontWeight: "bold"}}>شهادة المهارات من الايدولرن</h1>
-        <div style={{position: "absolute", top: "60%", left: "29%"}}>
+        <div style={{}}>
         <General_Button backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="https://www.google.com">
         إبحث عن دروسك !
         </General_Button>
