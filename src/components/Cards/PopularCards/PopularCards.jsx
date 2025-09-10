@@ -1,5 +1,7 @@
 import ActionButtons from "@/components/Buttons/ActionButtons/ActionButtons";
-import Category from "@/components/CardSpecialists/Category/Category";
+import Hours from "@/components/CardSpecialists/Hours/Hours";
+import Stars from "@/components/CardSpecialists/Stars/Stars";
+import BusinessCard from "../BusinessCard/BusinessCard";
 
 export default function PopularCards() {
   return (
@@ -11,9 +13,18 @@ export default function PopularCards() {
 
         </div>   
 <div style={{width:"100%", height:"50%", display:"flex", flexDirection:"column", alignItems:"start", justifyContent:"start", padding:"20px"}}>
-<Category category="تطوير"/>
-<h1>المبادئ التوجيهية الكاملة لمطوري الويب 2023</h1>
+<div style={{marginBottom:"10px"}}>
+<Hours hour="10"/>
 </div>
-                      </div>
+<div style={{marginBottom:"10px"}}>
+<Stars rating={5} reviews={24} size="medium" />
+</div>
+<h4 style={{color:"#2A254D", fontSize:"20px", fontWeight:"bold"}}>المبادئ التوجيهية الكاملة لمطوري الويب 2023</h4>
+<div style={{width:"90%", height:"50%", display:"flex", flexDirection:"column", alignItems:"start", justifyContent:"start"}}>
+<BusinessCard type="salary" />
+
+</div>
+</div>
+    </div>
   )
 }

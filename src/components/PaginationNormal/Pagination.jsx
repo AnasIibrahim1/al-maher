@@ -16,7 +16,7 @@ export default function Pagination({ children }) {
       const itemWidth = screenWidth < 480 ? 200 : 310;
       const availableWidth = screenWidth - 60; // padding
       const items = Math.floor((availableWidth + gap) / (itemWidth + gap));
-      return Math.max(1, items);
+      return Math.max(1, items - 1);
     };
 
     const updateItemsPerPage = () => {

@@ -4,6 +4,7 @@ import DottedCard from "@/components/Cards/DottedCard/DottedCard";
 import HeaderPargraph from "@/components/Paragraphs/Header/HeaderPargraph";
 import Pagination from "@/components/PaginationNormal/Pagination";
 import PopularCards from "@/components/Cards/PopularCards/PopularCards";
+import "./style.css";
 
 export default function AboutPage() {
   return (
@@ -26,12 +27,12 @@ export default function AboutPage() {
             </div>
             <h2 style={{color: "#2A254D", fontSize: "32px", fontWeight: "bold",margin:0}}>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</h2>
             <p style={{color: "#697585", fontSize: "16px", margin:0}}>يستخدم قاموسًا يضم أكثر من 200 كلمة لاتينية، بالإضافة إلى مجموعة من هياكل الجمل النموذجية، لإنشاء لوريم إيبسوم الذي يبدو مميزًا، وبالتالي فإن لوريم إيبسوم الذي تم إنشاؤه يكون دائمًا خاليًا من التكرار</p>
-              <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "right", gap: "20px"}}>
+              <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "right", gap: "20px", margin:"20px 0"}}>
             <img src="/icons/goal.svg" alt="" />
             <h4 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold", marginLeft: "10px"}}>أهدافنا</h4>
           </div>
           <p style={{color: "#697585", fontSize: "16px", margin:0}}>يستخدم قاموسًا يضم أكثر من 200 كلمة لاتينية، بالإضافة إلى مجموعة من هياكل الجمل النموذجية، لإنشاء لوريم إيبسوم الذي يبدو مميزًا، وبالتالي فإن لوريم إيبسوم الذي تم إنشاؤه يكون دائمًا خاليًا من التكرار</p>
-          <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "right", gap: "20px"}}>
+          <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "right", gap: "20px", margin:"20px 0"}}>
             <img src="/icons/eye.svg" alt="" />
             <h4 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold", marginLeft: "10px"}}>رؤيتنا</h4>
           </div>
@@ -70,13 +71,17 @@ export default function AboutPage() {
     </section>
 
     {/* Popular Course */}
-    <section style={{width: "100%", height: "60vh", position: "relative", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-      <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+    <section style={{width: "100%", position: "relative", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", margin:"100px 0px"}}>
+      <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom:"50px"}}>
       <h4 style={{color: "#4F5DE4", fontSize: "24px", fontWeight: "bold", margin: "0px"}}>الدورات الأشهر</h4>
         <HeaderPargraph title="الدورات الأشهر في هذا الشهر" color="#2A254D" alignItems="center" justifyContent="center" style={{margin:"0px"}}/>
       </div>
 
       <Pagination>
+        <PopularCards/> 
+        <PopularCards/> 
+        <PopularCards/> 
+        <PopularCards/> 
         <PopularCards/> 
       </Pagination>
     </section>

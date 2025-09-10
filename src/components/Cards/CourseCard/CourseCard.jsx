@@ -5,6 +5,7 @@ import SalaryLessons from "@/components/CardSpecialists/SalaryLessons/SalaryLess
 import GeneralBox from "@/components/Boxes/GeneralBox/GeneralBox";
 import ProfileCircles from "@/components/Circles/ProfileCicles/ProfileCircles";
 import CourseCircles from "@/components/Circles/CoursesCircles/CoursesCircles";
+import BusinessCard from "../BusinessCard/BusinessCard";
 export default function CourseCard({title, image, price}) {
   return (
     <div style={{display: "flex", flexDirection: "column", justifyContent: "space-between", width: "450px", height : "300px",borderRadius: "10px", backgroundColor: "#fff", padding : "30px",zIndex: "10"}}>
@@ -17,21 +18,7 @@ export default function CourseCard({title, image, price}) {
 
 <Stars rating={5} reviews={24} size="medium" />
 <CourseHead title={title} />
-<GeneralBox backgroundColor="#F1F2FD" width="auto" height="auto"  padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
-      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
-      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
-        <ProfileCircles image="/photo.jpg" backgroundColor="#E4E4E4" width="60px" height="50px" />
-      <div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center", width: "100%", height: "100%", marginRight: "10px"}}>
-        <h3 style={{color: "#000", fontSize: "16px", fontWeight: "bold"}}>أنس إبراهيم حلمي</h3>
-        <p style={{color: "gray", fontSize: "12px", fontWeight: "bold"}}>مبرمج تطبيقات</p>
-      </div>
-      </div>
-      <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "50%", height: "100%"}}>
-<SalaryLessons salary={100} lessons={24} />
-
-</div>
-      </div>
-    </GeneralBox>
+<BusinessCard type="salary" />
     </div>
   )
 }
