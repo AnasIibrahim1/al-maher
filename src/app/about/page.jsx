@@ -1,11 +1,11 @@
 export default function AboutPage() {
   return (
-    <main style={{ padding: '40px 16px' }}>
-      <h1 style={{ fontSize: '28px', marginBottom: '12px' }}>من نحن</h1>
-      <p style={{ color: '#666' }}>
-        صفحة تعريفية عن المنصة. يمكنك تعديل هذا المحتوى لاحقًا.
-      </p>
-    </main>
+    <section style={{width: "100%", height: "60vh", backgroundColor: "#000", position: "relative"}}>
+      <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+        <h1 style={{color: "#fff", fontSize: "40px", fontWeight: "bold"}}>من نحن</h1>
+        <p style={{color: "#fff", fontSize: "16px"}}>الرئيسية / من نحن</p>
+      </div>
+    </section>
   );
 }
 
