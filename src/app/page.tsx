@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 'use client'
 import './page.css';  
-import Header from '../components/Header/Header';
 import HomeCircle from '../components/Circles/HomeCircle/HomeCircle';
 import General_Button from '@/components/Buttons/GeneralButtons/Buttons';
 import PaperCard from '@/components/Cards/PaperCard/PaperCard';
@@ -19,7 +18,6 @@ import Counter from '@/components/Counter/Counter';
 import InnerPaginationBox from '@/components/Boxes/PaginationBox/innerPaginationBox';
 import CircleWithBrush from '@/components/Circles/CircleWithBrush/CircleWithBrush';
 import BackBoxCard from '@/components/Cards/BackBoxCard/BackBoxCard';
-import Footer from '@/components/Footer/Footer';
 import SocialButtons from '@/components/Buttons/Solcial Buttons/SocialButtons';
 import Category from '@/components/CardSpecialists/Category/Category';
 import GeneralBox from '@/components/Boxes/GeneralBox/GeneralBox';
@@ -34,8 +32,6 @@ export default function Home() {
 
   return (
     <>
-    {/* Header Component */}
-    <Header />
 
     {/* Landing Section*/}
     <section className='landing-section' style={{width: "100%", height: "100vh", backgroundColor: "#4F5DE4", position: "relative", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap"}}>
@@ -434,7 +430,6 @@ export default function Home() {
 
     {/* Ad Skills */}
     <AdSkills />
-<Footer/>
     </>
 
   );

@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import './Header.css';
 
 export default function Header() {
@@ -52,11 +53,11 @@ export default function Header() {
         {/* Navigation Links */}
         <nav className={`header-nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-links">
-            <li><a href="#home">الرئيسية</a></li>
-            <li><a href="#about">من نحن</a></li>
+            <li><Link href="/">الرئيسية</Link></li>
+            <li><Link href="/about">من نحن</Link></li>
             <li><a href="#services">الخدمات</a></li>
             <li><a href="#courses">الدورات</a></li>
-            <li><a href="#contact">اتصل بنا</a></li>
+            <li><Link href="/contact">اتصل بنا</Link></li>
           </ul>
         </nav>
 
@@ -106,9 +107,9 @@ export default function Header() {
           </button>
 
           {/* Get in Touch Button */}
-          <button className="get-in-touch-btn">
+          <Link href="/contact" className="get-in-touch-btn">
             تواصل معنا
-          </button>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <button 
