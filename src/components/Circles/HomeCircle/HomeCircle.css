@@ -174,5 +174,25 @@
   .landing-section img{
     width: 20% !important;
   }
+  .floating-brush-1 {
+right : 0 !important;
+  }
+  
+  .floating-brush-2 {
+    left : 0 !important;
+  }
+  
+  .floating-brush-3 {
+bottom : 0 !important;
+  }
+  
+  .floating-brush-4 {
+top : 0 !important;
+right : 100px !important;
+  }
+  .floating-card{
+    bottom : 0 !important;
+    right : 0 !important;
+  }
 
 }

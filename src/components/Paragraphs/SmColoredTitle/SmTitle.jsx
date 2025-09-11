@@ -42,7 +42,8 @@ export default function SmColoredTitle({title, color, alignItems, justifyContent
         padding: "5px",
         borderRadius: "8px",
         position: "relative",
-        background: "transparent"
+        background: "transparent",
+        marginBottom: "10px"
       }}
     >
       {/* Bottom Border Animation */}

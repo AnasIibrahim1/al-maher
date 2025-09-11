@@ -6,6 +6,19 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 1300px) {
+.about-section-container{
+  flex-direction: column !important;
+}
+.about-section-container-left{
+  width: 100% !important;
+  margin-Bottom: 100px !important;
+}
+.about-section-container-right{
+  width: 100% !important;
+}
+}
+
 @media (max-width: 850px) {
   .landing-section{
     flex-wrap: wrap;
@@ -21,5 +34,7 @@
 .landing-section-buttons{
   flex-direction: column !important;
   align-items: start !important;
+}
+.about-section{
 }
 }
