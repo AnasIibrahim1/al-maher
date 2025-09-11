@@ -6,6 +6,7 @@ import HeaderPargraph from "@/components/Paragraphs/Header/HeaderPargraph";
 import Pagination from "@/components/PaginationNormal/Pagination";
 import PopularCards from "@/components/Cards/PopularCards/PopularCards";
 import FeedBackCards from "@/components/Cards/FeebackCards/FeedBackCards";
+import TeamMemberCard from "@/components/Circles/TeamMemberCard/TeamMemberCard";
 
 import "./style.css";
 
@@ -93,11 +94,11 @@ export default function AboutPage() {
       </Pagination>
     </section>
 
-
+    {/* Feedbacks */}
     <section style={{width: "100%", position: "relative", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", margin:"100px 0px"}}>
     <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom:"50px"}}>
     <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", width: "100%", height: "100%"}}>
-      <h4 style={{color: "#4F5DE4", fontSize: "24px", fontWeight: "bold", margin: "0px"}}>فريقنا</h4>
+      <h4 style={{color: "#4F5DE4", fontSize: "24px", fontWeight: "bold", margin: "0px"}}>اراء الطلاب</h4>
       <img src="/Shapes/frame.svg" alt="" style={{transform: "rotate(180deg)", marginRight: "20px"}} />
       </div>
       <HeaderPargraph title="ما هي تعليقات طلابنا" color="#2A254D" alignItems="center" justifyContent="center" style={{margin:"0px"}}/>
@@ -110,6 +111,39 @@ export default function AboutPage() {
           <FeedBackCards/>
           <FeedBackCards/>
         </PaginationFeedback>
+    </section>
+
+    {/* Our Team */}
+    <section style={{width: "100%", position: "relative", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", margin:"100px 0px"}}>
+    <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom:"50px"}}>
+    <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", width: "100%", height: "100%"}}>
+      <h4 style={{color: "#4F5DE4", fontSize: "24px", fontWeight: "bold", margin: "0px"}}>فريقنا</h4>
+      <img src="/Shapes/frame.svg" alt="" style={{transform: "rotate(180deg)", marginRight: "20px"}} />
+      </div>
+      <HeaderPargraph title="تعرف على فريقنا المتميز من الخبراء والمدربين" color="#2A254D" alignItems="center" justifyContent="center" style={{margin:"0px", maxWidth:"50%", textAlign:"center"}}/>
+      </div>
+
+      <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "30px", flexWrap: "wrap", position:"relative", marginBottom:"100px"}}>
+        <TeamMemberCard/>
+        <TeamMemberCard/>
+        <TeamMemberCard/>
+        <TeamMemberCard/>
+        <img src="/BackgroundsEffects/Base3.svg" alt="" style={{position:"absolute", bottom:"0", left:"0", zIndex:"-1"}} />
+        </div>
+    </section>
+
+
+    {/* Subscribe Section */}
+    <section style={{width: "100%", height:"50vh", position: "relative", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+      <div style={{width: "90%", height: "80%", borderRadius:"10px", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", position:"relative", backgroundColor:"#4F5DE4", overflow:"hidden"}}>
+        <img src="/Shapes/1.svg" alt="" style={{position:"absolute", bottom:"0", left:"0"}}/>
+        <img src="/Shapes/2.svg" alt="" style={{position:"absolute", right:"0", bottom:"0", height:"100%"}}/>
+        <h1 style={{color:"#fff", fontSize:"40px", fontWeight:"bold", margin:"0px", padding:"0px",zIndex:"1", textAlign:"right", maxWidth:"50%", marginRight:"20px"}}>اشترك في النشرة الإخبارية لدينا للحصول على التحديثات اليومية</h1>
+        <div style={{width:"50%", height:"50px", display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center", gap:"10px", zIndex:"1"}}>
+          <button style={{width:"160px", height:"100%", backgroundColor:"#F57005", color:"white", border:"none", borderRadius:"5px", fontSize:"20px", fontWeight:"bold", cursor:"pointer"}}>اشتراك</button>
+          <input type="email" placeholder="ادخل بريدك الالكتروني" style={{width:"50%", height:"100%", backgroundColor:"rgb(255, 255, 255)", border:"1px solid rgba(255,255,255,0.3)", borderRadius:"5px", padding:"0px 20px", color:"#000", fontSize:"16px"}} />
+        </div>
+      </div>
     </section>
     </>
   );
