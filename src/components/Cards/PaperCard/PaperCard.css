@@ -46,3 +46,9 @@
         box-shadow: 0 0 0 0 rgba(79, 93, 228, 0);
     }
 }
+
+@media (max-width: 1400px) {
+    .paper-card-content p{
+        font-size : 14px !important;
+    }
+}

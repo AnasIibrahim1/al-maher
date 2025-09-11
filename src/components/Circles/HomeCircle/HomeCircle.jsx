@@ -8,7 +8,10 @@ export default function HomeCircle({image, backgroundColor, width, height, anima
   };
 
   const innerStyle = {
-    backgroundColor: backgroundColor,
+    backgroundImage: `url(${image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
   };
 
   return (
@@ -17,7 +20,6 @@ export default function HomeCircle({image, backgroundColor, width, height, anima
       style={containerStyle}
     >
       <div className="home-circle-inner" style={innerStyle}>
-        <img src={image} alt="home-circle" className="home-circle-image"/>
       </div>
       
       {/* Overlay images positioned relative to outer container */}
@@ -36,8 +38,7 @@ export default function HomeCircle({image, backgroundColor, width, height, anima
                   <General_Button backgroundColor="#4F5DE4" color="#fff" padding="0px 0px" border="1px solid #fff" href="https://www.google.com">
                       اضافة الدرس
                   </General_Button>
-                  <div style={{position: "absolute", top: "-55px", right: "0", width: "55px", height: "55px", borderRadius: "50%", border: "10px solid #4F5DE4"}}>
-                    <img src="/photo.jpg" alt="photo" style={{width: "100%", height: "100%", borderRadius: "50%"}}/>
+                  <div style={{position: "absolute", top: "-55px", right: "0", width: "55px", height: "55px", borderRadius: "50%", border: "10px solid #4F5DE4", backgroundImage: `url("/photo.jpg")`, backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat"}}>
                   </div>
               </div>
           </div>    

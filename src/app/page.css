@@ -5,3 +5,21 @@
   padding: 0 ;
   box-sizing: border-box;
 }
+
+@media (max-width: 850px) {
+  .landing-section{
+    flex-wrap: wrap;
+    flex-direction: column !important;
+    align-items: start !important;
+    height: auto !important;
+    gap : 100px !important;
+  }
+  .landing-section-containers{
+    width: 100% !important;
+    height: auto !important;
+  }
+.landing-section-buttons{
+  flex-direction: column !important;
+  align-items: start !important;
+}
+}

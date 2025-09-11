@@ -55,3 +55,9 @@
     width: 100%;
     left: 0;
   }
+
+  @media (max-width: 1250px) {
+    .custom-button .button-text {
+      font-size: 12px !important;
+    }
+  }
