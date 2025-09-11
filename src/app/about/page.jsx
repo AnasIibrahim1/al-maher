@@ -1,9 +1,12 @@
 "use client"
 import DoubleCircles from "@/components/Circles/DoubleCircles/DoubleCircles";
 import DottedCard from "@/components/Cards/DottedCard/DottedCard";
+import PaginationFeedback from "@/components/PaginationFeedbacks/PaginationFeedback";
 import HeaderPargraph from "@/components/Paragraphs/Header/HeaderPargraph";
 import Pagination from "@/components/PaginationNormal/Pagination";
 import PopularCards from "@/components/Cards/PopularCards/PopularCards";
+import FeedBackCards from "@/components/Cards/FeebackCards/FeedBackCards";
+
 import "./style.css";
 
 export default function AboutPage() {
@@ -99,6 +102,14 @@ export default function AboutPage() {
       </div>
       <HeaderPargraph title="ما هي تعليقات طلابنا" color="#2A254D" alignItems="center" justifyContent="center" style={{margin:"0px"}}/>
       </div>
+        <PaginationFeedback>
+          <FeedBackCards/>  
+          <FeedBackCards/>
+          <FeedBackCards/>
+          <FeedBackCards/>
+          <FeedBackCards/>
+          <FeedBackCards/>
+        </PaginationFeedback>
     </section>
     </>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Stars.css';
 
-export default function Stars({ rating = 5, reviews = 24, size = 'medium' }) {
+export default function Stars({ rating = 5, reviews, size = 'medium' }) {
   const renderStars = () => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -30,9 +30,11 @@ export default function Stars({ rating = 5, reviews = 24, size = 'medium' }) {
       <div className="stars-wrapper">
         {renderStars()}
       </div>
-      <span className="reviews-text">
-        ({reviews} تقيمات)
-      </span>
+      {reviews && (
+        <span className="reviews-text">
+          ({reviews} تقيمات)
+        </span>
+      )}
     </div>
   );
 }
