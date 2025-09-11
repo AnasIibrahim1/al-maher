@@ -2,7 +2,8 @@ import GeneralBox from "@/components/Boxes/GeneralBox/GeneralBox";
 import ProfileCircles from "@/components/Circles/ProfileCicles/ProfileCircles";
 import DateDisplay from "@/components/CardSpecialists/Date/Date";
 import SalaryLessons from "@/components/CardSpecialists/SalaryLessons/SalaryLessons";
-export default function BusinessCard({type}) {
+import ActionButtons from "@/components/Buttons/ActionButtons/ActionButtons";
+export default function BusinessCard({type, actionButton = {}, href = ""}) {
   return (
 <GeneralBox backgroundColor="#F1F2FD" width="100%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
@@ -12,11 +13,44 @@ export default function BusinessCard({type}) {
         <h3 style={{color: "#000", fontSize: "16px", fontWeight: "bold"}}>أنس إبراهيم حلمي</h3>
         <p style={{color: "gray", fontSize: "12px", fontWeight: "bold"}}>مبرمج تطبيقات</p>
       </div>
-      <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "40%", height: "100%"}}>
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "40%", height: "100%", position:"relative"}}>
         {type === "date" ? (
           <DateDisplay date={new Date()} style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}} className="date-display"/>
         ) : type === "salary" ? (
           <SalaryLessons salary={100} lessons={24} />
+        ) : type === "button" ? (
+         <a href={href}>
+           <button
+          style={{
+            backgroundColor: "transparent", 
+            borderRadius: "50%", 
+            width: "40px", 
+            height: "40px", 
+            display: "flex", 
+            alignItems: "center", 
+            justifyContent: "center", 
+            border:"1px solid #F57005", 
+            color:"#000",
+            transition: "all 0.3s ease",
+            cursor: "pointer"
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#F57005";
+            e.currentTarget.style.color = "#fff";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "transparent";
+            e.currentTarget.style.color = "#000";
+          }}
+          onClick={actionButton}
+          aria-label="Previous page"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12,5 5,12 12,19"></polyline>
+            </svg>
+          </button>
+         </a>
         ) : null}
 </div>
       </div>

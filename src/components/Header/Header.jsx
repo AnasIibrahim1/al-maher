@@ -55,6 +55,7 @@ export default function Header() {
           <ul className="nav-links">
             <li><Link href="/">الرئيسية</Link></li>
             <li><Link href="/about">من نحن</Link></li>
+            <li><Link href="/blog">الأخبار</Link></li>
             <li><a href="#services">الخدمات</a></li>
             <li><a href="#courses">الدورات</a></li>
             <li><Link href="/contact">اتصل بنا</Link></li>
