@@ -229,13 +229,13 @@ export default function Home() {
     </section>
 
     {/* Ad Section */}
-    <section style={{width: "100%", backgroundColor: "#4F5DE4", position: "relative", margin: "100px 0px", height: "auto", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap", overflow:"hidden"}}>
+    <section className="ad-section" style={{width: "100%", backgroundColor: "#4F5DE4", position: "relative", margin: "100px 0px", height: "auto", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap", overflow:"hidden"}}>
     <img src="/squares.svg" alt="ad" style={{width: "50%", height: "100%", position: "absolute", top: 0, right: "-200px", zIndex: "0", opacity: "0.2"}} />
     <img src="/diamond.svg" alt="ad" style={{width: "50%", height: "100%", position: "absolute", top: 0, left: "-200px", zIndex: "0", opacity: "1"}} />
     <img src="/dotted white.svg" alt="ad" style={{width: "6%", height: "100%", position: "absolute", top: "20%", left: "50%", zIndex: "0", opacity: "1"}} />
     
 
-    <div style={{width: "50%", height: "100%", position: "relative", zIndex:"10", display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "space-around", padding: "100px 180px"}}>
+    <div className="ad-section-left" style={{width: "50%", height: "100%", position: "relative", zIndex:"10", display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "space-around", padding: "100px 60px"}}>
         <HeaderPargraph title="إنشىء حسابك المجاني الأن !"  color="#fff"  alignItems="right" justifyContent="start" style={{marginBottom:"20px"}}/>
         <PaperCard content={<div>
           <p style={{color: "#fff", fontSize: "16px", textAlign: "justify", padding: "20px"}}>ولذلك فإن نص لوريم إيبسوم الذي تم إنشاؤه يكون دائمًا خاليًا من التكرار أو الفكاهة المحقونة أو غير المميزة.</p>
@@ -243,7 +243,7 @@ export default function Home() {
         <General_Button style={{marginTop:"20px"}} backgroundColor="#F57005" color="white" padding="10px 20px" border="none" href="https://www.google.com">إنضم الأن</General_Button>
       </div>
 
-      <div style={{width: "50%", height: "100%", position: "relative", zIndex:"10", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+      <div className="ad-section-right" style={{width: "50%", height: "100%", position: "relative", zIndex:"10", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
         <BackCircles width="500px" height="500px" style={{position: "absolute", top: "0", left: "0", zIndex: "1"}} content={<Counter/>} />
       </div>
 
@@ -251,20 +251,20 @@ export default function Home() {
     </section>
 
     {/* Testimonials */}
-    <section style={{width: "100%", backgroundColor: "#fff", position: "relative", overflow:"hidden", marginTop: "100px"}}>
-      <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
+    <section style={{width: "100%", backgroundColor: "#fff", position: "relative", marginTop: "100px"}}>
+      <div style={{width: "80%", textAlign: "center", margin : "20px auto 80px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
         <SmColoredTitle title="التعليقات" color="#4F5DE4" alignItems="start" justifyContent="center" />
         <HeaderPargraph style={{}} title="التعليقات على الدورات" color="#2A254D" alignItems="center" justifyContent="center" />
       </div>
 
-      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", width: "100%", height: "80vh", position: "relative", flexWrap: "wrap"}}>
+      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", width: "100%", position: "relative", flexWrap: "wrap"}}>
         <InnerPaginationBox data={data} style={{}} />
 <CircleWithBrush src="/photo.jpg" position="relative" style={{}} />
 </div>
     </section>
 
     {/* Team Members */}
-    <section style={{width: "100%", minHeight: "80vh", backgroundColor: "#F1F2FD", position: "relative", overflow:"hidden", marginTop: "100px"}}>
+    <section style={{width: "100%", backgroundColor: "#F1F2FD", position: "relative", overflow:"hidden", marginTop: "100px"}}>
       <img src="/BackgroundsEffects/coverd.svg" alt="" style={{width: "100%", height: "100%%", position: "absolute", top: 0, left: 0, zIndex:"0", opacity: "0.5"}} />
       <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
         <SmColoredTitle title="اعضاء الفريق" color="#4F5DE4" alignItems="start" justifyContent="center" />
@@ -355,7 +355,7 @@ export default function Home() {
     </section>
 
     {/* Latest Blog */}
-    <section style={{width: "100%", minHeight: "100vh", backgroundColor: "#fff", position: "relative", overflow:"hidden", marginTop: "100px"}}>
+    <section style={{width: "100%", backgroundColor: "#fff", position: "relative", overflow:"hidden", marginTop: "100px"}}>
     <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
         <SmColoredTitle title="اخر الاخبار" color="#4F5DE4" alignItems="start" justifyContent="center" />
         <HeaderPargraph style={{}} title="اخر الخبار و المقالات" color="#2A254D" alignItems="center" justifyContent="center" />
@@ -381,7 +381,7 @@ export default function Home() {
   } />
  </div>
 </div>
-        <div style={{display: "flex", flexDirection: "column", gap: "10px", width:"50%", minHeight: "300px", height: "100%"}}>
+        <div className="blog-section" style={{display: "flex", flexDirection: "column", gap: "10px", width:"50%", minHeight: "300px", height: "100%"}}>
           <div style={{width: "100%", flex: 1, backgroundColor: "#152B4A", borderRadius: "10px 15px 15px 10px", minHeight: "200px"}}>
             <div style={{width:"70%", minHeight: "300px", backgroundColor: "#fff", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)", borderRadius: "0px 10px 10px 0px", display: "flex", flexDirection: "column", alignItems: "right", justifyContent: "space-around",  padding: "20px"}}>
               <Category category="تطوير"/>

@@ -282,3 +282,24 @@
     font-size: 16px;
   }
 }
+
+@media (max-width: 550px) {
+.author-info{
+  flex-direction: column !important;
+  align-items: start !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+.author-info .author-info-left{
+  width : 50% !important;
+}
+.pagination-controls2{
+  justify-content: start !important;
+}
+.author-name{
+  font-size: 14px !important;
+}
+.author-title{
+  font-size: 12px !important; 
+}
+}

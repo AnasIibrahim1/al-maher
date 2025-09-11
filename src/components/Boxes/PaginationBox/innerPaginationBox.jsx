@@ -38,7 +38,7 @@ export default function InnerPaginationBox({ data = [], width = "800px", style }
       <div className="pagination-content2" style={{marginTop: "100px"}} key={`content-${currentIndex}`}>
         <p className="opinion-text" style={{textAlign: "justify", maxWidth: "600px", marginBottom: "40px"}}>{currentItem.text}</p>
         <div className="author-info">
-<div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "start", width: "40%"}}>
+<div className="author-info-left" style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "start", width: "40%"}}>
 <h3 className="author-name">{currentItem.name}</h3>
 <p className="author-title">{currentItem.title}</p>
 </div>

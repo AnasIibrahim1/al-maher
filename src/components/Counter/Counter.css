@@ -92,3 +92,37 @@
   opacity: 0.9;
 }
 
+@media (max-width: 800px) {
+  .counter-title h2{
+  font-size : 16px !important;
+}
+.counter-circle {
+  width: 50px;
+  height: 50px; 
+}
+.counter-number {
+  font-size : 16px !important;
+}
+.counter-label {
+  font-size : 14px !important;
+}
+}
+
+@media (max-width: 500px) {
+  .counter-title h2{
+  font-size : 12px !important;
+}
+.counter-column {
+  gap : 10px !important;
+}
+.counter-circle {
+  width: 40px;
+  height: 40px; 
+}
+.counter-number {
+  font-size : 14px !important;
+}
+.counter-label {
+  font-size : 12px !important;
+}
+}

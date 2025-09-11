@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './style.css'
 // Renders date in format: 25 Mar. 2023
 // Props:
 // - date: string | number | Date (optional). Defaults to today when omitted.
