@@ -20,7 +20,7 @@ export default function PopularCards() {
 <Stars rating={5} reviews={24} size="medium" />
 </div>
 <h4 style={{color:"#2A254D", fontSize:"20px", fontWeight:"bold"}}>المبادئ التوجيهية الكاملة لمطوري الويب 2023</h4>
-<div style={{width:"90%", height:"50%", display:"flex", flexDirection:"column", alignItems:"start", justifyContent:"start"}}>
+<div style={{width:"100%", height:"50%", display:"flex", flexDirection:"column", alignItems:"start", justifyContent:"start"}}>
 <BusinessCard type="salary" />
 
 </div>
