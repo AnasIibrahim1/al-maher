@@ -1,13 +1,17 @@
 'use client'
+import { use } from 'react';
 import BlogDetailsCard from "@/components/Cards/BlogDetailsCard/BlogDetailsCard";
 import BlogSidebar from "@/components/Sidebar/BlogSidebar/BlogSidebar";
 import { getBlogPostById, getRelatedPosts } from "@/BlogData/blogPosts";
 import "./style.css";
 
 export default function BlogDetails({ params }) {
+  // Unwrap params using React.use()
+  const resolvedParams = use(params);
+  
   // Get blog data from the BlogData folder
-  const blogData = getBlogPostById(params.id);
-  const relatedPosts = getRelatedPosts(params.id, 3);
+  const blogData = getBlogPostById(resolvedParams.id);
+  const relatedPosts = getRelatedPosts(resolvedParams.id, 3);
   
   // If blog post not found, show 404 or redirect
   if (!blogData) {
