@@ -1,5 +1,6 @@
 'use client'
 import BlogDetailsCard from "@/components/Cards/BlogDetailsCard/BlogDetailsCard";
+import BlogSidebar from "@/components/Sidebar/BlogSidebar/BlogSidebar";
 import { getBlogPostById, getRelatedPosts } from "@/BlogData/blogPosts";
 import "./style.css";
 
@@ -30,16 +31,24 @@ export default function BlogDetails({ params }) {
 
       {/* Blog Details Section */}
       <section style={{width: "100%", position: "relative", margin:"100px 0px", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-        <div style={{width: "80%", height: "100%", margin:"0 auto"}}>
-          <BlogDetailsCard 
-            title={blogData.title}
-            category={blogData.category}
-            date={blogData.date}
-            image={blogData.image}
-            description={blogData.description}
-            author={blogData.author}
-            readTime={blogData.readTime}
-          />
+        <div style={{width: "90%", height: "100%", margin:"0 auto", display: "flex", flexDirection: "row", gap: "40px", alignItems: "flex-start"}}>
+          {/* Main Blog Content */}
+          <div style={{flex: "1", minWidth: "0"}}>
+            <BlogDetailsCard 
+              title={blogData.title}
+              category={blogData.category}
+              date={blogData.date}
+              image={blogData.image}
+              description={blogData.description}
+              author={blogData.author}
+              readTime={blogData.readTime}
+            />
+          </div>
+
+          {/* Blog Sidebar */}
+          <div style={{flex: "0 0 350px"}}>
+            <BlogSidebar />
+          </div>
         </div>
       </section>
     </>

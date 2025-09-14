@@ -6,8 +6,50 @@
     direction: rtl;
 }
 
+/* Blog Layout Styles */
+.blog-main-layout {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.blog-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.blog-sidebar-container {
+  flex: 0 0 350px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .blog-main-layout {
+    gap: 30px;
+  }
+  
+  .blog-sidebar-container {
+    flex: 0 0 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-main-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .blog-sidebar-container {
+    flex: none;
+    width: 100%;
+  }
+}
+
 @media (max-width: 450px) {
-    .blog-section-item{
-        width: 320px !important;
-    }
+  .blog-section-item {
+    width: 320px !important;
+  }
 }

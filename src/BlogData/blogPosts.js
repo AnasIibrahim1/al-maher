@@ -145,6 +145,19 @@ export const categories = [
   { id: 5, name: "أداء", color: "#ffc107", count: 1 }
 ];
 
+// Calculate actual counts from blog posts
+export const getCategoryCounts = () => {
+  const counts = {};
+  blogPosts.forEach(post => {
+    counts[post.category] = (counts[post.category] || 0) + 1;
+  });
+  
+  return categories.map(category => ({
+    ...category,
+    count: counts[category.name] || 0
+  }));
+};
+
 // Helper Functions
 export const getBlogPostById = (id) => {
   return blogPosts.find(post => post.id === parseInt(id));
