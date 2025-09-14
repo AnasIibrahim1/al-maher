@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 10px;
 }
 
 .pagination-pages-content-wrapper {
@@ -13,11 +13,11 @@
 }
 
 .pagination-pages-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 30px;
-  width: 100%;
-  max-width: 1200px;
+  justify-content: center;
+  max-width: 1400px;
   transition: opacity 0.3s ease;
 }
 
@@ -26,9 +26,13 @@
 }
 
 .pagination-pages-item {
+  width: 420px;
+  height: 480px;
+  margin-bottom: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .pagination-pages-numbers {
@@ -42,7 +46,7 @@
 .pagination-pages-btn {
   width: 40px;
   height: 40px;
-  border: 2px solid #4F5DE4;
+  border: 2px solid #f1f1f1;
   background: transparent;
   border-radius: 8px;
   display: flex;
@@ -50,22 +54,22 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #4F5DE4;
+  color: #000000;
   font-size: 14px;
   font-weight: 600;
 }
 
 .pagination-pages-btn:hover:not(.disabled):not(.dots) {
-  background: #4F5DE4;
+  background: #F57005;
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(79, 93, 228, 0.3);
 }
 
 .pagination-pages-btn.active {
-  background: #4F5DE4;
+  background: #F57005;
   color: white;
-  border-color: #4F5DE4;
+  border-color: none;
 }
 
 .pagination-pages-btn.disabled {
@@ -94,17 +98,22 @@
 }
 
 /* Responsive design */
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .pagination-pages-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 900px) {
+  
+  .pagination-pages-grid {
+    gap: 20px;
   }
 }
 
 @media (max-width: 768px) {
   .pagination-pages-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 15px;
   }
   
   .pagination-pages-numbers {
@@ -120,8 +129,7 @@
 
 @media (max-width: 480px) {
   .pagination-pages-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 10px;
   }
   
   .pagination-pages-numbers {

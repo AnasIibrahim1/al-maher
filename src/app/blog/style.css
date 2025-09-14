@@ -5,3 +5,9 @@
     font-family: 'Cairo', sans-serif !important;
     direction: rtl;
 }
+
+@media (max-width: 450px) {
+    .blog-section-item{
+        width: 320px !important;
+    }
+}

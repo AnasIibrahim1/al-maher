@@ -8,13 +8,35 @@ export default function PaginationPages({ children }) {
   const [itemsPerPage, setItemsPerPage] = useState(6);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Calculate items per page based on screen width
+  // Calculate items per page based on screen width and item dimensions
   useEffect(() => {
     const calculateItemsPerPage = () => {
       const screenWidth = window.innerWidth;
-      if (screenWidth < 768) return 2; // 2 items per page on mobile
-      if (screenWidth < 1200) return 4; // 4 items per page on tablet
-      return 6; // 6 items per page on desktop (3 rows x 2 columns)
+      const containerPadding = 60; // 30px padding on each side
+      const gap = 30;
+      
+      if (screenWidth < 768) {
+        // Small screens: 200px items
+        const itemWidth = 200;
+        const availableWidth = screenWidth - containerPadding;
+        const itemsPerRow = Math.floor((availableWidth + gap) / (itemWidth + gap));
+        const rowsPerPage = 2; // Show 2 rows on mobile
+        return Math.max(1, itemsPerRow * rowsPerPage);
+      } else if (screenWidth < 900) {
+        // Medium screens: 350px items
+        const itemWidth = 350;
+        const availableWidth = screenWidth - containerPadding;
+        const itemsPerRow = Math.floor((availableWidth + gap) / (itemWidth + gap));
+        const rowsPerPage = 2;
+        return Math.max(1, itemsPerRow * rowsPerPage);
+      } else {
+        // Large screens: 420px items
+        const itemWidth = 420;
+        const availableWidth = screenWidth - containerPadding;
+        const itemsPerRow = Math.floor((availableWidth + gap) / (itemWidth + gap));
+        const rowsPerPage = 2; // Show 2 rows on desktop
+        return Math.max(1, itemsPerRow * rowsPerPage);
+      }
     };
 
     const updateItemsPerPage = () => {
@@ -116,7 +138,7 @@ export default function PaginationPages({ children }) {
             aria-label="Previous page"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="15,18 9,12 15,6"></polyline>
+              <polyline points="9,18 15,12 9,6"></polyline>
             </svg>
           </button>
           
@@ -139,8 +161,9 @@ export default function PaginationPages({ children }) {
             aria-label="Next page"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <polyline points="9,18 15,12 9,6"></polyline>
+              <polyline points="15,18 9,12 15,6"></polyline>
             </svg>
+            
           </button>
         </div>
       )}
