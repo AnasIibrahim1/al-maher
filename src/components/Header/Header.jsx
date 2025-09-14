@@ -15,12 +15,35 @@ export default function Header() {
       setIsScrolled(window.scrollY > 10);
     };
 
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && !event.target.closest('.header-container')) {
+        setIsMenuOpen(false);
+      }
+      if (isSearchOpen && !event.target.closest('.search-container')) {
+        setIsSearchOpen(false);
+      }
+    };
+
+    const handleBodyOverflow = () => {
+      if (isMenuOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'unset';
+      }
+    };
+
     handleScroll();
+    handleBodyOverflow();
+    
     window.addEventListener('scroll', handleScroll, { passive: true });
+    document.addEventListener('click', handleClickOutside);
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('click', handleClickOutside);
+      document.body.style.overflow = 'unset';
     };
-  }, []);
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -53,16 +76,16 @@ export default function Header() {
         {/* Navigation Links */}
         <nav className={`header-nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-links">
-            <li><Link href="/">الرئيسية</Link></li>
-            <li><Link href="/about">من نحن</Link></li>
-            <li><Link href="/blog">الأخبار</Link></li>
-            <li><Link href="/contact">اتصل بنا</Link></li>
+            <li><Link href="/" onClick={toggleMenu}>الرئيسية</Link></li>
+            <li><Link href="/about" onClick={toggleMenu}>من نحن</Link></li>
+            <li><Link href="/blog" onClick={toggleMenu}>الأخبار</Link></li>
+            <li><Link href="/contact" onClick={toggleMenu}>اتصل بنا</Link></li>
             {/* Mobile Auth Buttons */}
             <div className="mobile-auth-buttons">
-              <Link href="https://admin.al-maher.net/ar/login" className="mobile-signin-btn">
+              <Link href="https://admin.al-maher.net/ar/login" className="mobile-signin-btn" onClick={toggleMenu}>
                 تسجيل الدخول
               </Link>
-              <Link href="/register" className="mobile-signup-btn">
+              <Link href="/register" className="mobile-signup-btn" onClick={toggleMenu}>
                 إنشاء حساب
               </Link>
             </div>

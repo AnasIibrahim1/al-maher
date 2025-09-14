@@ -7,22 +7,21 @@ export default function ContactPage() {
   return (
       <>
           {/* Head Section */}
-    <section style={{width: "100%", height: "60vh", backgroundImage: "url('/photo.jpg')", backgroundSize: "cover", backgroundPosition: "center", position: "relative"}}>
-      <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-        <h1 style={{color: "#fff", fontSize: "40px", fontWeight: "bold"}}>تواصل معنا</h1>
-        <p style={{color: "#fff", fontSize: "16px"}}>الرئيسية / تواصل معنا</p>
+    <section className="contact-hero-section">
+      <div className="contact-hero-content">
+        <h1 className="contact-hero-title">تواصل معنا</h1>
+        <p className="contact-hero-breadcrumb">الرئيسية / تواصل معنا</p>
       </div>
     </section>
 
 
     {/* Contact us Section */}
-    <div style={{display:"flex", flexDirection: "row", alignItems: "center", justifyContent: "center", margin:"100px 0px 50px 0px"}}>
-    <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom:"50px"}}>
-      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", width: "100%", height: "100%"}}>
-      <h4 style={{color: "#4F5DE4", fontSize: "24px", fontWeight: "bold", margin: "0px"}}>تواصل معنا</h4>
-      <img src="/Shapes/frame.svg" alt="" style={{transform: "rotate(180deg)", marginRight: "20px"}} />
-
-      </div>
+    <div className="contact-intro-section">
+      <div className="contact-intro-container">
+        <div className="contact-intro-header">
+          <h4 className="contact-intro-title">تواصل معنا</h4>
+          <img src="/Shapes/frame.svg" alt="" className="contact-intro-shape" />
+        </div>
         <HeaderPargraph title="يسعدنا تواصلكم معنا" color="#2A254D" alignItems="center" justifyContent="center" style={{margin:"0px"}}/>
       </div>
     </div>
