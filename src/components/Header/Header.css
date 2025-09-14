@@ -181,25 +181,59 @@
   transform: scale(1.05);
 }
 
-/* Profile */
-.profile-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  color: white;
+/* Authentication Buttons */
+.auth-buttons {
   display: flex;
+  gap: 12px;
   align-items: center;
-  justify-content: center;
 }
 
-.profile-btn:hover {
-  border-color: #FF7200;
-  color: #FF7200;
-  transform: scale(1.1);
-  background: rgba(255, 114, 0, 0.1);
+@media (max-width: 550px) {
+  .auth-buttons {
+    display: none;
+  }
+}
+
+.signin-btn {
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.signin-btn:hover {
+  background: #fff;
+  color: #2A254D;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.signup-btn {
+  text-decoration: none;
+  background: #4F5DE4;
+  border: 2px solid #4F5DE4;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.signup-btn:hover {
+  background: #3A47C7;
+  border-color: #3A47C7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(79, 93, 228, 0.4);
 }
 
 /* Get in Touch Button */
@@ -221,7 +255,7 @@
 
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
-  display: none;
+  display: flex;
   background: none;
   border: none;
   cursor: pointer;
@@ -276,10 +310,13 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .header-container {
     padding: 0 15px;
     height: 60px;
+  }
+  .mobile-auth-buttons-divider{
+    visibility: visible;
   }
   
   .header-logo img {
@@ -319,8 +356,52 @@
     display: block;
   }
   
-  .mobile-menu-toggle {
-    display: flex;
+  .mobile-auth-buttons {
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+  }
+  
+  .mobile-signin-btn,
+  .mobile-signup-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: block;
+  }
+  
+  .mobile-signin-btn {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  
+  .mobile-signin-btn:hover {
+    background: #fff;
+    color: #2A254D;
+  }
+  
+  .mobile-signup-btn {
+    background: #4F5DE4;
+    border: 2px solid #4F5DE4;
+    color: #fff;
+  }
+  
+  .mobile-signup-btn:hover {
+    background: #3A47C7;
+    border-color: #3A47C7;
+  }
+}
+
+/* Hide mobile auth buttons on larger screens */
+@media (min-width: 551px) {
+  .mobile-auth-buttons {
+    display: none !important;
   }
   
   .get-in-touch-btn {
@@ -339,6 +420,7 @@
   .header-container {
     padding: 0 10px;
   }
+
   
   .header-logo img {
     height: 30px;
@@ -352,6 +434,16 @@
     padding: 6px 10px;
     font-size: 11px;
     border-radius: 6px;
+  }
+  
+  .auth-buttons {
+    gap: 8px;
+  }
+  
+  .signin-btn,
+  .signup-btn {
+    padding: 8px 12px;
+    font-size: 12px;
   }
   
   .search-dropdown {
@@ -388,5 +480,29 @@
 @media (max-width: 768px) {
   .search-dropdown {
     left: -30px;
+  }
+  
+  .auth-buttons {
+    gap: 6px;
+  }
+  
+  .signin-btn,
+  .signup-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .signin-btn,
+  .signup-btn {
+    padding: 5px 8px;
+    font-size: 10px;
+    width: 100%;
   }
 }

@@ -9,7 +9,13 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="ar" dir="rtl">
       
-      <body style={{ fontFamily: 'Cairo, sans-serif', margin: 0, padding: 0, boxSizing: 'border-box' }}>
+      <body style={{ 
+        fontFamily: 'Cairo, sans-serif', 
+        margin: 0, 
+        padding: 0, 
+        boxSizing: 'border-box',
+        overflowX: 'hidden'
+      }}>
         <Header />
         {children}
         <Footer/>

@@ -35,7 +35,7 @@ export default function BlogSidebar() {
       {/* Search Container */}
       <div className="sidebar-section">
         <h3 className="sidebar-title">البحث</h3>
-        <div className="search-container">
+        <div className="search-container-blog">
           <input
             type="text"
             placeholder="ابحث في المدونة..."

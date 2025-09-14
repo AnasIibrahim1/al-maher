@@ -56,9 +56,16 @@ export default function Header() {
             <li><Link href="/">الرئيسية</Link></li>
             <li><Link href="/about">من نحن</Link></li>
             <li><Link href="/blog">الأخبار</Link></li>
-            <li><a href="#services">الخدمات</a></li>
-            <li><a href="#courses">الدورات</a></li>
             <li><Link href="/contact">اتصل بنا</Link></li>
+            {/* Mobile Auth Buttons */}
+            <div className="mobile-auth-buttons">
+              <Link href="https://admin.al-maher.net/ar/login" className="mobile-signin-btn">
+                تسجيل الدخول
+              </Link>
+              <Link href="/register" className="mobile-signup-btn">
+                إنشاء حساب
+              </Link>
+            </div>
           </ul>
         </nav>
 
@@ -99,13 +106,15 @@ export default function Header() {
             )}
           </div>
 
-          {/* Profile Icon */}
-          <button className="profile-btn" aria-label="Profile">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-          </button>
+          {/* Authentication Buttons */}
+          <div className="auth-buttons">
+            <Link href="https://admin.al-maher.net/ar/login" className="signin-btn" aria-label="Sign In">
+              تسجيل الدخول
+            </Link>
+            <Link href="/register" className="signup-btn" aria-label="Sign Up">
+              إنشاء حساب
+            </Link>
+          </div>
 
           {/* Get in Touch Button */}
           <Link href="/contact" className="get-in-touch-btn">
