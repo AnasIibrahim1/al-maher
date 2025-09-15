@@ -33,15 +33,14 @@ export default function BlogSidebar() {
   return (
     <div className="blog-sidebar">
       {/* Search Container */}
-      <div className="sidebar-section">
-        <h3 className="sidebar-title">البحث</h3>
+
         <div className="search-container-blog">
           <input
             type="text"
             placeholder="ابحث في المدونة..."
             value={searchTerm}
             onChange={handleSearch}
-            className="search-input"
+            className="search-input-blog"
           />
           <div className="search-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -50,25 +49,20 @@ export default function BlogSidebar() {
             </svg>
           </div>
         </div>
-      </div>
 
       {/* Categories Container */}
       <div className="sidebar-section">
-        <h3 className="sidebar-title">الفئات</h3>
+        <h3 className="sidebar-title sidebar-title--dotted">الفئات</h3>
         <div className="categories-container">
           {categories.map((category) => (
             <button
               key={category.id}
-              className={`category-item ${selectedCategory === category.name ? 'active' : ''}`}
+              className={`category-item category-item--clean ${selectedCategory === category.name ? 'active' : ''}`}
               onClick={() => handleCategoryClick(category.name)}
-              style={{ borderColor: category.color }}
+              aria-pressed={selectedCategory === category.name}
             >
-              <span 
-                className="category-dot" 
-                style={{ backgroundColor: category.color }}
-              ></span>
+              <span className="category-chevron">»</span>
               <span className="category-name">{category.name}</span>
-              <span className="category-count">({category.count})</span>
             </button>
           ))}
         </div>

@@ -56,12 +56,6 @@ export default function BlogDetailsCard({
       <div className="blog-details-description">
         {description}
       </div>
-
-      {/* Actions */}
-      <div className="blog-details-actions">
-        <BusinessCard type="button" actionButton={() => window.print()} />
-        <BusinessCard type="button" actionButton={() => window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}`)} />
-      </div>
     </div>
   );
 }
