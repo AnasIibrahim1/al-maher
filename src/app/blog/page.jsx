@@ -25,7 +25,7 @@ export default function Blog() {
           {blogPosts.map((post) => (
             <Link key={post.id} href={`/blog/${post.id}`} className="blog-link">
               <div className="blog-section-item" style={{width:"420px", height:"480px", backgroundImage: `url('${post.image}')`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "12px", position: "relative", marginBottom: "150px", cursor: "pointer"}}>
-                <div style={{width:"90%", backgroundColor: "white", position: "absolute", bottom: "-50px", left: "50%", transform: "translateX(-50%)", borderRadius: "12px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.2)", padding: "20px"}}>
+                <div style={{width:"90%", height:"200px", backgroundColor: "white", position: "absolute", bottom: "-50px", left: "50%", transform: "translateX(-50%)", borderRadius: "12px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.2)", padding: "20px"}}>
                   <div style={{width:"100%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                     <Category category={post.category} />
                     <DateDisplay date={post.date} style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}} className="date-display"/>
