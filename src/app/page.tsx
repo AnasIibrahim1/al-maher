@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-'use client'
-import './page.css';  
+'use client'  
 import HomeCircle from '../components/Circles/HomeCircle/HomeCircle';
 import General_Button from '@/components/Buttons/GeneralButtons/Buttons';
 import PaperCard from '@/components/Cards/PaperCard/PaperCard';
