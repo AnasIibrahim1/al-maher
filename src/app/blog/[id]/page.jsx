@@ -4,6 +4,7 @@ import BlogDetailsCard from "@/components/Cards/BlogDetailsCard/BlogDetailsCard"
 import BlogSidebar from "@/components/Sidebar/BlogSidebar/BlogSidebar";
 import { getBlogPostById, getRelatedPosts } from "@/BlogData/blogPosts";
 import "./style.css";
+import GeneralButton from '@/components/Buttons/GeneralButtons/Buttons';
 
 export default function BlogDetails({ params }) {
   // Unwrap params using React.use()
@@ -47,6 +48,48 @@ export default function BlogDetails({ params }) {
               author={blogData.author}
               readTime={blogData.readTime}
             />
+
+            {/* Comments Section */}
+            <div className="comments-section">
+              <h3 className="comments-title">2 تعليقات</h3>
+
+              <div className="comment-item">
+                <div className="comment-avatar" aria-hidden="true"></div>
+                <div className="comment-content">
+                  <h4 className="comment-author">David Shon</h4>
+                  <p className="comment-text">
+                    Nam vel lacus eu nisl bibendum accumsan vitae vitae nibh. Nam nec eros id magna
+                    hendrerit sagittis. Nullam sed mi non odio feugiat volutpat sit amet nec elit. Maecenas
+                    id hendrerit ipsum. Sed eget auctor metus, ac dapibus dolor.
+                  </p>
+                  <button className="comment-reply">Reply</button>
+                </div>
+              </div>
+
+              <div className="comment-item">
+                <div className="comment-avatar" aria-hidden="true"></div>
+                <div className="comment-content">
+                  <h4 className="comment-author">Jhon Watchson</h4>
+                  <p className="comment-text">
+                    Nam vel lacus eu nisl bibendum accumsan vitae vitae nibh. Nam nec eros id magna
+                    hendrerit sagittis. Nullam sed mi non odio feugiat volutpat sit amet nec elit. Maecenas
+                    id hendrerit ipsum. Sed eget auctor metus, ac dapibus dolor.
+                  </p>
+                  <button className="comment-reply">Reply</button>
+                </div>
+              </div>
+
+              {/* Leave a comment */}
+              <div className="comment-form">
+                <h3 className="comment-form-title">اترك تعليقاً</h3>
+                <div className="comment-form-row">
+                  <input type="text" className="comment-input" placeholder="اسمك" />
+                  <input type="email" className="comment-input" placeholder="البريد الإلكتروني" />
+                </div>
+                <textarea className="comment-textarea" placeholder="اكتب رسالتك"></textarea>
+                <GeneralButton backgroundColor="#F57005" color="#fff" padding="5px 20px" border="none" borderRadius="8px" fontWeight="bold" cursor="pointer" alignSelf="center" transition="background-color 0.3s ease">إرسال الرسالة</GeneralButton>
+              </div>
+            </div>
           </div>
 
           {/* Blog Sidebar */}

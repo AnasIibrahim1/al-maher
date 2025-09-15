@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DateDisplay from '@/components/CardSpecialists/Date/Date';
 import { blogPosts, getCategoryCounts } from '@/BlogData/blogPosts';
 import './BlogSidebar.css';
 
@@ -82,7 +83,7 @@ export default function BlogSidebar() {
                 <div className="latest-post-meta">
                   <span className="latest-post-category">{post.category}</span>
                   <span className="latest-post-date">
-                    {post.date.toLocaleDateString('ar-SA')}
+                    <DateDisplay date={post.date} />
                   </span>
                 </div>
               </div>
