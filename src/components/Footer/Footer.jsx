@@ -61,7 +61,7 @@ export default function Footer() {
         <div className="footer-column">
           <h3 className="footer-title">استكشف</h3>
           <ul className="footer-links">
-            <li><a href="#programming">برمجة التطبيقات</a></li>
+            <li><a href="/faq">الأسئلة الشائعة</a></li>
             <li><a href="#web-design">تصميم المواقع</a></li>
             <li><a href="#mobile-apps">تطبيقات الجوال</a></li>
             <li><a href="#ui-ux">تصميم واجهات المستخدم</a></li>
