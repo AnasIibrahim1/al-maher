@@ -2,6 +2,7 @@ import GeneralBox from "@/components/Boxes/GeneralBox/GeneralBox";
 import ProfileCircles from "@/components/Circles/ProfileCicles/ProfileCircles";
 import DateDisplay from "@/components/CardSpecialists/Date/Date";
 import SalaryLessons from "@/components/CardSpecialists/SalaryLessons/SalaryLessons";
+import "./style.css";
 export default function BusinessCard({type, actionButton = {}, href = ""}) {
   return (
 <GeneralBox backgroundColor="#F1F2FD" width="100%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
