@@ -82,6 +82,7 @@ export default function Header() {
             <li><Link href="/contact" onClick={toggleMenu}>اتصل بنا</Link></li>
             <li><Link href="/teacher" onClick={toggleMenu}>المدرسين</Link></li>
             <li><Link href="/courses" onClick={toggleMenu}>الدورات</Link></li>
+            <li><Link href="/gallery" onClick={toggleMenu}>المعرض</Link></li>
             {/* Mobile Auth Buttons */}
             <div className="mobile-auth-buttons">
               <Link href="https://admin.al-maher.net/ar/login" className="mobile-signin-btn" onClick={toggleMenu}>
