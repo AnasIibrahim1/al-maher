@@ -4,9 +4,9 @@ import './SocialButtons.css';
 export default function SocialButtons({backgroundColor, borderColor, icon}) {
   return (
     <div className="social-buttons-container" style={{backgroundColor: backgroundColor, border: `2px solid ${borderColor}`}}>
-        <a href="">
+        <span>
 {icon}
-        </a>
+        </span>
 
     </div>
   )

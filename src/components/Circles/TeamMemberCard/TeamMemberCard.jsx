@@ -1,12 +1,14 @@
 import "./TeamMember.css";
 import SocialButtons from "@/components/Buttons/Solcial Buttons/SocialButtons";
-export default function TeamMemberCard() {
+import Link from "next/link";
+export default function TeamMemberCard({ id, name, jobTitle, photo }) {
   return (
-    <div className="team-member-card" style={{width:"340px", height:"510px", borderRadius:"500px", backgroundColor:"#152B4A", position:"relative", borderBottom:"30px solid #4F5DE4", backgroundImage:"url('/photo.jpg')", backgroundSize:"cover", backgroundPosition:"center"}}>
+    <Link href={`/teacher/${id}`} style={{textDecoration: "none"}}>
+      <div className="team-member-card" style={{width:"340px", height:"510px", borderRadius:"500px", backgroundColor:"#152B4A", position:"relative", borderBottom:"30px solid #4F5DE4", backgroundImage:`url('${photo || "/photo.jpg"}')`, backgroundSize:"cover", backgroundPosition:"center"}}>
 
 <div className="content" style={{width:"100%", height:"100%", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
-<h3 style={{color:"#fff", fontSize:"24px", fontWeight:"bold"}}>أنس إبراهيم حلمي</h3>
-<p style={{color:"#fff", fontSize:"16px", fontWeight:"bold"}}>مبرمج تطبيقات</p>
+<h3 style={{color:"#fff", fontSize:"24px", fontWeight:"bold"}}>{name || "عضو فريق"}</h3>
+<p style={{color:"#fff", fontSize:"16px", fontWeight:"bold"}}>{jobTitle || "الوظيفة"}</p>
 <div style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"center", gap:"10px", marginTop:"10px"}}>
     <SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
@@ -18,6 +20,7 @@ export default function TeamMemberCard() {
 </div>
 </div>
 
-    </div>
+      </div>
+    </Link>
   )
 }
