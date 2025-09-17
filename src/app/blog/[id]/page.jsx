@@ -36,7 +36,7 @@ export default function BlogDetails({ params }) {
 
       {/* Blog Details Section */}
       <section style={{width: "100%", position: "relative", margin:"100px 0px", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-        <div style={{width: "90%", height: "100%", margin:"0 auto", display: "flex", flexDirection: "row", gap: "40px", alignItems: "flex-start"}}>
+        <div className="blog-details-layout" style={{width: "90%", height: "100%", margin:"0 auto", display: "flex", flexDirection: "row", gap: "40px", alignItems: "flex-start"}}>
           {/* Main Blog Content */}
           <div style={{flex: "1", minWidth: "0"}}>
             <BlogDetailsCard 
@@ -93,7 +93,7 @@ export default function BlogDetails({ params }) {
           </div>
 
           {/* Blog Sidebar */}
-          <div style={{flex: "0 0 350px"}}>
+          <div className="blog-details-sidebar" style={{flex: "0 0 350px"}}>
             <BlogSidebar />
           </div>
         </div>

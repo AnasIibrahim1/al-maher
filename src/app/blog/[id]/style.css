@@ -161,7 +161,16 @@
 }
 
 
-
+@media (max-width: 850px) {
+  .blog-details-layout{
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .blog-details-sidebar{
+    width: 100% !important;
+    border-top: 1px solid #eee;
+  }
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
