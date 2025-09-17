@@ -1,7 +1,7 @@
 'use client'
 import "./style.css";
 import HeaderPargraph from "@/components/Paragraphs/Header/HeaderPargraph";
-import GeneralButton from "@/components/Buttons/GeneralButtons/Buttons";
+import General_Button from '@/components/Buttons/GeneralButtons/Buttons';
 
 export default function ContactPage() {
   return (
@@ -29,7 +29,7 @@ export default function ContactPage() {
 
     {/* Form Section */}
       <section style={{width: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", margin: "0px 0px 100px 0px"}}>
-        <div style={{width: "80%", padding: "50px",  borderRadius: "10px", }}>
+        <div className="contact-form-section" style={{width: "80%", padding: "50px",  borderRadius: "10px", }}>
           <form style={{width: "100%", display: "flex", flexDirection: "column", gap: "20px"}}>
             
             {/* Name and Email Row */}
@@ -105,7 +105,9 @@ export default function ContactPage() {
 
             {/* Submit Button */}
 <div style={{width: "100%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-<GeneralButton backgroundColor="#F57005" color="#fff" padding="15px 30px" border="none" borderRadius="8px" fontWeight="bold" cursor="pointer" alignSelf="center" transition="background-color 0.3s ease">إرسال الرسالة</GeneralButton>
+<General_Button style={{}} backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="https://www.google.com">
+        إرسال الرسالة
+      </General_Button>
 </div>
           </form>
         </div>
@@ -113,7 +115,7 @@ export default function ContactPage() {
     
     {/* Contact Info Section */}
     <section style={{width: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-      <div style={{ width: "80%", display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "50px", marginBottom: "50px", boxShadow: "0 15px 35px rgba(0,0,0,0.1)" }}>
+      <div className="contact-info-container" style={{ width: "80%", display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: "50px", marginBottom: "50px", boxShadow: "0 15px 35px rgba(0,0,0,0.1)" }}>
         
         {/* Email Container */}
         <div style={{ 

@@ -15,8 +15,12 @@
 
 @media (max-width: 650px) {
     .contact-form-row {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    .contact-form-section{
+        width: 100% !important;
+        padding: 10px !important;
     }
     
     /* Hero Section */
@@ -49,10 +53,6 @@
     }
     
     /* Form Section */
-    .contact-form-section div {
-        width: 90% !important;
-        padding: 30px 20px !important;
-    }
     
     .contact-form-section input,
     .contact-form-section textarea {
@@ -126,10 +126,7 @@
     }
     
     /* Form Section */
-    .contact-form-section div {
-        width: 95% !important;
-        padding: 20px 15px !important;
-    }
+    
     
     .contact-form-section input,
     .contact-form-section textarea {
