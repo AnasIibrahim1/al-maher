@@ -133,7 +133,7 @@ export default function Pagination({ children }) {
       {totalPages > 1 && (
         <div className="pagination-arrows-container">
           <button 
-            className={`pagination-arrow prev ${currentPage === 0 ? 'disabled' : ''}`}
+            className={`pagination-arrow prev ${currentPage === 1 ? 'disabled' : ''}`}
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
             aria-label="Previous page"
@@ -142,18 +142,6 @@ export default function Pagination({ children }) {
               <polyline points="9,18 15,12 9,6"></polyline>
             </svg>
           </button>
-          
-          {getPageNumbers().map((page, index) => (
-            <button
-              key={index}
-              className={`pagination-pages-btn number ${page === currentPage ? 'active' : ''} ${page === '...' ? 'dots' : ''}`}
-              onClick={() => typeof page === 'number' && handlePageChange(page)}
-              disabled={page === '...'}
-              aria-label={page === '...' ? 'More pages' : `Go to page ${page}`}
-            >
-              {page}
-            </button>
-          ))}
           
           <button 
             className={`pagination-arrow next ${currentPage === totalPages ? 'disabled' : ''}`}

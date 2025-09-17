@@ -19,7 +19,7 @@ export default function TeacherPage() {
 
     {/* Teachers Section */}
     <section style={{width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-      <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: "30px", flexWrap: "wrap", position:"relative", marginBottom:"100px", marginTop:"100px"}}>
+      <div style={{width: "80%", height: "100%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-around", gap: "30px", flexWrap: "wrap", position:"relative", marginBottom:"100px", marginTop:"100px"}}>
         {teachers.map(t => (
           <TeamMemberCard key={t.id} id={t.id} name={t.name} jobTitle={t.jobTitle} photo={t.photo} />
         ))}
