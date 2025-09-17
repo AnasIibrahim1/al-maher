@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import PaginationPages from "@/components/PaginationPages/PaginationPages";
 import BusinessCard from "@/components/Cards/BusinessCard/BusinessCard";
 import Category from "@/components/CardSpecialists/Category/Category";
@@ -8,6 +9,7 @@ import { blogPosts } from "@/BlogData/blogPosts";
 
 import "./style.css";
 export default function Blog() {
+  const router = useRouter();
   return (
     <>
         {/* Head Section */}
@@ -23,7 +25,7 @@ export default function Blog() {
       <div style={{width: "80%", height: "100%", margin:"0 auto"}}>
         <PaginationPages>
           {blogPosts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.id}`} className="blog-link">
+            <div key={post.id} className="blog-link" onClick={() => router.push(`/blog/${post.id}`)} style={{textDecoration: 'none'}}>
               <div className="blog-section-item" style={{width:"420px", height:"480px", backgroundImage: `url('${post.image}')`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "12px", position: "relative", marginBottom: "150px", cursor: "pointer"}}>
                 <div style={{width:"90%", height:"200px", backgroundColor: "white", position: "absolute", bottom: "-50px", left: "50%", transform: "translateX(-50%)", borderRadius: "12px", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.2)", padding: "20px"}}>
                   <div style={{width:"100%", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
@@ -36,7 +38,7 @@ export default function Blog() {
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </PaginationPages>
       </div>
