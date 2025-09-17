@@ -1,3 +1,4 @@
+'use client'
 import React, { useState, useEffect } from 'react';
 import './PaginationFeedback.css';
 
@@ -47,7 +48,6 @@ export default function PaginationFeedback({ children }) {
   // Handle page navigation
   const handlePageChange = (newPage) => {
     if (newPage === currentPage || newPage < 0 || newPage >= totalPages) return;
-    
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentPage(newPage);
@@ -92,10 +92,9 @@ export default function PaginationFeedback({ children }) {
             disabled={currentPage === 0}
             aria-label="Previous page"
           >
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polyline points="9,18 15,12 9,6"></polyline>
             </svg>
-
           </button>
           
           <button 
