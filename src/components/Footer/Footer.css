@@ -43,7 +43,7 @@
   display: flex;
   gap: 10px;
   flex-direction: row;
-
+  justify-content: start;
 }
 
 /* Column 2 & 3: Links */
@@ -177,7 +177,7 @@
 
 .subscribe-btn:hover {
   background: linear-gradient(135deg, #e65a00, #e6a366);
-  transform: translateY(-50%) scale(1.05);
+  transform: translateY(-50%);
 }
 
 /* Footer Bottom */
@@ -227,6 +227,11 @@
   .footer {
     padding: 50px 0 0;
   }
+  .footer-social{
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -319,9 +324,22 @@
   }
   
   .subscribe-btn {
-    font-size: 11px;
-    padding: 100px 12px;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #FF7200, #FFBF8C);
+    border: none;
+    border-radius: 6px;
+    padding: 10px 25px;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
   }
+  
 }
 
 /* RTL Specific Adjustments */

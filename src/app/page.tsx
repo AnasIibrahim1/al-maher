@@ -25,6 +25,7 @@ import DateDisplay from '@/components/CardSpecialists/Date/Date';
 import BotCard from '@/components/Cards/BotCard/BotCard';
 import AdSkills from '@/components/AdSkills/AdSkills';
 import BusinessCard from '@/components/Cards/BusinessCard/BusinessCard';
+import "./style.css"
 
 
 export default function Home() {
@@ -416,7 +417,7 @@ export default function Home() {
     </section>
 
     {/* Ad Skills */}
-    <AdSkills />
+    {/* <AdSkills /> */}
     </>
 
   );
