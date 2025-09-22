@@ -49,6 +49,10 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
   };
@@ -76,19 +80,19 @@ export default function Header() {
         {/* Navigation Links */}
         <nav className={`header-nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-links">
-            <li><Link href="/" onClick={toggleMenu}>الرئيسية</Link></li>
-            <li><Link href="/about" onClick={toggleMenu}>من نحن</Link></li>
-            <li><Link href="/blog" onClick={toggleMenu}>الأخبار</Link></li>
-            <li><Link href="/contact" onClick={toggleMenu}>اتصل بنا</Link></li>
-            <li><Link href="/teacher" onClick={toggleMenu}>المدرسين</Link></li>
-            <li><Link href="/courses" onClick={toggleMenu}>الدورات</Link></li>
-            <li><Link href="/gallery" onClick={toggleMenu}>المعرض</Link></li>
+            <li><Link href="/" onClick={closeMenu}>الرئيسية</Link></li>
+            <li><Link href="/about" onClick={closeMenu}>من نحن</Link></li>
+            <li><Link href="/blog" onClick={closeMenu}>الأخبار</Link></li>
+            <li><Link href="/contact" onClick={closeMenu}>اتصل بنا</Link></li>
+            <li><Link href="/teacher" onClick={closeMenu}>المدرسين</Link></li>
+            <li><Link href="/courses" onClick={closeMenu}>الدورات</Link></li>
+            <li><Link href="/gallery" onClick={closeMenu}>المعرض</Link></li>
             {/* Mobile Auth Buttons */}
             <div className="mobile-auth-buttons">
-              <Link href="https://admin.al-maher.net/ar/login" className="mobile-signin-btn" onClick={toggleMenu}>
+              <Link href="https://admin.al-maher.net/ar/login" className="mobile-signin-btn" onClick={closeMenu}>
                 تسجيل الدخول
               </Link>
-              <Link href="/register" className="mobile-signup-btn" onClick={toggleMenu}>
+              <Link href="/register" className="mobile-signup-btn" onClick={closeMenu}>
                 إنشاء حساب
               </Link>
             </div>
@@ -143,7 +147,7 @@ export default function Header() {
           </div>
 
           {/* Get in Touch Button */}
-          <Link href="/contact" className="get-in-touch-btn">
+          <Link href="/contact" className="get-in-touch-btn" onClick={closeMenu}>
             تواصل معنا
           </Link>
 
