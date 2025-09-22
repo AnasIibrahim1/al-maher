@@ -132,7 +132,7 @@
     gap: 10px;
   }
   .pagination-pages-item {
-    width: auto !important;
+    width: 90% !important;
   }
   .pagination-pages-numbers {
     gap: 4px;

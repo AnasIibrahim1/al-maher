@@ -1,6 +1,7 @@
 'use client'
 import PopularCards from "@/components/Cards/PopularCards/PopularCards"
 import PaginationPages from "@/components/PaginationPages/PaginationPages"
+import "./style.css"
 export default function CoursesPage() {
   return (
 <>
@@ -14,7 +15,7 @@ export default function CoursesPage() {
 
 {/* Courses Section */}
 <section style={{width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
-<div style={{width: "80%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom:"100px", marginTop:"100px"}}>
+<div className="courses-section-container" style={{width: "80%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom:"100px", marginTop:"100px"}}>
 <PaginationPages>
     <PopularCards/> 
     <PopularCards/> 

@@ -9,3 +9,9 @@
         font-weight: 700;
         color: #F57005;
     } }
+
+@media (max-width: 400px){
+    .salary-lessons-lessons{
+        text-align: center !important;
+    }
+}
