@@ -39,8 +39,8 @@ export default function CourseDetailsPage({ params }) {
 
   return (
     <>
-<div style={{width: "90%", display: "flex", flexDirection: "row", alignItems: "start", justifyContent: "center", gap: "40px", padding: "60px 20px 20px 20px"}}>
-<div style={{width: "80%", display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "space-between", gap: "40px", margin: "0 auto"}}>
+<div className="course-details-container" style={{width: "90%", display: "flex", flexDirection: "row", alignItems: "start", justifyContent: "center", gap: "40px", padding: "60px 20px 20px 20px"}}>
+<div className="course-details-content" style={{width: "80%", display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "space-between", gap: "40px", margin: "0 auto"}}>
         {/* Head Section */}
         <section className="course-head">
         <div className="course-media">

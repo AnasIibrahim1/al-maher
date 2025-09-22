@@ -52,6 +52,34 @@
   .course-head, .course-body { width: 100%; }
   .course-body { grid-template-columns: 1fr; }
   .course-media { width: 100%; }
+  .course-details-container{
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 20px;
+  }
+  .course-details-container .course-head{
+    width: 100% !important;
+  }
+  .course-details-container .course-body{
+    width: 100% !important;
+  }
+  .course-details-container .course-sidebar{
+    width: 40% !important;
+  }
+  .course-details-content{
+    width: 100% !important;
+  }
 }
-
-
+@media (max-width: 768px) {
+  .course-details-container .course-sidebar{
+    width: 100% !important;
+  }
+  .course-author{
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .course-meta-right{
+    margin-right: 0 !important;
+  }
+}
