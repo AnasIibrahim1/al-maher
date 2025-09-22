@@ -20,7 +20,7 @@
     }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 1000px) {
     .about-us-container{
         flex-direction: column !important;
         gap: 100px !important;

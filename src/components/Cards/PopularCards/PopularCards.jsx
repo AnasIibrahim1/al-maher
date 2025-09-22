@@ -2,10 +2,11 @@ import ActionButtons from "@/components/Buttons/ActionButtons/ActionButtons";
 import Hours from "@/components/CardSpecialists/Hours/Hours";
 import Stars from "@/components/CardSpecialists/Stars/Stars";
 import BusinessCard from "../BusinessCard/BusinessCard";
+import "./style.css";
 
 export default function PopularCards() {
   return (
-    <div style={{width:"410px", height:"570px", borderRadius:"10px", backgroundColor:"#fff", boxShadow:"0 15px 35px rgba(0,0,0,0.2)", position:"relative", display:"flex", flexDirection:"column", alignItems:"start", justifyContent:"space-between", zIndex:"0"}}>
+    <div className="popular-cards-container" style={{width:"410px", height:"570px", borderRadius:"10px", backgroundColor:"#fff", boxShadow:"0 15px 35px rgba(0,0,0,0.2)", position:"relative", display:"flex", flexDirection:"column", alignItems:"start", justifyContent:"space-between", zIndex:"0"}}>
       <div style={{width:"100%", height:"50%", backgroundImage:"url('/photo.jpg')", backgroundSize:"cover", backgroundPosition:"center", borderRadius:"10px 10px 50% 50%", position:"relative", display:"flex", flexDirection:"column", alignItems:"start", justifyContent:"end"}}>
         <div style={{width:"80%", height:"50%", backgroundColor:"#F57005", borderRadius:"10px 10px 50% 50%", position:"absolute", bottom:"-10px", left:"50%", transform:"translateX(-50%)", zIndex:"-1"}}>
         </div>

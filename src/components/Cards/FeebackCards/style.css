@@ -1,0 +1,9 @@
+@media (max-width: 450px) {
+    .feed-back-cards-container{
+        width: auto !important;
+    }
+}
+@media (max-width: 1000px) {
+    .feed-back-cards-container{
+        max-width: 350px !important;
+    }}
