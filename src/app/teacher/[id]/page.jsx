@@ -61,7 +61,7 @@ export default function TeacherPage({params}) {
     {/* Teacher Section */}
     <section className="teacher-wrapper">
       <div className="teacher-container">
-        <div className="teacher-content">
+        <div  className="teacher-content">
           <h1 className="teacher-name">مرحباً، أنا {teacher.name}</h1>
           <p className="teacher-sub">{teacher.jobTitle}</p>
           <p className="teacher-bio">{teacher.bio}</p>

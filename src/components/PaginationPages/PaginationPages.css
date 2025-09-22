@@ -131,7 +131,9 @@
   .pagination-pages-grid {
     gap: 10px;
   }
-  
+  .pagination-pages-item {
+    width: auto !important;
+  }
   .pagination-pages-numbers {
     gap: 4px;
     flex-wrap: wrap;

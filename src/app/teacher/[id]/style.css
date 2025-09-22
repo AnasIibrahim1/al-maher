@@ -83,3 +83,27 @@
   .teacher-container{flex-direction: column-reverse; text-align: center;}
   .teacher-content{align-items: center;}
 }
+@media (max-width: 750px){
+  .teacher-content{
+    width: 100% !important;
+    align-items: flex-start !important;
+  }
+  .teacher-photo{
+    width: 100% !important;
+  }
+  .teacher-photo img:first-child{
+    width: 100% !important;
+  }
+  .teacher-bio, .teacher-sub, .teacher-name{
+    text-align: right !important;
+  }
+  .teacher-name{
+    font-size: 24px !important;
+  }
+  .teacher-sub{
+    font-size: 16px !important;
+  }
+  .teacher-bio{
+    font-size: 14px !important;
+  }
+}
