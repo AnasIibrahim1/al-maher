@@ -1,0 +1,121 @@
+.pagination-feedback-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.pagination-feedback-content-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-feedback-content {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-end;
+  transition: opacity 0.3s ease;
+  min-height: 350px;
+}
+
+.pagination-feedback-content.transitioning {
+  opacity: 0.5;
+}
+
+.feedback-card {
+  transition: transform 0.3s ease;
+}
+
+.feedback-card.middle-card {
+  transform: translateY(-20px);
+}
+
+.pagination-feedback-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.pagination-feedback-btn {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #4F5DE4;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #4F5DE4;
+}
+
+.pagination-feedback-btn:hover:not(.disabled) {
+  background: #4F5DE4;
+  color: white;
+  transform: scale(1.1);
+}
+
+.pagination-feedback-btn.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: #ccc;
+  color: #ccc;
+}
+
+.pagination-feedback-btn.disabled:hover {
+  background: transparent;
+  transform: none;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .pagination-feedback-content {
+    gap: 15px;
+  }
+  
+  .feedback-card.middle-card {
+    transform: translateY(-15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .pagination-feedback-content {
+    gap: 10px;
+    min-height: 300px;
+  }
+  
+  .feedback-card.middle-card {
+    transform: translateY(-10px);
+  }
+  
+  .pagination-feedback-buttons {
+    gap: 10px;
+  }
+  
+  .pagination-feedback-btn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-feedback-content {
+    gap: 5px;
+    min-height: 250px;
+  }
+  
+  .feedback-card.middle-card {
+    transform: translateY(-5px);
+  }
+  
+  .pagination-feedback-btn {
+    width: 40px;
+    height: 40px;
+  }
+}

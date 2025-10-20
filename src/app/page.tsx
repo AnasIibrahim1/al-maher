@@ -1,501 +1,424 @@
-"use client";
+/* eslint-disable @next/next/no-img-element */
+'use client'  
+import HomeCircle from '../components/Circles/HomeCircle/HomeCircle';
+import General_Button from '@/components/Buttons/GeneralButtons/Buttons';
+import PaperCard from '@/components/Cards/PaperCard/PaperCard';
+import IconButtons from '@/components/Buttons/IconButtons/IconButtons';
+import ReadMoreButtons from '@/components/Buttons/ReadMoreBurrons/ReadMoreButtons';
+import AboutCircle from '@/components/Circles/AboutCircles/AboutCircle';
+import SmColoredTitle from '@/components/Paragraphs/SmColoredTitle/SmTitle';
+import HeaderPargraph from '@/components/Paragraphs/Header/HeaderPargraph';
+import GradiantButton from '@/components/Buttons/GradiantButton/GradiantButton';
+import PaginationCategories from '@/components/PaginationCategories/PaginationCategories';
+import SemiHalfCard from '@/components/Cards/SemiHalfCard/SemiHalfCard';
+import CourseCard from '@/components/Cards/CourseCard/CourseCard';
+import BackCircles from '@/components/Circles/BackCircles/BackCircles';
+import Counter from '@/components/Counter/Counter';
+import InnerPaginationBox from '@/components/Boxes/PaginationBox/innerPaginationBox';
+import CircleWithBrush from '@/components/Circles/CircleWithBrush/CircleWithBrush';
+import BackBoxCard from '@/components/Cards/BackBoxCard/BackBoxCard';
+import SocialButtons from '@/components/Buttons/Solcial Buttons/SocialButtons';
+import Category from '@/components/CardSpecialists/Category/Category';
+import GeneralBox from '@/components/Boxes/GeneralBox/GeneralBox';
+import ProfileCircles from '@/components/Circles/ProfileCicles/ProfileCircles';
+import DateDisplay from '@/components/CardSpecialists/Date/Date';
+import BotCard from '@/components/Cards/BotCard/BotCard';
+import AdSkills from '@/components/AdSkills/AdSkills';
+import BusinessCard from '@/components/Cards/BusinessCard/BusinessCard';
+import "./style.css"
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import Input from "@/components/input/input";
-import Image from "next/image";
-import { Cabin } from 'next/font/google';
-import Container from "@/components/Container/Conatiner";
-import Paragraph from "@/components/Paragraphs/small";
-import ContainerRow from "@/components/Container/ContainerRow";
-import Box from "@/components/Boxs/Box";
-import AdsBox from "@/components/Boxs/AdsBox";
-import Stars from "@/components/Rates/stars";
-import { useState, useEffect } from "react";
-import General_Button from "@/components/Buttons/General_Button";
-import Paginations from "@/components/PaginationBar/Paginations";
-import TestLogin from "@/components/TestLogin";
-import { useRouter } from "next/navigation";
 
-
-const cabin = Cabin({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-});
-
-const testimonials = [
-  {
-    name: "أنس ابراهيم",
-    email: "a.ibrahim@gmail.com",
-    image: "/ppl/ppl.jpg",
-    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
-  },
-  {
-    name: "أنس ابراهيم",
-    email: "a.ibrahim@gmail.com",
-    image: "/ppl/ppl.jpg",
-    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
-  },
-  {
-    name: "أنس ابراهيم",
-    email: "a.ibrahim@gmail.com",
-    image: "/ppl/ppl.jpg",
-    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
-  },
-  {
-    name: "أنس ابراهيم",
-    email: "a.ibrahim@gmail.com",
-    image: "/ppl/ppl.jpg",
-    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
-  },
-  {
-    name: "أنس ابراهيم",
-    email: "a.ibrahim@gmail.com",
-    image: "/ppl/ppl.jpg",
-    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
-  },
-  {
-    name: "أنس ابراهيم",
-    email: "a.ibrahim@gmail.com",
-    image: "/ppl/ppl.jpg",
-    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
-  },
-  {
-    name: "أنس ابراهيم",
-    email: "a.ibrahim@gmail.com",
-    image: "/ppl/ppl.jpg",
-    text: "تجربة رائعة جدًا! المحتوى غني بالمعلومات ومُقدَّم بطريقة سلسة وسهلة الفهم. أعجبني تفاعل المدرسين وسرعة استجابتهم لاستفسارات الطلاب. أنصح الجميع بالانضمام والاستفادة من الدورات!",
-  },
-];
-const boxes = Array(10).fill({}); 
 export default function Home() {
-const router = useRouter();
-
-const [rating, setRating] = useState(0);
-const [LessonspageSize, setLessonspageSize] = useState(4);
-const [testimonialspageSize, setTestimonialspageSize] = useState(2);
-const [currentPage, setCurrentPage] = useState(1);
-useEffect(() => {
-  function handleResize() {
-    // Lessons
-    if (window.innerWidth < 750) {
-      setLessonspageSize(1);
-    } else if (window.innerWidth < 1200) {
-      setLessonspageSize(2);
-    } else if (window.innerWidth < 1450) {
-      setLessonspageSize(3);
-    } else {
-      setLessonspageSize(4);
-    }
-    // Testimonials
-    if (window.innerWidth < 750) {
-      setTestimonialspageSize(1);
-    } else {
-      setTestimonialspageSize(2);
-    }
-  }
-  handleResize();
-  window.addEventListener('resize', handleResize);
-  return () => window.removeEventListener('resize', handleResize);
-}, []);
-const startIdx = (currentPage - 1) * LessonspageSize;
-const endIdx = startIdx + LessonspageSize;
-const pagedBoxes = boxes.slice(startIdx, endIdx);
-const testimonialsstartIdx = (currentPage - 1) * testimonialspageSize;
-const testimonialsendIdx = testimonialsstartIdx + testimonialspageSize;
-const totalPages = Math.ceil(testimonials.length / testimonialspageSize);
-const pagedTestimonials = testimonials.slice(testimonialsstartIdx, testimonialsendIdx);
+  const data = [{text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "1 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.png"}, {text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "أنس إبراهيم 2 حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}, {text: "تشير الفصول المرنة إلى عملية اكتساب المعرفة أو المهارات من خلال استخدام التقنيات الرقمية والإنترنت. تشير الفئات المرنة إلى العملية تشير الفئات المرنة إلى العملية", name: "3 أنس إبراهيم حلمي", title: "مبرمج تطبيقات", image: "/photo.jpg"}]
 
   return (
-    <div className="h-full w-full">
-      <TestLogin />
-  
-  {/* Container 1 :"Landing" */}
-<Container className="landing-container" justify="center" style={{
-      backgroundImage: "url('/backgrounds/landing.png')",
-      backgroundSize: "cover",
-      minHeight: "100vh",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-    }}>
-       <div className="flex flex-col gap-2 mb-20 h-100 text-center" style={{
-        width: "50%",
-      }}>
-        <Paragraph color="#CED3E6" size="50px"  className="font-bold landing-title" style={{
-          textShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
-          lineHeight: "1.5",
-        }}>
-منصه الماهر
-        </Paragraph>
-        <Paragraph color="#CED3E6" size="50px" className="font-bold landing-title" style={{
-          textShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
-          lineHeight: "1.5",
-        }}>
-تفتح لك ابواب النمو والتقدم
-        </Paragraph>
-        <Paragraph color="#F7A23C" size="50px" className="font-bold landing-title" style={{
-          lineHeight: "1.5",
-        }}>
-يحق لك ان ترتقي
-        </Paragraph>
-       <Input className="landing-input" placeholder="ماذا تريد أن تتعلم؟" width="60%" margin="60px auto 0 auto" padding="25px" icon={<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#169FC6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>}
-       />
-       </div>
-       <div className="flex flex-row justify-around absolute bottom-10 left-0 right-0 landing-boxes-container" style={{
-        width: "80%",
-        margin: "0 auto",
-       }}>
-          <div className="flex flex-col bg-white border-2 justify-center items-center border-[#169FC6] rounded-md p-4 text-center landing-box" style={{
-            width:"220px",
-            height:"162px",
-            boxShadow : "0 10px 10px 0 rgba(0, 0, 0, 0.3)",
-          }}>
-            <Image src="/icons/common_icons/group.png" alt="landing" width={100} height={100} className="landing-box-image" />
-            <Paragraph className="landing-box-paragraph" color="#169FC6" size="25px" style={
-              {
-                fontFamily : 'Cabin',
-                maxWidth : "190px",
-                fontWeight : "900"
-              }
-            }>اكثر من  مـلـيـون
- متسخدم</Paragraph>
- 
-          </div>
-                    <div className="flex flex-col bg-white border-2 justify-center items-center border-[#169FC6] rounded-md p-4 text-center landing-box" style={{
-            width:"220px",
-            height:"162px",
-            boxShadow : "0 10px 10px 0 rgba(0, 0, 0, 0.3)",
-          }}>
-            <Image src="/icons/common_icons/girl.png" className="landing-box-image" alt="landing" width={100} height={100}  />
-            <Paragraph className="landing-box-paragraph" color="#169FC6" size="25px" style={
-              {
-                fontFamily : 'Cabin',
-                maxWidth : "190px",
-                fontWeight : "900"
-              }
-            }>أكثر من 100 الف خريج</Paragraph>
-          </div>
-          <div className="flex flex-col bg-white border-2 justify-center items-center border-[#169FC6] rounded-md p-4 text-center landing-box" style={{
-            width:"220px",
-            height:"162px",
-            boxShadow : "0 10px 10px 0 rgba(0, 0, 0, 0.3)",
-          }}>
-            <Image src="/icons/common_icons/study.png" className="landing-box-image" alt="landing" width={100} height={100}  />
-            <Paragraph className="landing-box-paragraph" color="#169FC6" size="25px" style={
-              {
-                fontFamily : 'Cabin',
-                maxWidth : "190px",
-                fontWeight : "900"
-              }
-            }>اكـثـر مــن 50 محـاضــر</Paragraph>
-</div>
+    <>
 
-          </div>
-        </Container>
+    {/* Landing Section*/}
+    <section className='landing-section' style={{width: "100%", height: "100vh", backgroundColor: "#4F5DE4", position: "relative", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap"}}>
+      <img src="/Shapes/landing.png" alt="line" draggable={false} style={{width: "100%", height: "100%", position: "absolute", top: 0, left: 0, bottom: 0, right: 0, zIndex:"0"}} />
+      <div className="landing-section-containers" style={{width:"50%", height:"100%", display:"flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", textAlign: "right"}}>
+      <h1 style={{color: "#fff", fontSize: "70px", fontWeight: "bold", maxWidth: "70%"}}>
+    أفضل 
+    رحلة التعلم المستقبلية تبدأ هنا
+    </h1>
+    <p style={{color: "#fff", fontSize: "18px", maxWidth: "70%"}}>
+    تميل جميع مولدات لوريم إيبسوم الموجودة على الإنترنت إلى تكرار الأجزاء المحددة مسبقًا حسب الضرورة،
+    </p>
+     <div className="landing-section-buttons" style={{marginTop: "20px", display:"flex", flexDirection: "row", alignItems: "center", gap: "10px", justifyContent: "flex-start", width: "70%"}}>
+     <General_Button style={{}} backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="https://www.google.com">
+        إحجز حضورك الآن
+      </General_Button>
+    <General_Button style={{}} backgroundColor="#4F5DE4" color="#fff" padding="10px 20px" border="1px solid #fff" href="https://www.google.com">
+        إبحث عن دروسك
+      </General_Button>
 
-        {/* Container 2 :"info" */}
-<Container style={{
-}}>
-  <div className="flex flex-col h-full mt-20"  style={{
-      width: "80%",
-      margin: "40px auto",
-    }}>
-    <h2 className="text-4xl font-bold" style={{
-      lineHeight: "1.5",
-    }}>محتويات المنصة</h2>
-    <Paragraph color="#6D737A" size="1rem" className="mr-8" style={{
-      marginBottom: "20px",
-    }}>
-    لوريم إيبسوم هو ببساطة نص وهمي للطباعة.لوريم إيبسوم هو ببساطة نص وهمي للطباعة.
-    </Paragraph>
-    <Container className="">
-    <ContainerRow justify="between" className="flex-wrap" style={{
-      width: "100%",
-      gap: "50px",
-      marginTop: "50px",
-    }}>
-      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
-        window.scrollTo(0, 0);
-        router.push('/twgeeh');
-      }}>
-        <Image src="/icons/common_icons/grads.png" alt="landing" width=
-        {50} height={50}  />
-        <Paragraph color="black" size="20px">توجيهي</Paragraph>
-        <div className="absolute left-0 p-5 ">
-          <Image src="/icons/common_icons/ArrowUpRight.png" alt="landing" width=
-        {30} height={50} className="bg-[#169FC6] rounded-md p-1"  />
-        </div>
-      </Box>
-      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
-        window.scrollTo(0, 0);
-        router.push('/package');
-      }}>
-        <Image src="/icons/common_icons/mony.png" alt="landing" width=
-        {50} height={50}  />
-        <Paragraph color="black" size="20px">بكجات التوجيهي</Paragraph>
-        <div className="absolute left-0 p-5 ">
-          <Image src="/icons/common_icons/ArrowUpRight.png" alt="landing" width=
-        {30} height={50} className="bg-[#169FC6] rounded-md p-1"  />
-        </div>
-      </Box>
-      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
-        window.scrollTo(0, 0);
-        router.push('/basic');
-      }}>
-        <Image src="/icons/common_icons/work.png" alt="landing" width=
-        {50} height={50}  />
-        <Paragraph color="black" size="20px">الصفوف الأساسية</Paragraph>
-        <div className="absolute left-0 p-5 ">
-          <Image src="/icons/common_icons/ArrowUpRight.png" alt="landing" width=
-        {30} height={50} className="bg-[#169FC6] rounded-md p-1"  />
-        </div>
-      </Box>
-      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
-        window.scrollTo(0, 0);
-        router.push('/btc');
-      }}>
-        <Image src="/icons/common_icons/grad.png" alt="landing" width=
-        {50} height={50}  />
-        <Paragraph color="black" size="20px">لطلاب الـBTEC</Paragraph>
-        <div className="absolute left-0 p-5 ">
-          <Image src="/icons/common_icons/ArrowUpRight.png" alt="landing" width=
-        {30} height={50} className="bg-[#169FC6] rounded-md p-1"  />
-        </div>
-      </Box>
-      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
-        window.scrollTo(0, 0);
-        router.push('/vip');
-      }}>
-        <Image src="/icons/common_icons/vip.png" alt="landing" width=
-        {50} height={50}  />
-        <Paragraph color="black" size="20px">بطاقة الـ Event</Paragraph>
-        <div className="absolute left-0 p-5 ">
-          <Image src="/icons/common_icons/ArrowUpRight.png" alt="landing" width=
-        {30} height={50} className="bg-[#169FC6] rounded-md p-1"  />
-        </div>
-      </Box>
-      <Box cursor="pointer" border="1px solid #169FC6" borderRadius="10px" width="350px" padding="5px" flex itemsCenter onClick={() => {
-        window.scrollTo(0, 0);
-        router.push('/basicPackage');
-      }}>
-        <Image src="/icons/common_icons/mony2.png" alt="landing" width=
-        {50} height={50}  />
-        <Paragraph color="black" size="20px">بكجات الصفوف الاساسية</Paragraph>
-        <div className="absolute left-0 p-5 ">
-          <Image src="/icons/common_icons/ArrowUpRight.png" alt="landing" width=
-        {30} height={50} className="bg-[#169FC6] rounded-md p-1"  />
-        </div>
-      </Box>
-    </ContainerRow>
-   </Container>
-  </div>
-</Container>
-
-{/* Container 3 :"ads" */}
-<AdsBox
-  images={[
-    '/banners/banner1.png',
-    '/banners/banner2.png',
-    '/banners/banner3.png'
-  ]}
-  autoPlayInterval={5000}
-/>
-
-{/* Container 4 :"Lessons" */}
-<Container>
-  <div className="flex flex-col h-full mt-20"  style={{
-    width: "80%",
-    margin: "40px auto",
-  }}>
-    <Paragraph color="black" size="40px" style={{
-      fontWeight: "900",
-    }}>
-الدروس المقترحة
-    </Paragraph>
-    <Paragraph color="#6D737A" size="1rem" className="mr-3" style={{
-      marginBottom: "20px",
-    }}>
-    لوريم إيبسوم هو ببساطة نص وهمي للطباعة.لوريم إيبسوم هو ببساطة نص وهمي للطباعة.
-    </Paragraph>
-
-    <ContainerRow gap="10" className="xxl:flex-col">
-    {pagedBoxes.map((box, idx) => (
-      <Box key={startIdx + idx} height="400px" borderRadius="10px" padding="5px" flex column justifybetween style={{
-        boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.3)",
-      }}>
-        <div className="xxl:w-full" style={{
-          width: "280px",
-          margin: "0 auto",
-          height: "207px",
-          borderRadius: "10px",
-          backgroundImage: "url('/common/st.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}></div>
-        <Paragraph color="black" size="20px" style={{
-        }}>
-دروس مقترحة        </Paragraph>
-{/* Stars */}
-<div className="flex flex-row justify-end gap-2">
-<Stars value={rating} size={20} color="#FACC15" />
-<Paragraph color="#6D737A" size="1rem" style={{
-  fontWeight: "900",
-}}>
-(15)
-</Paragraph>
-
-</div>
-<General_Button text="انضمام" bgColor="#169FC6" color="white" width="100%" padding="10px" />
-
-      </Box>
-    ))}
-    </ContainerRow>
-    <Paginations
-  total={boxes.length}
-  currentPage={currentPage}
-  LessonspageSize={LessonspageSize}
-  onPageChange={setCurrentPage}
-/>
+    </div>
       </div>
-</Container>
+      <div className="landing-section-containers" style={{width:"50%", height:"100%", display:"flex", alignItems: "center", justifyContent: "center"}}>
+      <HomeCircle image="/photo.jpg" backgroundColor="#E4E4E4" width="600px" height="600px" />
+      </div>
+    </section>
 
-
-{/* Container 5 :"SignUp" */}
-<AdsBox
-  images={[
-    '/backgrounds/Sign.png',
-  ]}
->
-  {/* <h1 className="text-white text-4xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-100"></h1>
-   */}
-<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-100" style={{
-  margin: "0 auto",
-  height: "100%",
-  width: "70%",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  textAlign: "center",
-}}>
-<Paragraph className="paragraph-signup" color="white"  style={{
-    fontWeight: "900",
-    fontSize: "40px",
-   }}>
-!سجل الان واحصل علي المزيد من الدورات
-   </Paragraph>
-   <Paragraph className="paragraph-signup" color="white" size="20px" style={{
-   }}>
-.هناك دورات يمكنك ايجادها والوصول اليها فقط عندما يكون لديك حساب , لذا يمكنك التسجيل الان للاستمتاع بكل الدورات اللتي نوفرها وتستفيد اقصي استفاد
-   </Paragraph>
-   <General_Button className="signup-button" text="إنشاء حساب" bgColor="#F7A23C" width="200px" color="white" padding="20px" fontWeight="900" fontSize="20px" margin="20px auto" href="/sign"/>
+    {/* About Section */}
+    <section className='about-section' style={{width: "100%", backgroundColor: "#fff", position: "relative", overflow:"hidden"}}>
+      <img src="/line.svg" alt="line" draggable={false} style={{width: "200%", height: "200%", position: "absolute", top: "-50%", left: 0, bottom: 0, right: "-50%"}} />
+    <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "row", marginTop: "100px", justifyContent: "center", flexWrap: "wrap", gap: "100px"}}>
+    <PaperCard content={<div>
+      <IconButtons backgroundColor="#4F5DE4" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/Group.svg" alt="Icon" width={24} height={24} />
+      } />
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>المدرب الحصري</h2>
+      <p style={{color: "gray", fontSize: "16px"}}>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
+    </div>} backgroundColorGeneral="#4F5DE4" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
+    <PaperCard content={<div>
+      <IconButtons backgroundColor="#F57005" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/busn.svg" alt="Icon" width={24} height={24} />
+      } />
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>المدرب الحصري</h2>
+      <p style={{color: "gray", fontSize: "16px"}}>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
+    </div>} backgroundColorGeneral="#F57005" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
+    <PaperCard content={<div>
+      <IconButtons backgroundColor="#4F5DE4" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/neu.svg" alt="Icon" width={24} height={24} />
+      } />
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>المدرب الحصري</h2>
+      <p style={{color: "gray", fontSize: "16px"}}>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
+    </div>} backgroundColorGeneral="#4F5DE4" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
+    <PaperCard content={<div>
+      <IconButtons backgroundColor="#F57005" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>المدرب الحصري</h2>
+      <p style={{color: "gray", fontSize: "16px"}}>العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة</p>
+      <ReadMoreButtons content={<p style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}}>إقرأ المزيد</p>} href="https://www.google.com"/>
+    </div>} backgroundColorGeneral="#F57005" backgroundColor="#fff" alignItems="start" justifyContent="start" width="300px" height="340px" padding="30px" />
+    </div>
+    
+    <div className="about-section-container" style={{width: "100%", height: "100%", display: "flex", flexDirection: "row", alignItems: "center", flexWrap: "wrap", marginTop: "100px"}}>
+      <div className="about-section-container-left" style={{width: "50%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1"}}>
+      <div style={{maxWidth: "80%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "20px"}}>
+      <SmColoredTitle title="من نحن" color="#4F5DE4" alignItems="start" justifyContent="start" />
+      <HeaderPargraph style={{}} title="العميل سعيد جدًا بمتابعته. تزين كونفاليس دائمًا ديم هندريريت. يأخذ الدورة" color="#2A254D" alignItems="start" justifyContent="start" />
+<p style={{color: "gray", fontSize: "16px", textAlign: "start", width: "100%"}}>يستخدم قاموسًا يضم أكثر من 200 كلمة لاتينية، بالإضافة إلى مجموعة من هياكل الجمل النموذجية، لإنشاء لوريم إيبسوم الذي يبدو</p>
+      <GradiantButton color1="#FF7200" color2="#fff" borderWidth="2px" borderRadius="10px" backgroundColor="#fff" width="100%" height="fit-content" alignItems="center" justifyContent="start" padding="16px" ariaLabel="إحجز حضورك الآن">
+        <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "start", gap: "10px"}}>
+        <IconButtons backgroundColor="rgba(128, 137, 225, 0.12)" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/presentation.svg" alt="Presentation" width={24} height={24} />
+      } />
+<div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center", gap: "1px", marginRight: "10px"}}>
+<h3 style={{color: "#2D2A4E", fontSize: "22px", fontWeight: "bold"}}>فصول مرنة</h3>
+<p style={{color: "gray", fontSize: "16px"}}> يستخدم قاموسًا يضم أكثر من 200 كلمة لاتينية، بالإضافة إلى مجموعة من هياكل الجمل النموذجية، لإنشاء لوريم إيبسوم الذي يبدو</p>
 </div>
-  </AdsBox>
+</div>
+      </GradiantButton>
+      <GradiantButton color1="#FF7200" color2="#fff" borderWidth="2px" borderRadius="10px" backgroundColor="#fff" width="100%" height="fit-content" alignItems="center" justifyContent="start" padding="16px" ariaLabel="إحجز حضورك الآن">
+        <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "start", gap: "10px"}}>
+        <IconButtons backgroundColor="rgba(128, 137, 225, 0.12)" borderRadius="10px" width="fit-content" height="fit-content" padding="20px" icon={
+        <img src="/online_learning.svg" alt="Presentation" width={24} height={24} />
+      } />
+<div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center", gap: "1px", marginRight: "10px"}}>
+<h3 style={{color: "#2D2A4E", fontSize: "22px", fontWeight: "bold"}}>فصول مرنة</h3>
+<p style={{color: "gray", fontSize: "16px"}}> يستخدم قاموسًا يضم أكثر من 200 كلمة لاتينية، بالإضافة إلى مجموعة من هياكل الجمل النموذجية، لإنشاء لوريم إيبسوم الذي يبدو</p>
+</div>
+</div>
+      </GradiantButton>
+<div style={{width: "100%", display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "start", gap: "10px"}}>
+<General_Button style={{}} backgroundColor="#F57005" color="#fff" padding="10px 20px" border="none" href="https://www.google.com">
+        إحجز حضورك الآن
+      </General_Button>
+</div>
+      </div>
+      </div>
+      <div className="about-section-container-right" style={{width: "50%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+        <AboutCircle src="/photo.jpg" />
+      </div>
+    </div>
+    </section>
+    
+    {/* Favorite Topics To Learn */}
+    <section style={{width: "100%", backgroundColor: "#fff", position: "relative", overflow:"hidden", marginTop: "100px"}}>
+      <img src="/base.jpg" alt="" style={{width: "100%", height: "50%", position: "absolute", top: 0, left: 0, zIndex:"0"}} />
+      <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
+        <SmColoredTitle title="الفئات" color="#4F5DE4" alignItems="start" justifyContent="center" />
+        <HeaderPargraph style={{}} title="المواضيع المفضلة للتعلم" color="#2A254D" alignItems="center" justifyContent="center" />
+      </div>
+      <PaginationCategories>
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      <SemiHalfCard content={<div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: "100px"}}>
+<IconButtons backgroundColor="#F57005" borderRadius="50%" width="fit-content" height="fit-content" padding="20px"  icon={
+        <img src="/ed.svg" alt="Icon" width={24} height={24} />
+      } />
+</div>
+      <h2 style={{color: "#2A254D", fontSize: "24px", fontWeight: "bold"}}>علوم الحاسب</h2>
+      <p style={{color: "gray", fontSize: "16px", textAlign: "center"}}>6 دروس</p>
+      </div>} backgroundColorGeneral="#152B4A" backgroundColorOverlay="#fff" alignItems="center" justifyContent="center" color={"#000"} />
+      </PaginationCategories>
+    </section>
+
+    {/* Best Courses */}
+    <section style={{width: "100%",  backgroundColor: "#F1F2FD", position: "relative", overflow:"hidden", marginTop: "100px"}}>
+      <img src="/base1.svg" alt="" style={{width: "100%", height: "100%", position: "absolute", top: 0, left: 0, zIndex:"0", objectFit: "cover", opacity: "0.5"}} />
 
 
-{/* Container 6 :"Opinions" */}
-<Container>
-<div className="flex flex-col h-full mt-20"  style={{
-    width: "85%",
-    margin: "40px auto",
-  }}>
-    <Paragraph color="black" size="40px" style={{
-      fontWeight: "900",
-    }}>
-تعليقات الطلاب
+      <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
+        <SmColoredTitle title="أفضل الدورات" color="#4F5DE4" alignItems="start" justifyContent="center" />
+        <HeaderPargraph style={{}} title="الدورات المميزة لهذا الشهر"color="#2A254D" alignItems="center" justifyContent="center" />
+      </div>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "150px", zIndex: "10", margin : "150px auto", flexWrap: "wrap", width: "90%"}}>
+<CourseCard title="دورة المطور النهائي
+للمتعلم في المستقبل" image="/photo.jpg" price={100} />
+<CourseCard title="دورة المطور النهائي
+للمتعلم في المستقبل" image="/photo.jpg" price={100} />
+<CourseCard title="دورة المطور النهائي
+للمتعلم في المستقبل" image="/photo.jpg" price={100} />
+<CourseCard title="دورة المطور النهائي
+للمتعلم في المستقبل" image="/photo.jpg" price={100} />
+<CourseCard title="دورة المطور النهائي
+للمتعلم في المستقبل" image="/photo.jpg" price={100} />
+</div>
 
-    </Paragraph>
-    <Paragraph color="#6D737A" size="1rem" className="mr-3" style={{
-      marginBottom: "20px",
-    }}>
-    لوريم إيبسوم هو ببساطة نص وهمي للطباعة.لوريم إيبسوم هو ببساطة نص وهمي للطباعة.
-    </Paragraph>
-    <ContainerRow
-  style={{
-    backgroundColor: "#f1f4f7",
-    width: "100%",
-    margin: "0 auto",
-    padding: "20px",
-  }}
-  justify="between"
-  gap="10"
->
-  {pagedTestimonials.map((t, idx) => (
-    <Box
-      key={idx}
-      width="650px"
-      height="200px"
-      borderRadius="10px"
-      background="white"
-      padding="5px"
-      flex
-      column
-      justifybetween
-      style={{
-        boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.3)",
-      }}
-      className="opinion-box"
-    >
-      <Container style={{ width: "100%", height: "100%" }}>
-        <ContainerRow style={{ width: "100%", height: "50%" }} items="center">
-          <Image
-            src={t.image}
-            alt={t.name}
-            width={70}
-            height={70}
-            style={{ borderRadius: "50%" }}
-          />
-          <Container justify="between" style={{ width: "50%", marginRight: "20px" }}>
-            <Paragraph className="opinion-name" color="black" size="20px" style={{ fontWeight: "900" }}>
-              {t.name}
-            </Paragraph>
-            <Paragraph color="#084FC7" size="12px" style={{ fontWeight: "900" }}>
-              {t.email}
-            </Paragraph>
-          </Container>
-          <div className="absolute left-0 p-5 ">
-            <Image
-              src="/icons/common_icons/coma.svg"
-              alt="coma"
-              width={70}
-              height={50}
-              className="rounded-md p-1 coma"
-            />
+    </section>
+
+    {/* Ad Section */}
+    <section className="ad-section" style={{width: "100%", backgroundColor: "#4F5DE4", position: "relative", margin: "100px 0px", height: "auto", display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap", overflow:"hidden"}}>
+    <img src="/squares.svg" alt="ad" style={{width: "50%", height: "100%", position: "absolute", top: 0, right: "-200px", zIndex: "0", opacity: "0.2"}} />
+    <img src="/diamond.svg" alt="ad" style={{width: "50%", height: "100%", position: "absolute", top: 0, left: "-200px", zIndex: "0", opacity: "1"}} />
+    <img src="/dotted white.svg" alt="ad" style={{width: "6%", height: "100%", position: "absolute", top: "20%", left: "50%", zIndex: "0", opacity: "1"}} />
+    
+
+    <div className="ad-section-left" style={{width: "50%", height: "100%", position: "relative", zIndex:"10", display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "space-around", padding: "100px 60px"}}>
+        <HeaderPargraph title="إنشىء حسابك المجاني الأن !"  color="#fff"  alignItems="right" justifyContent="start" style={{marginBottom:"20px"}}/>
+        <PaperCard content={<div>
+          <p style={{color: "#fff", fontSize: "16px", textAlign: "justify", padding: "20px"}}>ولذلك فإن نص لوريم إيبسوم الذي تم إنشاؤه يكون دائمًا خاليًا من التكرار أو الفكاهة المحقونة أو غير المميزة.</p>
+        </div>} backgroundColorGeneral="#F57005" backgroundColor="#6470E6" alignItems="center" justifyContent="center" width="100%" height="auto"/>
+        <General_Button style={{marginTop:"20px"}} backgroundColor="#F57005" color="white" padding="10px 20px" border="none" href="https://www.google.com">إنضم الأن</General_Button>
+      </div>
+
+      <div className="ad-section-right" style={{width: "50%", height: "100%", position: "relative", zIndex:"10", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center"}}>
+        <BackCircles width="500px" height="500px" style={{position: "absolute", top: "0", left: "0", zIndex: "1"}} content={<Counter/>} />
+      </div>
+
+
+    </section>
+
+    {/* Testimonials */}
+    <section style={{width: "100%", backgroundColor: "#fff", position: "relative", marginTop: "100px"}}>
+      <div style={{width: "80%", textAlign: "center", margin : "20px auto 80px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
+        <SmColoredTitle title="التعليقات" color="#4F5DE4" alignItems="start" justifyContent="center" />
+        <HeaderPargraph style={{}} title="التعليقات على الدورات" color="#2A254D" alignItems="center" justifyContent="center" />
+      </div>
+
+      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", width: "100%", position: "relative", flexWrap: "wrap"}}>
+        <InnerPaginationBox data={data} style={{}} />
+<CircleWithBrush src="/photo.jpg" position="relative" style={{}} />
+</div>
+    </section>
+
+    {/* Team Members */}
+    <section style={{width: "100%", backgroundColor: "#F1F2FD", position: "relative", overflow:"hidden", marginTop: "100px"}}>
+      <img src="/BackgroundsEffects/coverd.svg" alt="" style={{width: "100%", height: "100%%", position: "absolute", top: 0, left: 0, zIndex:"0", opacity: "0.5"}} />
+      <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
+        <SmColoredTitle title="اعضاء الفريق" color="#4F5DE4" alignItems="start" justifyContent="center" />
+        <HeaderPargraph style={{}} title="تعرف على فريقنا المتميز من الخبراء والمدربين" color="#2A254D" alignItems="center" justifyContent="center" />
+      </div>
+
+          <div style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "50px",
+            flexWrap: "wrap",
+            width: "80%",
+            height: "100%",
+            margin: "100px auto"
+          }}>
+      <BackBoxCard content={
+        <div>
+          <h1>أحمد ممدوح</h1>
+          <p>مدرب الدورات</p>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", marginTop: "10px"}}>
+<SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+          <SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+          <SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+</div>
+        </div>  
+      } image="/People/man.jpg" backgroundColor="#4F5DE4" />
+          <BackBoxCard content={
+        <div>
+          <h1>أحمد ممدوح</h1>
+          <p>مدرب الدورات</p>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", marginTop: "10px"}}>
+<SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+          <SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+          <SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+</div>
+        </div>  
+      } image="/People/man2.jpg" backgroundColor="#4F5DE4" />
+            <BackBoxCard content={
+        <div>
+          <h1>أحمد ممدوح</h1>
+          <p>مدرب الدورات</p>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", marginTop: "10px"}}>
+<SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+          <SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+          <SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+</div>
+        </div>  
+      } image="/People/man3.jpg" backgroundColor="#4F5DE4" />
+
+<BackBoxCard content={
+        <div>
+          <h1>أحمد ممدوح</h1>
+          <p>مدرب الدورات</p>
+<div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "10px", marginTop: "10px"}}>
+<SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+          <SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+          <SocialButtons icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>} backgroundColor="transparent" borderColor="#4F5DE4" />
+</div>
+        </div>  
+      } image="/People/man.jpg" backgroundColor="#4F5DE4" />
           </div>
-        </ContainerRow>
-        <Paragraph color="black" size="16px" className="opinion-paragraph">
-          {t.text}
-        </Paragraph>
-      </Container>
-    </Box>
-  ))}
-</ContainerRow>
-<div className="flex items-center justify-end gap-2 mt-6">
-  <button
-    onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-    disabled={currentPage === 1}
-    className="w-8 h-8 flex items-center justify-center rounded bg-white shadow transition disabled:opacity-50"
-  >
-    &#x2039;
-  </button>
-  {Array.from({ length: totalPages }).map((_, idx) => (
-    <span
-      key={idx}
-      onClick={() => setCurrentPage(idx + 1)}
-      className={`w-3 h-3 rounded-full mx-1 cursor-pointer ${currentPage === idx + 1 ? 'bg-[#169FC6]' : 'bg-gray-300'}`}
-      style={{ display: 'inline-block' }}
-    />
-  ))}
-  <button
-    onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-    disabled={currentPage === totalPages}
-    className="w-8 h-8 flex items-center justify-center rounded bg-white shadow transition disabled:opacity-50"
-  >
-    &#x203A;
-  </button>
+    </section>
+
+    {/* Latest Blog */}
+    <section style={{width: "100%", backgroundColor: "#fff", position: "relative", overflow:"hidden", marginTop: "100px"}}>
+    <div style={{width: "80%", textAlign: "center", margin : "20px auto" ,display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", zIndex:"1", position: "relative"}}>
+        <SmColoredTitle title="اخر الاخبار" color="#4F5DE4" alignItems="start" justifyContent="center" />
+        <HeaderPargraph style={{}} title="اخر الخبار و المقالات" color="#2A254D" alignItems="center" justifyContent="center" />
+      </div>
+      <div style={{width: "80%", flex: 1, display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", gap: "40px", margin: "100px auto", flexWrap: "wrap"}}>
+<div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "end", gap: "10px", height: "600px"}}>
+ <div style={{width: "auto", height: "100%"}}>
+ <BotCard width="400px" height="100%" content={
+    <div style={{width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-between"}}>
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "10px", height: "100%", textAlign: "center"}}>
+        <IconButtons  backgroundColor={"#4F5DE4"} borderRadius={"100%"} width={"100px"} height={"100px"} icon={<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z"/><path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10"/><path d="M20 10V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6"/></svg>} padding={"0 10px"}/>
+        <h1 style={{color: "#fff", fontSize: "24px", fontWeight: "bold", textAlign: "center", maxWidth: "70%"}}>اشترك في النشرة الإخبارية ليصلك كل جديد</h1>
+      </div>
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "end", width: "80%", zIndex: "1", paddingBottom: "20px"}}>
+        <input type="email" placeholder="البريد الإلكتروني" style={{width: "100%", height: "40px", borderRadius: "5px", border: "none", padding: "0 10px", marginBottom: "10px"}} />
+        <a href="" style={{width: "100%"}}>
+          <button style={{backgroundColor: "#4F5DE4", color: "#fff",width: "100%", height: "40px", borderRadius: "5px", border: "none", cursor: "pointer"}}>إشتراك</button>
+        </a>
+        <p style={{color: "#fff", fontSize: "14px", fontWeight: "normal", textAlign: "center", marginTop: "10px"}}>احصل على أخر الأخبار و المقالات</p>
+
+      </div>
+    </div>
+  } />
+ </div>
 </div>
+        <div className="blog-section" style={{display: "flex", flexDirection: "column", gap: "10px", width:"50%", minHeight: "300px", height: "100%"}}>
+          <div style={{width: "100%", flex: 1, backgroundColor: "#152B4A", borderRadius: "10px 15px 15px 10px", minHeight: "200px"}}>
+            <div style={{width:"70%", minHeight: "300px", backgroundColor: "#fff", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)", borderRadius: "0px 10px 10px 0px", display: "flex", flexDirection: "column", alignItems: "right", justifyContent: "space-around",  padding: "20px"}}>
+              <Category category="تطوير"/>
+              <h1>المبادئ التوجيهية الكاملة لمطوري الويب 2023</h1>
+              <BusinessCard type="date" />
+            </div>
+            
+          </div>
+          <div style={{width: "100%", flex: 1, backgroundColor: "#152B4A", borderRadius: "10px 15px 15px 10px", minHeight: "200px"}}>
+            <div style={{width:"70%", minHeight: "300px", backgroundColor: "#fff", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)", borderRadius: "0px 10px 10px 0px", display: "flex", flexDirection: "column", alignItems: "right", justifyContent: "space-around",  padding: "20px"}}>
+              <Category category="تطوير"/>
+              <h1>المبادئ التوجيهية الكاملة لمطوري الويب 2023</h1>
+              <GeneralBox backgroundColor="#F1F2FD" width="100%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
+      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
+      <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
+        <ProfileCircles image="/photo.jpg" backgroundColor="#E4E4E4" width="60px" height="50px" />
+      <div style={{display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "center", width: "100%", height: "100%", marginRight: "10px"}}>
+        <h3 style={{color: "#000", fontSize: "16px", fontWeight: "bold"}}>أنس إبراهيم حلمي</h3>
+        <p style={{color: "gray", fontSize: "12px", fontWeight: "bold"}}>مبرمج تطبيقات</p>
+      </div>
+      </div>
+      <div style={{display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", width: "50%", height: "100%"}}>
+<DateDisplay date={new Date()} style={{color: "#F57005", fontSize: "16px", fontWeight: "bold"}} className="date-display"/>
 </div>
-</Container>
-</div>
+      </div>
+    </GeneralBox>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    {/* Ad Skills */}
+    {/* <AdSkills /> */}
+    </>
 
   );
 }

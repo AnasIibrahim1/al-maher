@@ -1,34 +1,163 @@
-@media (max-width: 1200px) {    
-.contact-container{
-    flex-direction: column !important;
-    align-items: center !important;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif !important;
+    direction: rtl;
 }
-.contact-container-left{
-    width: 70% !important;
-    height: auto;
+
+/* Contact Form Responsive */
+.contact-form-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
-.contact-methods-container{
-    flex-direction: row !important;
-    align-items: center !important;
-    flex-wrap: wrap !important;
-    width: 100% !important;
-    height: auto;
-}
-}
-@media (max-width: 650px) { 
-    .contact-title{
+
+@media (max-width: 650px) {
+    .contact-form-row {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    .contact-form-section{
+        width: 100% !important;
+        padding: 10px !important;
+    }
+    
+    /* Hero Section */
+    .contact-hero-section h1 {
+        font-size: 28px !important;
+    }
+    
+    .contact-hero-section p {
+        font-size: 14px !important;
+    }
+    
+    /* Intro Section */
+    .contact-intro-section {
+        margin: 50px 0px 30px 0px !important;
+    }
+    
+    .contact-intro-container {
+        width: 90% !important;
+        margin-bottom: 30px !important;
+    }
+    
+    .contact-intro-title {
         font-size: 20px !important;
     }
-    .contact-paragraph{
-        font-size: 15px !important;
+    
+    .contact-intro-shape {
+        width: 20px !important;
+        height: 20px !important;
+        margin-right: 10px !important;
     }
-    .contact-container-row{
-        padding: 5px !important;
+    
+    /* Form Section */
+    
+    .contact-form-section input,
+    .contact-form-section textarea {
+        padding: 12px !important;
+        font-size: 14px !important;
     }
-    .contact-container-left{
-        width: 100% !important;
+    
+    /* Contact Info Section */
+    .contact-info-container {
+        width: 90% !important;
+        flex-direction: column !important;
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;
     }
-    .contact-method p{
-        font-size: 15px !important;
+    
+    .contact-info-item {
+        padding: 20px !important;
+        border-radius: 12px !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .contact-info-item:last-child {
+        margin-bottom: 0 !important;
+    }
+    
+    .contact-info-icon {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    
+    .contact-info-title {
+        font-size: 16px !important;
+        margin: 10px 0 !important;
+    }
+    
+    .contact-info-text {
+        font-size: 16px !important;
+    }
+    
+    /* Map Section */
+    .contact-map-iframe {
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hero Section */
+    .contact-hero-section {
+        height: 50vh !important;
+    }
+    
+    .contact-hero-section h1 {
+        font-size: 24px !important;
+    }
+    
+    .contact-hero-section p {
+        font-size: 12px !important;
+    }
+    
+    /* Intro Section */
+    .contact-intro-section {
+        margin: 30px 0px 20px 0px !important;
+    }
+    
+    .contact-intro-container {
+        width: 95% !important;
+    }
+    
+    .contact-intro-title {
+        font-size: 18px !important;
+    }
+    
+    /* Form Section */
+    
+    
+    .contact-form-section input,
+    .contact-form-section textarea {
+        padding: 10px !important;
+        font-size: 13px !important;
+    }
+    
+    /* Contact Info Section */
+    .contact-info-container {
+        width: 95% !important;
+    }
+    
+    .contact-info-item {
+        padding: 15px !important;
+    }
+    
+    .contact-info-icon {
+        width: 25px !important;
+        height: 25px !important;
+    }
+    
+    .contact-info-title {
+        font-size: 14px !important;
+    }
+    
+    .contact-info-text {
+        font-size: 14px !important;
+    }
+    
+    /* Map Section */
+    .contact-map-iframe {
+        height: 250px !important;
     }
 }

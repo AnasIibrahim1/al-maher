@@ -1,0 +1,59 @@
+.bubbles-wrapper{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1; /* behind content */
+}
+
+.bubble{
+  position: absolute;
+  bottom: -120px;
+  width: calc(40px + (var(--i) * 4px));
+  height: calc(40px + (var(--i) * 4px));
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(79,93,228,0.35), rgba(79,93,228,0.15) 60%, rgba(79,93,228,0.05));
+  filter: blur(0.2px);
+  animation: rise 12s ease-in infinite;
+  animation-delay: calc(var(--i) * -1.1s);
+  left: calc((var(--i) * 10%) - 5%);
+}
+
+/* Falling variant */
+.bubble-down{
+  top: -120px;
+  bottom: auto;
+  animation: fall 12s ease-in infinite;
+}
+
+@keyframes rise{
+  0%{
+    transform: translateY(0) translateX(0) scale(0.9);
+    opacity: 0;
+  }
+  10%{ opacity: 0.6; }
+  50%{
+    transform: translateY(-50vh) translateX(10px) scale(1);
+    opacity: 0.5;
+  }
+  100%{
+    transform: translateY(-110vh) translateX(-10px) scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes fall{
+  0%{
+    transform: translateY(0) translateX(0) scale(0.9);
+    opacity: 0;
+  }
+  10%{ opacity: 0.6; }
+  50%{
+    transform: translateY(50vh) translateX(-10px) scale(1);
+    opacity: 0.5;
+  }
+  100%{
+    transform: translateY(110vh) translateX(10px) scale(1.05);
+    opacity: 0;
+  }
+}

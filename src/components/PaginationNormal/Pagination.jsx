@@ -1,0 +1,160 @@
+'use client'
+import React, { useState, useEffect } from 'react';
+import './Pagination.css';
+
+export default function Pagination({ children }) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const [childrenArray, setChildrenArray] = useState([]);
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Calculate items per page based on screen width and item dimensions
+  useEffect(() => {
+    const calculateItemsPerPage = () => {
+      const screenWidth = window.innerWidth;
+      const containerPadding = 60; // 30px padding on each side
+      const gap = 30;
+      
+      if (screenWidth < 768) {
+        // Small screens: 200px items
+        const itemWidth = 200;
+        const availableWidth = screenWidth - containerPadding;
+        const itemsPerRow = Math.floor((availableWidth + gap) / (itemWidth + gap));
+        const rowsPerPage = 2; // Show 2 rows on mobile
+        return Math.max(1, itemsPerRow * rowsPerPage);
+      } else if (screenWidth < 900) {
+        // Medium screens: 350px items
+        const itemWidth = 350;
+        const availableWidth = screenWidth - containerPadding;
+        const itemsPerRow = Math.floor((availableWidth + gap) / (itemWidth + gap));
+        const rowsPerPage = 2;
+        return Math.max(1, itemsPerRow * rowsPerPage);
+      } else {
+        // Large screens: 420px items
+        const itemWidth = 420;
+        const availableWidth = screenWidth - containerPadding;
+        const itemsPerRow = Math.floor((availableWidth + gap) / (itemWidth + gap));
+        const rowsPerPage = 2; // Show 2 rows on desktop
+        return Math.max(1, itemsPerRow * rowsPerPage);
+      }
+    };
+
+    const updateItemsPerPage = () => {
+      setItemsPerPage(calculateItemsPerPage());
+    };
+
+    updateItemsPerPage();
+    window.addEventListener('resize', updateItemsPerPage);
+    return () => window.removeEventListener('resize', updateItemsPerPage);
+  }, []);
+
+  // Calculate total pages and split children into pages
+  useEffect(() => {
+    const childrenList = React.Children.toArray(children);
+    setChildrenArray(childrenList);
+    setTotalPages(Math.ceil(childrenList.length / itemsPerPage));
+    // Reset to first page if current page is out of bounds
+    if (currentPage > Math.ceil(childrenList.length / itemsPerPage)) {
+      setCurrentPage(1);
+    }
+  }, [children, itemsPerPage, currentPage]);
+
+  // Get current page items
+  const getCurrentPageItems = () => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return childrenArray.slice(startIndex, endIndex);
+  };
+
+  // Handle page navigation
+  const handlePageChange = (newPage) => {
+    if (newPage === currentPage || newPage < 1 || newPage > totalPages) return;
+    
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentPage(newPage);
+      setTimeout(() => {
+        setIsTransitioning(false);
+      }, 50);
+    }, 200);
+  };
+
+  // Generate page numbers to display
+  const getPageNumbers = () => {
+    const pages = [];
+    const maxVisible = 5;
+    
+    if (totalPages <= maxVisible) {
+      for (let i = 1; i <= totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      if (currentPage <= 3) {
+        for (let i = 1; i <= 4; i++) {
+          pages.push(i);
+        }
+        pages.push('...');
+        pages.push(totalPages);
+      } else if (currentPage >= totalPages - 2) {
+        pages.push(1);
+        pages.push('...');
+        for (let i = totalPages - 3; i <= totalPages; i++) {
+          pages.push(i);
+        }
+      } else {
+        pages.push(1);
+        pages.push('...');
+        pages.push(currentPage - 1);
+        pages.push(currentPage);
+        pages.push(currentPage + 1);
+        pages.push('...');
+        pages.push(totalPages);
+      }
+    }
+    
+    return pages;
+  };
+
+  return (
+    <div className="pagination-normal-container">
+      {/* Content Grid */}
+      <div className="pagination-content-wrapper">
+        <div className={`pagination-content ${isTransitioning ? 'transitioning' : ''}`}>
+          {getCurrentPageItems().map((item, index) => (
+            <div key={index}>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Pagination Numbers */}
+      {totalPages > 1 && (
+        <div className="pagination-arrows-container">
+          <button 
+            className={`pagination-arrow prev ${currentPage === 1 ? 'disabled' : ''}`}
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            aria-label="Previous page"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
+          </button>
+          
+          <button 
+            className={`pagination-arrow next ${currentPage === totalPages ? 'disabled' : ''}`}
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            aria-label="Next page"
+          >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}

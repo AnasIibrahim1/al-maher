@@ -1,0 +1,128 @@
+/* Counter Container */
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+/* Counter Title */
+.counter-title {
+  text-align: center;
+  color: white;
+}
+
+.counter-title h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color : black;
+}
+
+.counter-title p {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.9;
+  font-weight: 300;
+  color : black;
+
+}
+
+/* Counter Grid */
+.counter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Counter Column */
+.counter-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Counter Item */
+.counter-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Counter Circle */
+.counter-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  background-color: #F1F2FD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 10px;
+}
+
+
+
+.counter-circle:hover {
+  transform: scale(1.05);
+}
+
+/* Counter Number */
+.counter-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color : #4F5DE4;
+  z-index: 1;
+  position: relative;
+  height:fit-content;
+}
+
+/* Counter Label */
+.counter-label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  opacity: 0.9;
+}
+
+@media (max-width: 800px) {
+  .counter-title h2{
+  font-size : 16px !important;
+}
+.counter-circle {
+  width: 50px;
+  height: 50px; 
+}
+.counter-number {
+  font-size : 16px !important;
+}
+.counter-label {
+  font-size : 14px !important;
+}
+}
+
+@media (max-width: 500px) {
+  .counter-title h2{
+  font-size : 12px !important;
+}
+.counter-column {
+  gap : 10px !important;
+}
+.counter-circle {
+  width: 40px;
+  height: 40px; 
+}
+.counter-number {
+  font-size : 14px !important;
+}
+.counter-label {
+  font-size : 12px !important;
+}
+}
