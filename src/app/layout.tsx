@@ -5,6 +5,13 @@ import '@fontsource/cairo/400.css';
 import '@fontsource/cairo/500.css';
 import '@fontsource/cairo/600.css';
 import '@fontsource/cairo/700.css';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'المهير - منصة التعليم الإلكتروني',
+  description: 'منصة تعليمية عربية حديثة تقدم دورات متنوعة، مدونة تقنية، وملفات تعريف للمدربين مع دعم كامل للغة العربية وواجهة مستخدم عصرية.',
+  keywords: ['تعليم إلكتروني', 'دورات', 'مدونة', 'عربي', 'المهير'],
+};
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
