@@ -394,7 +394,7 @@ export default function Home() {
             <div style={{width:"70%", minHeight: "300px", backgroundColor: "#fff", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)", borderRadius: "0px 10px 10px 0px", display: "flex", flexDirection: "column", alignItems: "right", justifyContent: "space-around",  padding: "20px"}}>
               <Category category="تطوير"/>
               <h1>المبادئ التوجيهية الكاملة لمطوري الويب 2023</h1>
-              <GeneralBox backgroundColor="#F1F2FD" width="100%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between">
+              <GeneralBox backgroundColor="#F1F2FD" width="100%" height="auto" padding="5px" flexDirection="row" alignItems="center" justifyContent="space-between" borderColor="transparent">
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
       <div style={{display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "space-between", width: "100%", height: "100%"}}>
         <ProfileCircles image="/photo.jpg" backgroundColor="#E4E4E4" width="60px" height="50px" />
