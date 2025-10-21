@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import SocialButtons from '../Buttons/Solcial Buttons/SocialButtons';
-import './footer.css';
+import './Footer.css';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
