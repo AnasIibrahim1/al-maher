@@ -6,9 +6,6 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     remotePatterns: [],
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: false,
   },
